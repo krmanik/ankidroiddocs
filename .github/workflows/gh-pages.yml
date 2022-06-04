@@ -1,0 +1,48 @@
+env:
+  cname: docs.ankidroid.org
+
+name: github pages
+
+on:
+  push:
+    branches:
+      - main
+      - test
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build
+        run: .github/workflows/build.sh
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./book/html
+          cname: ${{ env.cname }}
+
+  check:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build
+        run: |
+          git branch docs
+          git checkout docs
+
+          chmod +x ./tools/setup.sh
+          chmod +x ./tools/build.sh
+
+          CHECK=1 ./tools/setup.sh
+
+          git config --global user.name github-actions
+          git config --global user.email github-actions@github.com
+          git add .
+          git commit -am "updated docs"
+          git push --set-upstream origin docs -f
+
