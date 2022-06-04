@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>使用Anki的桌面AnkiDroid - AnkiDroid 手册</title>
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="css/kbd.css">
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="介绍.html">介绍</a></li><li class="chapter-item affix "><a href="开始使用.html">开始使用</a></li><li class="chapter-item affix "><a href="牌组选择.html">牌组选择</a></li><li class="chapter-item affix "><a href="抽屉.html">导航抽屉</a></li><li class="chapter-item affix "><a href="牌组概览.html">牌组概览屏幕</a></li><li class="chapter-item affix "><a href="复习.html">学习屏幕</a></li><li class="chapter-item affix "><a href="添加笔记.html">添加笔记屏幕</a></li><li class="chapter-item affix "><a href="编辑笔记.html">编辑笔记屏幕</a></li><li class="chapter-item affix "><a href="浏览器.html">寻找/搜索/浏览</a></li><li class="chapter-item affix "><a href="过滤.html">过滤牌组</a></li><li class="chapter-item affix "><a href="Anki桌面版.html" class="active">使用Anki的桌面AnkiDroid</a></li><li class="chapter-item affix "><a href="AnkiWeb冲突.html">解决AnkiWeb的合并冲突</a></li><li class="chapter-item affix "><a href="导入.html">导入Anki文件</a></li><li class="chapter-item affix "><a href="导出.html">导出Anki文件</a></li><li class="chapter-item affix "><a href="备份.html">自动备份</a></li><li class="chapter-item affix "><a href="设置.html">首选项</a></li><li class="chapter-item affix "><a href="手势.html">手势</a></li><li class="chapter-item affix "><a href="高级功能.html">高级功能</a></li><li class="chapter-item affix "><a href="beta测试.html">beta测试</a></li><li class="chapter-item affix "><a href="贡献.html">贡献于AnkiDroid</a></li><li class="chapter-item affix "><a href="帮助和支持.html">帮助和支持</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AnkiDroid 手册</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ankidroid/ankidroiddocs/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="使用anki的桌面ankidroid"><a class="header" href="#使用anki的桌面ankidroid">使用Anki的桌面AnkiDroid</a></h1>
+<p>Anki有一个免费的云同步服务称为AnkiWeb可以很容易的把你的卡牌在移动设备和电脑之间同步。如果你有一些不能使用同步的原因，使用USB这也是可能的，虽然这种方法更费力。</p>
+<p>注意，AnkiDroid不隶属于它的桌面或AnkiWeb。AnkiDroid是基于它的桌面但它是由一个完全独立的志愿者社区开发的。</p>
+<p><img src="img/AnkiDesktop.png" alt="AnkiDesktop.png" /></p>
+<h2 id="通过云同步"><a class="header" href="#通过云同步">通过云同步</a></h2>
+<p>在您使用AnkiWeb之前，首先你需要创建一个帐户访问 <a href="https://ankiweb.net">https://ankiweb.net</a>点击注册按钮。 如果你过去用过AnkiWeb，你可以跳过这一步。注册后，看到下面的相应的指令，这取决于你是否选择把你存在的牌组导入到AnkiDroid里面或从AnkiDroid导出。</p>
+<h3 id="同步现有的牌组到一个新的ankidroid安装"><a class="header" href="#同步现有的牌组到一个新的ankidroid安装">同步现有的牌组到一个新的AnkiDroid安装</a></h3>
+<p>在这种情况下，你有一些现有的Anki牌组要通过同步AnkiWeb复制到一个新的AnkiDroid安装。打开Anki客户端与你现有的牌组（通常这会是Anki的桌面，但它也可能意味着一个版本的AnkiDroid你已经在另一个设备使用），然后单击“同步”按钮（其中有一个圈中的两个箭头）在牌组列表右上方。</p>
+<p>如果你从未使用过ankiweb，在这之前如果提示，你需要输入你的凭据，然后按“上传AnkiWeb”按钮来确认你现有的AnKi里牌组是否与 AnkiWeb重合覆盖。AnKi将会上传你所有的卡片，图像和音频到AnkiWeb。如果你有很多媒体文件，这可能需要一些时间。</p>
+<p>一旦同步完成，在设备上打开AnkiDroid可让你试图复制现有的牌组，点击顶部<a href="%E7%89%8C%E7%BB%84%E9%80%89%E6%8B%A9.html">牌组选择</a>的活动栏中的“同步”按钮。登录你的AnkiWeb信息后，AnkiDroid将下载你所有的卡片和媒体，并为下一次记住您的登录信息。</p>
+<p>注意：在试图同步前如果你有任何存在的材料在AnkiDroid，你的上面会显示一条消息告诉你请你选择下载或上传到AnkiWeb。如果你乐意失去在AnkiDroid的卡片，它直接会选择“下载”。如果你需要与AnkiDroid合并现有的卡，那么你应该在继续前参阅<a href="AnkiWeb%E5%86%B2%E7%AA%81.html">解决AnkiWeb的合并冲突</a>部分。</p>
+<p>第一个同步完成后，在你希望同步云变化的任何时候你都可以单击“同步”按钮，唯一的变化得是自上次同步被发送，随后的同步会更快。</p>
+<p>如果您在桌面计算机上添加一些新的卡片，并希望同步到AnkiDroid，你会重复同样的基本过程：同步在桌面（或关闭程序，它自动同步关闭默认），然后在AnkiDroid点击同步按钮。</p>
+<h3 id="从ankidroid同步到计算机"><a class="header" href="#从ankidroid同步到计算机">从AnkiDroid同步到计算机</a></h3>
+<p>从AnkiDroid同步计算机的过程基本上和从电脑同步AnkiDroid是相同的，但反过来就不同。</p>
+<p>从<a href="%E7%89%8C%E7%BB%84%E9%80%89%E6%8B%A9.html">牌组选择</a>点击右上的同步按钮 (其中有一个圈中的两个箭头). 如果这是您第一次使用AnkiWeb，您可能需要输入您的登录信息，然后点击“上传”按钮上传你的AnkiDroid对AnkiWeb的收藏。</p>
+<p>一旦同步完成，打开你的电脑Anki桌面版和按下同步按钮（在一圈两箭），AnKi将下载您的收藏。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="过滤.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="AnkiWeb冲突.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="过滤.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="AnkiWeb冲突.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ジェスチャー - AnkiDroid Manual</title>
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="css/kbd.css">
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="intro.html">Introduction</a></li><li class="chapter-item "><a href="getting-started.html"><strong aria-hidden="true">1.</strong> 使ってみる</a></li><li class="chapter-item "><a href="deck-picker.html"><strong aria-hidden="true">2.</strong> デッキリスト</a></li><li class="chapter-item "><a href="drawer.html"><strong aria-hidden="true">3.</strong> ドロワーメニュー</a></li><li class="chapter-item "><a href="deck-overview.html"><strong aria-hidden="true">4.</strong> デッキ概要画面</a></li><li class="chapter-item "><a href="reviewer.html"><strong aria-hidden="true">5.</strong> 学習画面</a></li><li class="chapter-item "><a href="adding-notes.html"><strong aria-hidden="true">6.</strong> ノートの追加</a></li><li class="chapter-item "><a href="editing-notes.html"><strong aria-hidden="true">7.</strong> ノートの編集</a></li><li class="chapter-item "><a href="browser.html"><strong aria-hidden="true">8.</strong> カードブラウザによるカードの一覧、検索</a></li><li class="chapter-item "><a href="filtered-deck.html"><strong aria-hidden="true">9.</strong> Filtered Decks</a></li><li class="chapter-item "><a href="importing-anki-files.html"><strong aria-hidden="true">10.</strong> インポート</a></li><li class="chapter-item "><a href="exporting.html"><strong aria-hidden="true">11.</strong> エクスポート</a></li><li class="chapter-item "><a href="backups.html"><strong aria-hidden="true">12.</strong> 自動バックアップ</a></li><li class="chapter-item "><a href="settings.html"><strong aria-hidden="true">13.</strong> 設定</a></li><li class="chapter-item expanded "><a href="gestures.html" class="active"><strong aria-hidden="true">14.</strong> ジェスチャー</a></li><li class="chapter-item "><a href="note-formatting-toolbar.html"><strong aria-hidden="true">15.</strong> Note Formatting Toolbar</a></li><li class="chapter-item "><a href="keyboard-shortcuts.html"><strong aria-hidden="true">16.</strong> Keyboard Shortcuts</a></li><li class="chapter-item "><a href="rtl.html"><strong aria-hidden="true">17.</strong> Using Right-To-Left Languages with AnkiDroid</a></li><li class="chapter-item "><a href="anki-desktop.html"><strong aria-hidden="true">18.</strong> Ankiとあわせて使う</a></li><li class="chapter-item "><a href="ankiweb-conflicts.html"><strong aria-hidden="true">19.</strong> 同期で矛盾が生じた場合の処理</a></li><li class="chapter-item "><a href="advanced-features/intro.html"><strong aria-hidden="true">20.</strong> 高度な機能</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="advanced-features/mathjax.html"><strong aria-hidden="true">20.1.</strong> MathJax Support</a></li><li class="chapter-item "><a href="advanced-features/reverse-cards.html"><strong aria-hidden="true">20.2.</strong> Reverse Cards</a></li><li class="chapter-item "><a href="advanced-features/custom-fonts.html"><strong aria-hidden="true">20.3.</strong> カスタムフォント</a></li><li class="chapter-item "><a href="advanced-features/customizing-card-layout.html"><strong aria-hidden="true">20.4.</strong> カードレイアウトのカスタマイズ</a></li><li class="chapter-item "><a href="advanced-features/type-in-answer.html"><strong aria-hidden="true">20.5.</strong> 解答を入力する</a></li><li class="chapter-item "><a href="advanced-features/advanced-statistics.html"><strong aria-hidden="true">20.6.</strong> Advanced Statistics</a></li><li class="chapter-item "><a href="advanced-features/reminders.html"><strong aria-hidden="true">20.7.</strong> Reminders</a></li><li class="chapter-item "><a href="advanced-features/set-language-hint.html"><strong aria-hidden="true">20.8.</strong> Automatic Language Selection</a></li></ol></li><li class="chapter-item "><a href="help.html"><strong aria-hidden="true">21.</strong> お問い合わせの前に</a></li><li class="chapter-item "><a href="beta-testing.html"><strong aria-hidden="true">22.</strong> ベータテスト</a></li><li class="chapter-item "><a href="contributing.html"><strong aria-hidden="true">23.</strong> AnkiDroidの開発に貢献する</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AnkiDroid Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ankidroid/ankidroiddocs/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="ジェスチャー"><a class="header" href="#ジェスチャー">ジェスチャー</a></h1>
+<p>AnkiDroidでは、操作法をカスタマイズして、よく使う操作はタップ・スワイプといったジェスチャーですばやく呼び出せるようにすることができます。</p>
+<p>==== アクション</p>
+<p>以下のようなジェスチャーに機能を割りあてることができます。</p>
+<ul>
+<li>上にスワイプ</li>
+<li>下にスワイプ</li>
+<li>左にスワイプ</li>
+<li>右にスワイプ</li>
+<li>ダブルタップ</li>
+<li>上をタップ</li>
+<li>下をタップ</li>
+<li>左をタップ</li>
+<li>右をタップ</li>
+</ul>
+<p>それぞれのジェスチャーには、以下のような動作が割りあてられます。</p>
+<p>何もしない :: 何もしません。そのジェスチャーを無効にするときに使います。</p>
+<p>答えの表示 :: 問題が表示されているときに、答を表示します。</p>
+<p>回答ボタン1  :: 答が表示されているときに、赤字のボタンを押して「すぐ復習する」と評価する動作です。問題が表示されている場合にこの操作をすると、単に答が表示されます（下記の、他の回答アクションでも同様です）。</p>
+<p>回答ボタン2 :: 答が表示されているときに、左からふたつ目のボタンを押して「思い出すのが難しかった」と評価する動作です。</p>
+<p>回答ボタン3 :: 答が表示されているときに、左から三つ目のボタンを押す動作です。</p>
+<p>回答ボタン4 :: 答が表示されているときに、左から四つ目のボタンを押す動作です(四つ目がある場合)。</p>
+<p>推奨する答え（緑色） :: 答が表示されているときに、緑字のボタンを押す動作です。</p>
+<p>推奨された答えよりも良い答え :: 答が表示されているときに、緑字のボタンの右側のボタンを押し、「とても簡単だから復習間隔はもっと長くていい」と評価する動作です。</p>
+<p>戻す :: 最後に行った操作を元に戻します。</p>
+<p>カードを編集する :: 現在のカードを編集します。</p>
+<p>マークをつける :: 後で探しやすいように、現在のノートに「marked」(マーク付き)のタグをつけます。</p>
+<p>検索式 :: 拡張機能設定で辞書検索機能が有効にされている場合、辞書で検索を行います。なお、この機能を使う前に、検索内容をクリップボードにコピーしておく必要があります。</p>
+<p>カードを延期 :: 現在のカードの学習を一旦延期します。デッキリストに戻ると、そのカードはもう一度学習予定に入ります。</p>
+<p>カードを保留 :: カードに保留タグをつけ、ブラウザでタグをはずすまでは学習中に出てこないようにします。</p>
+<p>ノートを削除 :: 現在のノートと、そのノートに属するカード全てを削除します。裏→表のカードも自動生成されるデッキを使っているのでなければ、おそらく削除されるカードは一枚でしょう。</p>
+<p>メディアを再生 :: カードに添付されている音声を再生します。</p>
+<p>学習を中断 :: 学習を中断し、デッキ概要画面に戻ります。</p>
+<p>ノートを延期 :: 表示中のカードと関連カード（同じノートから作られたカード）の学習中の表示を延期します。つまり、翌日まで学習中に表示されなくなります。</p>
+<p>ノートを保留 :: 表示中のカードと関連カード（同じノートから作られたカード）が学習中に表示されないようにします。つまり、あなたが保留を解除するまで、学習中に表示されなくなります。</p>
+<p>=== 拡張機能
+慣れた利用者向けの、頻繁には使わないような機能についての設定です。</p>
+<p>コレクションの保存先 :: AnkiDroidのデータが保存される場所を変更します。（お勧めしません。）</p>
+<p>完全同期を強制する :: 次回の同期で、強制的にすべてのデータをアップロード、あるいはダウンロードしたい場合、ここをタップしてください(例えば、片方の側でうっかり間違ってデッキを削除してしまい、この削除操作を同期するのではなく、もう一方の側に残ったデータから元に戻したい場合など)。</p>
+<p>保管するバックアップの世代数 :: バックアップをいくつ保存しておくかを設定します。</p>
+<p>==== 回避策
+カード内にキーボード入力で解答する :: 
+解答をキーボード入力で行うよう設定（詳しくは、 http://wikiwiki.jp/rage2050/?2.0%2FCardsAndTemplates#checking-your-answer[Ankiのマニュアルのこの項]を参照してください）しているカード内に、テキスト入力ボックスを表示します。</p>
+<p>ホワイトボード機能やジェスチャー機能を使っている時のユーザーエクスペリエンスを向上させるために、AnkiDroidではテキスト入力ボックスとカードを別々に表示していますが、これはAnki上での表示方法とは異なります。</p>
+<p>Anki上での表示方法と一致させたい場合はこのオプションを有効にしてください。画面の領域を無駄なく使えますし、テキスト入力ボックスで適切なフォントを選ぶこともできます。</p>
+<p>回避方法を入力(※) :: 一部の古い端末で、テキスト入力欄にフォーカスがあたらなくなる問題を修正します(※Android 4.0.3以降では表示されません)。</p>
+<p>長押しの回避策(※) :: 一部の古い端末で、テキスト選択やコピーをするときに長押しが効かなくなる問題を修正します(※Android 3.0以降では表示されません)。</p>
+<p>ヘブライ語母音への対応(※)  :: 一部の古い端末ではヘブライ語が正しく表示できないので、ヘブライ語フォントをダウンロードし、それを使って表示します。(※API 15以降では表示されません)</p>
+<p>音声合成 :: カードに書かれている文章をAndroidの音声合成機能を使って発音させる場合、このオプションをオンにしてください。プリインストールされているGoogleの音声合成エンジンで動作するはずです。その他の製作者による音声合成エンジンは、動くものと動かないものがあると思われます。それぞれのデッキの学習を初めて行うときに、AnkiDroidがそのデッキのカードは表と裏がそれぞれ何語で書いてあるか聞いてきます。この言語設定を変更する、あるいは特定のデッキで音声合成をやめるという場合は、この下にある「言語設定のリセット」オプションを使い、デッキの言語設定をしなおす必要があります。</p>
+<p>　この機能は、将来的に廃止され、別個にダウンロードできるプラグインに変わる可能性があります。</p>
+<p>検索辞書 :: 学習中、クリップボードにコピーした単語を調べるための辞書を設定します。辞書の設定がすんだら、次のようにすると辞書を使った検索ができます。</p>
+<p>. 学習画面で、コピーしたい部分のあたりを長押し
+. コピーしたい部分を選択し、アクションバーの「コピー」をタップ
+. カードのどこかを一回タップ
+. 虫めがねのアイコンが右上に表示されるので、それを押すと検索実行</p>
+<p>あるいは、この検索操作をジェスチャーに設定しておくこともできます。</p>
+<p>　この機能は、将来的に廃止され、別個にダウンロードできるプラグインに変わる予定です。</p>
+<p>言語設定のリセット :: 音声合成の言語設定をリセットするために使います。</p>
+<p>eReader :: eReaderのハードウェアボタンによる操作をサポートします( https://github.com/ankidroid/Anki-Android/issues/1625[issue 1625] を参照してください。)。</p>
+<p>　この機能は、将来的に廃止され、別個にダウンロードできるプラグインに変わる予定です。</p>
+<p>ダブル スクロール :: eReaderのハードウェアボタンでのスクロール量を二倍にします。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="settings.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="note-formatting-toolbar.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="settings.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="note-formatting-toolbar.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

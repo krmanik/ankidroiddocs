@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>学习屏幕 - AnkiDroid 手册</title>
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="css/kbd.css">
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="介绍.html">介绍</a></li><li class="chapter-item affix "><a href="开始使用.html">开始使用</a></li><li class="chapter-item affix "><a href="牌组选择.html">牌组选择</a></li><li class="chapter-item affix "><a href="抽屉.html">导航抽屉</a></li><li class="chapter-item affix "><a href="牌组概览.html">牌组概览屏幕</a></li><li class="chapter-item affix "><a href="复习.html" class="active">学习屏幕</a></li><li class="chapter-item affix "><a href="添加笔记.html">添加笔记屏幕</a></li><li class="chapter-item affix "><a href="编辑笔记.html">编辑笔记屏幕</a></li><li class="chapter-item affix "><a href="浏览器.html">寻找/搜索/浏览</a></li><li class="chapter-item affix "><a href="过滤.html">过滤牌组</a></li><li class="chapter-item affix "><a href="Anki桌面版.html">使用Anki的桌面AnkiDroid</a></li><li class="chapter-item affix "><a href="AnkiWeb冲突.html">解决AnkiWeb的合并冲突</a></li><li class="chapter-item affix "><a href="导入.html">导入Anki文件</a></li><li class="chapter-item affix "><a href="导出.html">导出Anki文件</a></li><li class="chapter-item affix "><a href="备份.html">自动备份</a></li><li class="chapter-item affix "><a href="设置.html">首选项</a></li><li class="chapter-item affix "><a href="手势.html">手势</a></li><li class="chapter-item affix "><a href="高级功能.html">高级功能</a></li><li class="chapter-item affix "><a href="beta测试.html">beta测试</a></li><li class="chapter-item affix "><a href="贡献.html">贡献于AnkiDroid</a></li><li class="chapter-item affix "><a href="帮助和支持.html">帮助和支持</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AnkiDroid 手册</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ankidroid/ankidroiddocs/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="学习屏幕"><a class="header" href="#学习屏幕">学习屏幕</a></h1>
+<p>在牌组列表屏幕，点击牌组名称，或是在牌组概览屏幕点击学习按钮，系统将带你进入学习页面，在哪里你可以开始你的学习。</p>
+<p><img src="img/4-reviewer.png" alt="reviewer.png" /></p>
+<h2 id="基本概念"><a class="header" href="#基本概念">基本概念</a></h2>
+<p>如果你之前没有用过桌面版的Anki,你最好先看一下
+<a href="https://docs.ankiweb.net/getting-started.html#videos">intro video</a>
+这里的视频介绍, 它解释了基本的复习过程。</p>
+<p>在屏幕的左上角，你将看到三个数字，On the top left of the screen you'll see three numbers. From the left, these
+他们分别代表剩余的新卡片数量，学习中的卡片数量，以及等待复习的卡片数量。这些术语
+在桌面版的程序的视频介绍中有更详细的解释，
+如果你还没看到，请现在打开<a href="https://docs.ankiweb.net/getting-started.html#videos">check them out</a>
+这个视频。</p>
+<p>当你已经看到卡片的问题，并且已经回想到它的答案，或是
+你不知道答案, 点击<em>显示答案</em> 按钮。 点击之后i，底部区域将变成2-4个备选按钮，
+根据你之前对这张卡片做出的相应，这些按钮将显示下次卡片出现的时间
+其中10m 代表 &quot;10 分钟&quot; and &quot;5d&quot; 代表5天，
+你可以直接点击其中的一个按钮，确定下次卡片出现的时间。</p>
+<p>为了使复习更快捷，你可以为回答卡片配置手势（例如点击屏幕或滑动屏幕），这样你就可以不用再点击按钮了。 
+关于更多配置手势的信息请参阅<a href="%E8%AE%BE%E7%BD%AE.html">首选项</a>部分。</p>
+<h2 id="活动栏"><a class="header" href="#活动栏">活动栏</a></h2>
+<p>在学习屏幕的活动栏上有几个按钮，他们可执行多种常见操作，这些显示出来的按钮的数量是取决于
+你的屏幕尺寸，以及屏幕分辨率。如果你的屏幕有足够的宽度，它将显示所有的按钮。
+如果你的屏幕不能显示完这些按钮，其余的按钮将可通过点击最右侧的菜单按钮展示出来。如果你不能确定某个按钮的用途
+你可以长安这个按钮，系统将弹出一个标签告诉你这个按钮的名字，接下来向你展示这些可用的按钮:</p>
+<h4 id="取消"><a class="header" href="#取消">取消</a></h4>
+<p>取消上一张卡片你选择的答案（这个按钮总会显示）。</p>
+<h4 id="标记卡片"><a class="header" href="#标记卡片">标记卡片</a></h4>
+<p>为当前卡片的笔记添加上一个&quot;marked&quot;标签，这样方便你在卡片浏览器中很容易找到它。
+当你想随后对当前笔记做一些操作的话，这个标记会很有用，例如回家后查询一个单词。进行标记的卡片会在卡片的左上角显示一个星图标。</p>
+<h4 id="编辑卡片"><a class="header" href="#编辑卡片">编辑卡片</a></h4>
+<p>打开笔记编辑屏幕，在这里你可以改变现实在卡片上的内容(了解更多相关信息请参阅<a href="%E7%BC%96%E8%BE%91%E7%AC%94%E8%AE%B0.html">编辑笔记屏幕</a>部分)</p>
+<h4 id="隐藏--删除"><a class="header" href="#隐藏--删除">隐藏 / 删除</a></h4>
+<p>这里你可以选择搁置，暂停当前卡片或是笔记。</p>
+<ul>
+<li><strong>搁置卡片 / 搁置笔记:</strong> 隐藏一张卡片或是与它的笔记相关的所有卡片直到下一天才出现。 (如果你向取消搁置，你可以在牌组列表页面<a href="%E7%89%8C%E7%BB%84%E9%80%89%E6%8B%A9.html">牌组选择</a>长按牌组名称选择弹出的对话框, 或者在牌组概览页面 <a href="%E7%89%8C%E7%BB%84%E6%A6%82%E8%A7%88.html">牌组概览屏幕</a>进行设置.) 如果有时候你不想回答这些卡片，或是你想在其他时间再去学习这些卡片的时候，这个选项会显得很有用。如果一些卡片来自于同一个笔记的时候搁置也会自动执行 。如果卡片在被搁置的时候正处于学习中，则他们将优先被移动到新卡片队列或是复习卡片队列的后面。 </li>
+<li><strong>暂停卡片 / 暂停笔记:</strong> 隐藏一个卡片或是相关笔记的所有卡片直到它们被手动取消暂停（你可在<a href="%E6%B5%8F%E8%A7%88%E5%99%A8.html">寻找/搜索/浏览</a>浏览器页面长按目标笔记实现取消暂停）。有时你想避免复习这个笔记，但又不想删除它的时候，这个选项会显得很有用。如果卡片被暂停的时候正处于学习状态，则他们会被优先移动到新卡片队列或是复习卡片队列的后面。 </li>
+<li><strong>删除笔记:</strong> 删除当前卡片相关的笔记的所有卡片。</li>
+</ul>
+<h4 id="重新播"><a class="header" href="#重新播">重新播</a></h4>
+<p>如果当前卡片有音频在它的正面或是背面，点击此按钮，音频将会再次播放。</p>
+<h4 id="启用--禁用白板"><a class="header" href="#启用--禁用白板">启用 / 禁用白板</a></h4>
+<p>这个按钮可启用或禁用当前牌组的白板功能。白板功能可允许你在屏幕上涂鸦。
+当你在学习汉语，日语，或是阿拉伯语的时候，为当前牌组开启白板功能，来练习写字会很有用。
+当启用白板的时候，两个新的按钮将会出现，一个是清除白板上的内容，一个是隐藏白板，当禁用白板后，这两个按钮也会消失。</p>
+<h4 id="牌组选项"><a class="header" href="#牌组选项">牌组选项</a></h4>
+<p>打开当前牌组的牌组选项，了解更多牌组选项的信息请参阅<a href="https://docs.ankiweb.net/deck-options.html">desktop documentation</a>部分。</p>
+<h2 id="卡片学习完毕"><a class="header" href="#卡片学习完毕">卡片学习完毕</a></h2>
+<p>当你学习完了今天到期的卡片，你将被带回到牌组列表并显示一个祝贺信息。从这里你可以选择另外一个牌组继续学习，或者你已经全部完成了今天的学习任务，你也可以轻轻地点击一下home键，
+关掉ankidroid（当然，如果你愿意你可以在学习进行中关掉AnkiDroid）。</p>
+<p>如果你想进一步学习当前的牌组，只要轻轻再次点击牌组，系统将给你几个选项可以使你继续学习，更多信息请参阅<a href="%E8%BF%87%E6%BB%A4.html">过滤牌组</a>部分。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="牌组概览.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="添加笔记.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="牌组概览.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="添加笔记.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

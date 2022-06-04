@@ -1,0 +1,468 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Version 2.6 to 2.10 - AnkiDroid Manual</title>
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../css/kbd.css">
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../intro.html">Introduction</a></li><li class="chapter-item "><a href="../getting-started.html"><strong aria-hidden="true">1.</strong> Getting started</a></li><li class="chapter-item "><a href="../deck-picker.html"><strong aria-hidden="true">2.</strong> The Deck List</a></li><li class="chapter-item "><a href="../drawer.html"><strong aria-hidden="true">3.</strong> Navigation Drawer</a></li><li class="chapter-item "><a href="../deck-overview.html"><strong aria-hidden="true">4.</strong> Deck Overview Screen</a></li><li class="chapter-item "><a href="../reviewer.html"><strong aria-hidden="true">5.</strong> Study Screen</a></li><li class="chapter-item "><a href="../adding-notes.html"><strong aria-hidden="true">6.</strong> Add Note Screen</a></li><li class="chapter-item "><a href="../editing-notes.html"><strong aria-hidden="true">7.</strong> Edit Note Screen</a></li><li class="chapter-item "><a href="../browser.html"><strong aria-hidden="true">8.</strong> Finding/Searching/Browsing</a></li><li class="chapter-item "><a href="../filtered-deck.html"><strong aria-hidden="true">9.</strong> Filtered Decks</a></li><li class="chapter-item "><a href="../importing/importing-anki-files.html"><strong aria-hidden="true">10.</strong> Importing Anki Files</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../importing/importing-anki-databases.html"><strong aria-hidden="true">10.1.</strong> Importing Anki Databases (.anki2)</a></li></ol></li><li class="chapter-item "><a href="../exporting.html"><strong aria-hidden="true">11.</strong> Exporting Anki Files</a></li><li class="chapter-item "><a href="../backups.html"><strong aria-hidden="true">12.</strong> Automatic Backups</a></li><li class="chapter-item "><a href="../settings.html"><strong aria-hidden="true">13.</strong> Preferences</a></li><li class="chapter-item "><a href="../gestures.html"><strong aria-hidden="true">14.</strong> Gestures</a></li><li class="chapter-item "><a href="../note-formatting-toolbar.html"><strong aria-hidden="true">15.</strong> Note Formatting Toolbar</a></li><li class="chapter-item "><a href="../keyboard-shortcuts.html"><strong aria-hidden="true">16.</strong> Keyboard Shortcuts</a></li><li class="chapter-item "><a href="../rtl.html"><strong aria-hidden="true">17.</strong> Using Right-To-Left Languages with AnkiDroid</a></li><li class="chapter-item "><a href="../anki-desktop.html"><strong aria-hidden="true">18.</strong> Using Anki Desktop with AnkiDroid</a></li><li class="chapter-item "><a href="../ankiweb-conflicts.html"><strong aria-hidden="true">19.</strong> Dealing with merge conflicts on AnkiWeb</a></li><li class="chapter-item "><a href="../advanced-features/intro.html"><strong aria-hidden="true">20.</strong> Advanced Features</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../advanced-features/mathjax.html"><strong aria-hidden="true">20.1.</strong> MathJax Support</a></li><li class="chapter-item "><a href="../advanced-features/reverse-cards.html"><strong aria-hidden="true">20.2.</strong> Reverse Cards</a></li><li class="chapter-item "><a href="../advanced-features/custom-fonts.html"><strong aria-hidden="true">20.3.</strong> Custom Fonts</a></li><li class="chapter-item "><a href="../advanced-features/customizing-card-layout.html"><strong aria-hidden="true">20.4.</strong> Custom Card Layout</a></li><li class="chapter-item "><a href="../advanced-features/type-in-answer.html"><strong aria-hidden="true">20.5.</strong> Type in the answer feature</a></li><li class="chapter-item "><a href="../advanced-features/advanced-statistics.html"><strong aria-hidden="true">20.6.</strong> Advanced Statistics</a></li><li class="chapter-item "><a href="../advanced-features/reminders.html"><strong aria-hidden="true">20.7.</strong> Reminders</a></li><li class="chapter-item "><a href="../advanced-features/set-language-hint.html"><strong aria-hidden="true">20.8.</strong> Automatic Language Selection</a></li></ol></li><li class="chapter-item "><a href="../help.html"><strong aria-hidden="true">21.</strong> Help &amp; Supports</a></li><li class="chapter-item "><a href="../beta-testing.html"><strong aria-hidden="true">22.</strong> Beta testing</a></li><li class="chapter-item "><a href="../contributing.html"><strong aria-hidden="true">23.</strong> Contributing to AnkiDroid</a></li><li class="chapter-item expanded "><a href="../changelog/intro.html"><strong aria-hidden="true">24.</strong> Changelog</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../changelog/v2.15.0-to-2.15.6.html"><strong aria-hidden="true">24.1.</strong> Version 2.15</a></li><li class="chapter-item "><a href="../changelog/v2.14.0-to-2.14.6.html"><strong aria-hidden="true">24.2.</strong> Version 2.14</a></li><li class="chapter-item "><a href="../changelog/v2.13.0-to-2.13.5.html"><strong aria-hidden="true">24.3.</strong> Version 2.13</a></li><li class="chapter-item "><a href="../changelog/v2.11.0-to-2.12.0.html"><strong aria-hidden="true">24.4.</strong> Version 2.11 to 2.12</a></li><li class="chapter-item expanded "><a href="../changelog/v2.6-to-2.10.html" class="active"><strong aria-hidden="true">24.5.</strong> Version 2.6 to 2.10</a></li><li class="chapter-item "><a href="../changelog/v2.0-to-2.5.html"><strong aria-hidden="true">24.6.</strong> Version 2.0 to 2.5</a></li><li class="chapter-item "><a href="../changelog/v0.1-to-1.1.3.html"><strong aria-hidden="true">24.7.</strong> Version 0.1 to 1.1.3</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AnkiDroid Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ankidroid/ankidroiddocs/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="version-2104-2020-05-31"><a class="header" href="#version-2104-2020-05-31">Version 2.10.4 (2020-05-31)</a></h2>
+<ul>
+<li>Workaround expired AnkiWeb SSL Root certificate</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/22?closed=1">Full Changelog here</a></li>
+</ul>
+<h2 id="version-2103-2020-05-29"><a class="header" href="#version-2103-2020-05-29">Version 2.10.3 (2020-05-29)</a></h2>
+<ul>
+<li>Fix crash on no permissions on Card Browser system text menu entry</li>
+<li>Fix crash in widget if external storage unmounts</li>
+<li>Fix crash on device reboot if no permissions</li>
+<li>Fix crash if deck picker background image too large</li>
+<li>Fix crash in tags dialog</li>
+<li>Fix bad data generated for null objects (Anki compatability)</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/21?closed=1">Full Changelog here</a></li>
+</ul>
+<h2 id="version-2102-2020-05-14"><a class="header" href="#version-2102-2020-05-14">Version 2.10.2 (2020-05-14)</a></h2>
+<ul>
+<li>Fix type answer cards not rendering correctly</li>
+<li>Fix type answer card template creation on non-English new installs</li>
+<li>Fix frequent full sync caused by incorrect learning card counts</li>
+<li>Fix crash importing into fresh install with no storage permission</li>
+</ul>
+<h2 id="version-2101-2020-05-13"><a class="header" href="#version-2101-2020-05-13">Version 2.10.1 (2020-05-13)</a></h2>
+<ul>
+<li>Updated all translations from crowdin translators</li>
+<li>Fix crash note editor on rapid back button</li>
+<li>Fix crash from incorrect Thai translation</li>
+</ul>
+<h2 id="version-210-2020-05-12"><a class="header" href="#version-210-2020-05-12">Version 2.10 (2020-05-12)</a></h2>
+<ul>
+<li>Add welcome dialog explaining need for storage permission</li>
+<li>Add support for Flags on cards (including flagging by gesture)</li>
+<li>Add ability to set background image in Deck Picker</li>
+<li>Add localization of standard templates created in fresh install</li>
+<li>Add support for card javascript to reload current card programmatically</li>
+<li>Add support for restricted learning / classroom devices</li>
+<li>Add preference to disable &quot;Extended Text UI&quot; full-screen editor</li>
+<li>Add CSS style capability to heavy checkmark and down arrow in card</li>
+<li>Add display of current interval on reschedule dialog</li>
+<li>Add support for card javascript to answer cards programmatically</li>
+<li>Add ability to toggle sticky field in field editor</li>
+<li>Improve deck list newline, style, script tag handling in deck descriptions</li>
+<li>Improve whiteboard on/off state handling, especially between day/night mode</li>
+<li>Improve multi-selection options in CardBrowser</li>
+<li>Improve performance (systematic optimization process, lots of improvements!)</li>
+<li>Improve handling of erroneous notes (missing fields, improper clozes)</li>
+<li>Improve user messaging on network connection failures</li>
+<li>Improve counting of suspended/buried cards in advanced statistics</li>
+<li>Improve v2 scheduler compatibility with Anki ecosystem</li>
+<li>Improve handling / detection of full sync need</li>
+<li>Improve Anki compatibility by allowing more field/model/deck name characters</li>
+<li>Improve deck list estimated review times with human scale times</li>
+<li>Fix text scaling bug in card browser</li>
+<li>Fix crash in export while using v2 scheduler</li>
+<li>Fix Custom Tabs crash with non-default system web browser</li>
+<li>Fix issues with import of packages with long Unicode names</li>
+<li>Fix incorrect intervals on lapsed filtered v2 scheduler cards</li>
+<li>Fix multimedia editor save/cancel behavior</li>
+<li>Fix incorrect button/gesture availability while existing task is still active</li>
+<li>Fix type answer crash on invalid characters</li>
+<li>Fix cloze references not being recognized in all fields</li>
+<li>Fix invalid ability to change deck to a filtered deck</li>
+<li>Fix crashes on adding invalid images, audios, and videos</li>
+<li>Fix CardBrowser crash after deleting card</li>
+<li>Fix crash and help user if no browser detected</li>
+<li>Fix Reviewer crash if card not available</li>
+<li>Fix crash / improve import of pasted decks</li>
+<li>Fix clicking hint field blocks key input in Reviewer</li>
+<li>Fix Previewer forgetting which card to show on device rotation</li>
+<li>Fix Mathjax/cloze interactions</li>
+<li>Fix vertical alignment of touch area in full-screen review</li>
+<li>Fix handling of ':::' in deck names</li>
+<li>Fix incorrect display of HTML comments in card browser</li>
+</ul>
+<h2 id="version-297-2020-04-30"><a class="header" href="#version-297-2020-04-30">Version 2.9.7 (2020-04-30)</a></h2>
+<ul>
+<li>Fix crash / workaround deck options timer config regression in AnkiDesktop</li>
+</ul>
+<h2 id="version-296-2020-04-03"><a class="header" href="#version-296-2020-04-03">Version 2.9.6 (2020-04-03)</a></h2>
+<ul>
+<li>Fix multimedia crashes (permissions handling, image add, preview)</li>
+<li>Fix UI and crashes in database check (user dialog + exception handling)</li>
+<li>Fix Windows 10 image compatibility issue with image paths</li>
+<li>Fix AnkiDesktop sync compatibility issue if more than 1000 cards due</li>
+<li>Fix crash in card browser render</li>
+<li>Fix parsing of image tags in card browser</li>
+<li>Fix crash in StudyOptionsFragment</li>
+<li>Fix issue with deck options group changing on export</li>
+<li>Fix issue with exports containing unexpected media</li>
+<li>Fix issue with dynamic decks (crash fix, export fix)</li>
+<li>Fix high frequency issue &quot;AnkiDroid directory is inaccessible&quot;</li>
+<li>Fix high frequency WebView (card viewer) crash</li>
+<li>Add columns to card browser (due, ease, changed, created, edited)</li>
+<li>Fix card scheduler not respecting maximum intervals</li>
+<li>Fix card browser spins forever on images or empty strings</li>
+</ul>
+<h2 id="version-295-2020-03-15"><a class="header" href="#version-295-2020-03-15">Version 2.9.5 (2020-03-15)</a></h2>
+<ul>
+<li>Fix crash rendering card list while updating card browser search</li>
+<li>Fix case-sensitivity issue with pronunciation words not being found</li>
+<li>Fix crash caused by auto-sync on startup showing dialog too soon</li>
+<li>Fix crash on preview of TTS cards showing language selectiond dialog too slowly</li>
+<li>Fix crash on import if collection not found</li>
+<li>Fix Anki ecosystem deck configuration issue for Anki Desktop users &lt;= 2.16</li>
+<li>Fix crash if user attempts to open camera or gallery and no app is available</li>
+<li>Fix crash building deck reminders while deck is synchronizing</li>
+<li>Fix crash related to audio recording stop</li>
+<li>Show helpful messages if import fails because device is out of space</li>
+<li>Fix crash when taking pictures on devices with Lollipop and older</li>
+</ul>
+<h2 id="version-294-2020-02-18"><a class="header" href="#version-294-2020-02-18">Version 2.9.4 (2020-02-18)</a></h2>
+<ul>
+<li>Fix crash when fetching pronunciations in note editor</li>
+<li>Fix issue with pronunciation words not being found</li>
+<li>Fix crash on startup for users with auto-sync on startup</li>
+<li>Fix crash on deck import when app is in background</li>
+<li>Fix crash for users of Google Chrome Canary</li>
+<li>Fix crash when adding certain audio clips</li>
+<li>Fix crash related to fetching Sound metadata</li>
+<li>Fix issue where audio plays twice</li>
+</ul>
+<h2 id="version-293-2020-02-09"><a class="header" href="#version-293-2020-02-09">Version 2.9.3 (2020-02-09)</a></h2>
+<ul>
+<li>Fix issues with connection timeouts and new encryption library</li>
+<li>Fix incorrect handling of decks with ':::' in their name</li>
+</ul>
+<h2 id="version-292-2020-02-03"><a class="header" href="#version-292-2020-02-03">Version 2.9.2 (2020-02-03)</a></h2>
+<ul>
+<li>Add support for new AnkiWeb encryption changes</li>
+<li>Fix some bugs using filtered decks</li>
+<li>Fix crash on app startup with uninitialized collection</li>
+<li>Fix some issues with new cloze deletion menu</li>
+<li>Fix issue with Mathjax + cloze deletion</li>
+<li>Fix incorrect intervals bug with new scheduler</li>
+<li>Add various patches from Anki Desktop</li>
+</ul>
+<h2 id="version-291-2019-10-16"><a class="header" href="#version-291-2019-10-16">Version 2.9.1 (2019-10-16)</a></h2>
+<ul>
+<li>Fix crash reviewing on Android 5 - 7</li>
+<li>Fix crash on Hungarian translation</li>
+</ul>
+<h2 id="version-29-2019-10-14"><a class="header" href="#version-29-2019-10-14">Version 2.9 (2019-10-14)</a></h2>
+<ul>
+<li>Change to new adaptive icon</li>
+<li>Add multi-select in the card browser (delete, change deck, reschedule)</li>
+<li>Add support for new Anki 2.1 scheduler</li>
+<li>Add support for Mathjax</li>
+<li>Add ability to add local audio files to notes</li>
+<li>Add ability to specify filename and folder on export and import</li>
+<li>Add ability to insert cloze in Note Editor</li>
+<li>Add ability to reposition cards </li>
+<li>Add ability to use due reminders for specific decks</li>
+<li>Add support for gamepad input when reviewing</li>
+<li>Add support for common keyboard shortcuts from Anki Desktop</li>
+<li>Add ability to search in Card Browser for text from system context menu</li>
+<li>Add ability to recognize tts HTML elements in questions and answers</li>
+<li>Add ability to display LaTeX rendered to SVG (vs PNG) from Anki Desktop</li>
+<li>Add confirmation check for full sync trigger in preferences</li>
+<li>Fix excessive pull-to-sync false positives. Disable when not at top of page.</li>
+<li>Fix some issues with focus in Note Editor</li>
+<li>Fix media sync errors related to file creation issues</li>
+<li>Fix crash related to use of camera without permission or no camera hardware </li>
+<li>Fix crash related to Card Browser allowing preview with no cards selected</li>
+<li>Fix crash in Reviewer when collection inaccessible</li>
+<li>Fix crash related to TTS when TTS not initialized</li>
+<li>Fix crash related to sdcard mount/unmount on inaccessible collection</li>
+<li>Fix crash related to audio button being visible after loading pronunciation media</li>
+<li>Fix crash when attempting to import invalid zip files </li>
+<li>Fix crash related to switching from split-window mode to single-window mode</li>
+<li>Fix crash related to missing preferences in Preference editor</li>
+<li>Fix crash on deck selection after deleting a deck and immediately closing app</li>
+<li>Fix crash in Reviewer when non-standard browser installed</li>
+<li>Fix type-answer field showing unexpectedly after undo in Reviewer</li>
+<li>Fix incorrect display of some characters when using type-answer</li>
+<li>Fix error related to media in subfolders not showing in Reviewer</li>
+<li>Fix some issues with generated flashcard html and CSS selectors</li>
+<li>Fix some Glosbe and Beolingus regressions</li>
+<li>Fix issue where new deck was created when note type was renamed</li>
+<li>Fix add note button disappearing from Card Browser when returning from search</li>
+<li>Fix some statistics display issues </li>
+<li>Fix incorrect display of some preferences</li>
+<li>Fix invisible notification bar in NoteEditor</li>
+<li>Fix newline characters not working in cloze deletions</li>
+<li>Increase max card count display from 1000 to 99999</li>
+<li>Improve display handling of very long review intervals (&gt; 68 years)</li>
+<li>Improve next/back buttons when using Previewer on multiple cards</li>
+<li>Improve handling of selected deck between statistics, card browser and deck picker</li>
+<li>Improve Card Browser search by restoring when returning from other activities</li>
+<li>Improve card focus handling when moving between Note Editor and Card Template Editor</li>
+<li>Improve labeling of deck-group vs deck-specific options</li>
+<li>Improve formatting of HTTP error codes during sync</li>
+<li>Improve handling of multi-touch events while whiteboard displayed</li>
+<li>Improve permission dialog descriptions</li>
+<li>Improve handling of &quot;preview new cards&quot; setting when creating custom study deck</li>
+<li>Improve Navigation Drawer performance on older devices</li>
+<li>Improve database check dialog with addition progress updates during check</li>
+<li>Use different notification channels for study reminders and general notifications</li>
+<li>Drop support for Android &lt; Ice Cream Sandwich MR1 (API15, Android 4.0.3)</li>
+<li>Add support for more features on Chromebook (import, export, restore backup, camera)</li>
+<li>Add API support for card/note bury and suspend</li>
+<li>Add API to open Reviewer on specific decks from other apps</li>
+<li>Add support for HTML/Javascript debugging</li>
+<li>Add link to third party apps which support AnkiDroid API in advanced preferences</li>
+<li>Fix issue with custom sync server certificates</li>
+<li>Perform basic DB integrity check on app upgrade</li>
+<li>Introduce optional analytics reporting</li>
+</ul>
+<h2 id="version-284-2018-04-27"><a class="header" href="#version-284-2018-04-27">Version 2.8.4 (2018-04-27)</a></h2>
+<ul>
+<li>Fix error syncing due to too many card templates</li>
+</ul>
+<h2 id="version-283-2017-11-10"><a class="header" href="#version-283-2017-11-10">Version 2.8.3 (2017-11-10)</a></h2>
+<ul>
+<li>Fix crash adding a picture from camera</li>
+<li>Fix add note icon disappearing in browser after search</li>
+<li>Fix translations from Glosbe</li>
+<li>Fix crash long-tapping when no deck is selected</li>
+<li>Fix crash entering advanced settings on some devices</li>
+<li>Fix incorrect graph display in statistics</li>
+<li>Fix deck not changing properly in statistics</li>
+<li>Fix rounding error in statistics weekly breakdown</li>
+<li>Fix spurious new deck created on model rename</li>
+<li>Improve error message on exception during media sync</li>
+<li>Improve animation when transitioning between screens</li>
+<li>Use a round icon on devices that support it</li>
+</ul>
+<h2 id="version-282-2017-02-28"><a class="header" href="#version-282-2017-02-28">Version 2.8.2 (2017-02-28)</a></h2>
+<ul>
+<li>Fix bugs showing confirmation dialogs in various places</li>
+<li>Fix uncommon crash showing dialog after sync</li>
+</ul>
+<h2 id="version-281-2017-02-06"><a class="header" href="#version-281-2017-02-06">Version 2.8.1 (2017-02-06)</a></h2>
+<ul>
+<li>Allow sending exported apkg to arbitrary app (e.g. Google Drive)</li>
+<li>Allow AnkiWeb to display a warning on sync completion</li>
+<li>Fix potential full-sync after sync cancellation</li>
+<li>Fix media sync sometimes scanning all files again</li>
+<li>Fix removing $ character when importing media files</li>
+<li>Improve automatic card answer timing when audio is played</li>
+<li>Improve rendering of some statistics</li>
+<li>Fix some crashes in the Russian, Vietnamese, and Chinese translations</li>
+<li>Fix crash sending exported apkg by email. NB: Export path can no longer be modified.</li>
+</ul>
+<h2 id="version-27-2016-10-16"><a class="header" href="#version-27-2016-10-16">Version 2.7 (2016-10-16)</a></h2>
+<ul>
+<li>Add pull-to-sync feature</li>
+<li>Add option to place answer buttons at the top</li>
+<li>Add widget to directly access &quot;Add note&quot; screen</li>
+<li>Fix issue with importing whole collections and restoring backups</li>
+<li>Fix deck import failing after the first successful one</li>
+<li>Fix cards in learning queue not being randomized</li>
+<li>Fix crash with fullscreen mode and hidden answer buttons</li>
+<li>Fix rare crash when opening deck options</li>
+<li>Improve support with TalkBack</li>
+</ul>
+<h2 id="version-261-2016-07-08"><a class="header" href="#version-261-2016-07-08">Version 2.6.1 (2016-07-08)</a></h2>
+<ul>
+<li>Add card cycling in previewer (similar to desktop client)</li>
+<li>Add option to hide 'minutes left' in reviewer</li>
+<li>Fix language from app setting not always being used</li>
+<li>Fix not being able to play back new sound recording</li>
+<li>Fix potential crash on Android 2.3 (Gingerbread)</li>
+<li>Improved use of horizontal space when resizing large images</li>
+<li>Minor adjustment to black theme colors</li>
+</ul>
+<h2 id="version-26-2016-06-14"><a class="header" href="#version-26-2016-06-14">Version 2.6 (2016-06-14)</a></h2>
+<ul>
+<li>Add two new themes (black, plain), selectable in preferences</li>
+<li>Make reviewer app bar icons customizable</li>
+<li>Split &quot;hide / delete&quot; menu in reviewer into &quot;bury&quot;, &quot;suspend&quot;, &quot;delete note&quot;</li>
+<li>Reviewer undo button now removes last stroke when whiteboard in use</li>
+<li>Add menu entry to change TTS language from reviewer</li>
+<li>Add more of the statistics available on the desktop client</li>
+<li>Add &quot;advanced statistics&quot; plugin (must be enabled in advanced settings)</li>
+<li>Add setting to configure custom sync server (advanced)</li>
+<li>Fix card templates created in AnkiDroid incorrectly using bold style</li>
+<li>Fix many importing issues (behavior now consistent with the desktop client)</li>
+<li>Fix long-tapping card in browser not always working</li>
+<li>Update sound playback button image</li>
+<li>Reduce size of whiteboard and gesture area for better interoperability with full screen</li>
+<li>Improve error messages with inaccessible collections</li>
+<li>Allow auto-play of HTML media elements (for templates that enable it)</li>
+<li>Significant updates to the content provider and API (for developers; see documentation)</li>
+<li>Many small bug fixes, improvements, theme adjustments, translation updates</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../changelog/v2.11.0-to-2.12.0.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../changelog/v2.0-to-2.5.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../changelog/v2.11.0-to-2.12.0.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../changelog/v2.0-to-2.5.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

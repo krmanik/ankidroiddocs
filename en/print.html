@@ -1,0 +1,1869 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>AnkiDroid Manual</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="css/kbd.css">
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="intro.html">Introduction</a></li><li class="chapter-item "><a href="getting-started.html"><strong aria-hidden="true">1.</strong> Getting started</a></li><li class="chapter-item "><a href="deck-picker.html"><strong aria-hidden="true">2.</strong> The Deck List</a></li><li class="chapter-item "><a href="drawer.html"><strong aria-hidden="true">3.</strong> Navigation Drawer</a></li><li class="chapter-item "><a href="deck-overview.html"><strong aria-hidden="true">4.</strong> Deck Overview Screen</a></li><li class="chapter-item "><a href="reviewer.html"><strong aria-hidden="true">5.</strong> Study Screen</a></li><li class="chapter-item "><a href="adding-notes.html"><strong aria-hidden="true">6.</strong> Add Note Screen</a></li><li class="chapter-item "><a href="editing-notes.html"><strong aria-hidden="true">7.</strong> Edit Note Screen</a></li><li class="chapter-item "><a href="browser.html"><strong aria-hidden="true">8.</strong> Finding/Searching/Browsing</a></li><li class="chapter-item "><a href="filtered-deck.html"><strong aria-hidden="true">9.</strong> Filtered Decks</a></li><li class="chapter-item "><a href="importing/importing-anki-files.html"><strong aria-hidden="true">10.</strong> Importing Anki Files</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="importing/importing-anki-databases.html"><strong aria-hidden="true">10.1.</strong> Importing Anki Databases (.anki2)</a></li></ol></li><li class="chapter-item "><a href="exporting.html"><strong aria-hidden="true">11.</strong> Exporting Anki Files</a></li><li class="chapter-item "><a href="backups.html"><strong aria-hidden="true">12.</strong> Automatic Backups</a></li><li class="chapter-item "><a href="settings.html"><strong aria-hidden="true">13.</strong> Preferences</a></li><li class="chapter-item "><a href="gestures.html"><strong aria-hidden="true">14.</strong> Gestures</a></li><li class="chapter-item "><a href="note-formatting-toolbar.html"><strong aria-hidden="true">15.</strong> Note Formatting Toolbar</a></li><li class="chapter-item "><a href="keyboard-shortcuts.html"><strong aria-hidden="true">16.</strong> Keyboard Shortcuts</a></li><li class="chapter-item "><a href="rtl.html"><strong aria-hidden="true">17.</strong> Using Right-To-Left Languages with AnkiDroid</a></li><li class="chapter-item "><a href="anki-desktop.html"><strong aria-hidden="true">18.</strong> Using Anki Desktop with AnkiDroid</a></li><li class="chapter-item "><a href="ankiweb-conflicts.html"><strong aria-hidden="true">19.</strong> Dealing with merge conflicts on AnkiWeb</a></li><li class="chapter-item "><a href="advanced-features/intro.html"><strong aria-hidden="true">20.</strong> Advanced Features</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="advanced-features/mathjax.html"><strong aria-hidden="true">20.1.</strong> MathJax Support</a></li><li class="chapter-item "><a href="advanced-features/reverse-cards.html"><strong aria-hidden="true">20.2.</strong> Reverse Cards</a></li><li class="chapter-item "><a href="advanced-features/custom-fonts.html"><strong aria-hidden="true">20.3.</strong> Custom Fonts</a></li><li class="chapter-item "><a href="advanced-features/customizing-card-layout.html"><strong aria-hidden="true">20.4.</strong> Custom Card Layout</a></li><li class="chapter-item "><a href="advanced-features/type-in-answer.html"><strong aria-hidden="true">20.5.</strong> Type in the answer feature</a></li><li class="chapter-item "><a href="advanced-features/advanced-statistics.html"><strong aria-hidden="true">20.6.</strong> Advanced Statistics</a></li><li class="chapter-item "><a href="advanced-features/reminders.html"><strong aria-hidden="true">20.7.</strong> Reminders</a></li><li class="chapter-item "><a href="advanced-features/set-language-hint.html"><strong aria-hidden="true">20.8.</strong> Automatic Language Selection</a></li></ol></li><li class="chapter-item "><a href="help.html"><strong aria-hidden="true">21.</strong> Help &amp; Supports</a></li><li class="chapter-item "><a href="beta-testing.html"><strong aria-hidden="true">22.</strong> Beta testing</a></li><li class="chapter-item "><a href="contributing.html"><strong aria-hidden="true">23.</strong> Contributing to AnkiDroid</a></li><li class="chapter-item "><a href="changelog/intro.html"><strong aria-hidden="true">24.</strong> Changelog</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="changelog/v2.15.0-to-2.15.6.html"><strong aria-hidden="true">24.1.</strong> Version 2.15</a></li><li class="chapter-item "><a href="changelog/v2.14.0-to-2.14.6.html"><strong aria-hidden="true">24.2.</strong> Version 2.14</a></li><li class="chapter-item "><a href="changelog/v2.13.0-to-2.13.5.html"><strong aria-hidden="true">24.3.</strong> Version 2.13</a></li><li class="chapter-item "><a href="changelog/v2.11.0-to-2.12.0.html"><strong aria-hidden="true">24.4.</strong> Version 2.11 to 2.12</a></li><li class="chapter-item "><a href="changelog/v2.6-to-2.10.html"><strong aria-hidden="true">24.5.</strong> Version 2.6 to 2.10</a></li><li class="chapter-item "><a href="changelog/v2.0-to-2.5.html"><strong aria-hidden="true">24.6.</strong> Version 2.0 to 2.5</a></li><li class="chapter-item "><a href="changelog/v0.1-to-1.1.3.html"><strong aria-hidden="true">24.7.</strong> Version 0.1 to 1.1.3</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AnkiDroid Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ankidroid/ankidroiddocs/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>Thank you for using AnkiDroid, the Android client for the popular <a href="http://ankisrs.net">Anki</a> spaced repetition system. </p>
+<p>Anki is spaced repetition technique which is simple but highly effective. It helps you memorize things by automatically repeating them across increasing intervals based on your responses with no need for you to keep track of what to study or when to study it. You create notes (or download shared decks) with content you need to memorize, and the scheduler will make sure you see the content when you need to.</p>
+<p>AnkiDroid is intended to be used in conjunction with Anki on your computer. While it is possible to function without it, some tasks are either only possible with, or a lot more efficient with Anki Desktop. Furthermore, it is <strong>strongly recommended</strong> to at least read <a href="https://docs.ankiweb.net/getting-started.html#key-concepts"><code>Key Concepts</code></a> section of the main Anki manual to understand the terminology used here.</p>
+<p>If this manual doesn't contain what you are looking for, please check the <a href="https://github.com/ankidroid/Anki-Android/wiki">AnkiDroid Wiki</a> for a list of changes, instructions for submitting bug reports and feature requests, a list of frequently asked questions, and much more.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started"><a class="header" href="#getting-started">Getting started</a></h1>
+<p>To start using AnkiDroid, we need to add some cards to study. From the main screen, tapping the big blue plus button will allow you to either add a new <strong>note</strong> (i.e. create new flashcards), download shared decks (decks that other people have created and shared online), or create new empty decks.</p>
+<p>Please watch this 5 minute <a href="https://www.youtube.com/watch?v=F2K1gOSdIZA">tutorial video</a>, which gives an introduction to adding, downloading, and studying cards in AnkiDroid. More detailed information can be found in the sections below.</p>
+<p>If you are an existing user of Anki Desktop wishing to import your decks from the computer, you might like to skip straight to the <a href="anki-desktop.html#using-anki-desktop-with-ankidroid">using AnkiDroid with Anki Desktop</a> section.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="the-deck-list"><a class="header" href="#the-deck-list">The Deck List</a></h1>
+<!-- toc -->
+<p><strong>Note:</strong> <em>This section onwards assumes you understand what <a href="https://docs.ankiweb.net/getting-started.html#key-concepts">decks and cards</a> are</em></p>
+<p>The deck list is the screen you see when you start AnkiDroid. It displays a list of the decks which contain all of your flashcards, and allows you to perform various actions:</p>
+<p><img src="img/1-decks.png" alt="decks.png" /></p>
+<h2 id="add-button"><a class="header" href="#add-button">Add button</a></h2>
+<p>The big blue + button in the bottom right corner is used to add new material to AnkiDroid. Pressing it expands to give the following three options, which are also described in the <a href="https://www.youtube.com/watch?v=F2K1gOSdIZA">tutorial video</a>.</p>
+<h3 id="add"><a class="header" href="#add">Add</a></h3>
+<p>Choose this option if you want to create your own flashcards (notes) with AnkiDroid. &quot;Notes&quot; and &quot;cards&quot; have specific meanings in Anki, which are <a href="https://docs.ankiweb.net/getting-started.html#key-concepts">explained in the main Anki manual</a>. Please see the tutorial video for a quick introduction to adding notes, or refer to the <a href="adding-notes.html#add-note-screen">adding notes</a> section below for more detailed information.</p>
+<h3 id="get-shared-decks"><a class="header" href="#get-shared-decks">Get shared decks</a></h3>
+<p>To download a deck of cards from the internet that another user has contributed:</p>
+<ol>
+<li>Ensure you're connected to the internet.</li>
+<li>Tap + and then <strong>Get shared decks</strong>. AnkiWeb will open.</li>
+<li>Select a category, or type in a search.</li>
+<li>Tap <strong>Info</strong> on a deck you'd like to study.</li>
+<li>Scroll down and tap <strong>Download</strong>.</li>
+<li>You browser will download the file and display a <code>download complete</code> notification. 
+Tap this button.</li>
+<li>AnkiDroid will appear, and show a confirmation dialog. Tap the <strong>Add</strong> button.</li>
+<li>When the import completes, your deck should be ready to study.</li>
+</ol>
+<h3 id="create-deck"><a class="header" href="#create-deck">Create deck</a></h3>
+<p>To create a new empty deck:</p>
+<ol>
+<li>Tap the <strong>+</strong> button and choose <code>Create deck</code></li>
+<li>Choose a name for the deck, for example <code>New Japanese</code></li>
+<li>Add cards to it following the <code>Add</code> instructions above</li>
+</ol>
+<h2 id="app-bar"><a class="header" href="#app-bar">App Bar</a></h2>
+<p>At the top of each screen in AnkiDroid is the App Bar, with buttons for performing various actions. 
+The following actions are available from the app bar in the deck list:</p>
+<h3 id="navigation-menu-button"><a class="header" href="#navigation-menu-button">Navigation menu button</a></h3>
+<p>Tapping the icon on the far left will show the <a href="drawer.html#navigation-drawer">left navigation menu</a> for quickly navigating between the main parts of the app.</p>
+<h3 id="sync-button"><a class="header" href="#sync-button">Sync button</a></h3>
+<p>The circular button with arrows on the right is for synchronizing your cards with the cloud, as described in the <a href="anki-desktop.html#using-anki-desktop-with-ankidroid">adding decks from cloud</a> section.</p>
+<h3 id="overflow-menu-button"><a class="header" href="#overflow-menu-button">Overflow menu button</a></h3>
+<p>On the far right is the overflow menu which contains less commonly used actions. These actions are described further below.</p>
+<p><strong>Hint:</strong> long tapping on a button in the app bar anywhere in the app will display a textual hint describing what the button does!</p>
+<h2 id="studying-a-deck"><a class="header" href="#studying-a-deck">Studying a Deck</a></h2>
+<p>To study the cards in a deck, simply tap on the deck name (or the &quot;STUDY&quot; button on a 10&quot; tablet), and AnkiDroid will switch to study mode. </p>
+<p>Note that the currently selected deck is highlighted with a grey background, and if you have any <a href="filtered-deck.html#filtered-decks">filtered decks</a> they will be highlighted using a blue font. Filtered decks are discussed elsewhere in the manual.</p>
+<h2 id="other-deck-actions"><a class="header" href="#other-deck-actions">Other Deck Actions</a></h2>
+<p>Long tapping on a deck will show a list of other actions available to perform on that deck:</p>
+<h3 id="rename-deck"><a class="header" href="#rename-deck">Rename deck</a></h3>
+<p>Use this option to rename a deck</p>
+<h3 id="deck-options"><a class="header" href="#deck-options">Deck options</a></h3>
+<p>Tapping on deck options allows you to configure various deck specific study options.
+Please see the <a href="https://docs.ankiweb.net/deck-options.html">desktop documentation</a> for more information about these study options.</p>
+<h3 id="custom-study"><a class="header" href="#custom-study">Custom study</a></h3>
+<p>Allows you to choose from some convenient presets for studying outside of your normal schedule, for example increasing the study limit for the day. See the section on <a href="filtered-deck.html#filtered-decks">filtered decks</a> for more detailed information.</p>
+<h3 id="delete-deck"><a class="header" href="#delete-deck">Delete deck</a></h3>
+<p>Use this option to delete a deck (note: this action is not reversible, although you can <a href="backups.html#automatic-backups">restore from a backup</a></p>
+<h3 id="export-deck"><a class="header" href="#export-deck">Export deck</a></h3>
+<p>This option can be used to share a deck with other users. See the <a href="exporting.html#exporting-anki-files">exporting decks</a> section for more information.</p>
+<h3 id="unbury"><a class="header" href="#unbury">Unbury</a></h3>
+<p>This option is only visble when the selected deck has cards that have been manually or automatically buried.</p>
+<h3 id="rebuild--empty"><a class="header" href="#rebuild--empty">Rebuild / Empty</a></h3>
+<p>If the selected deck is a <a href="filtered-deck.html#filtered-decks">filtered decks</a> then you also have the option to rebuild or empty the cards in it.</p>
+<h4 id="clickable-areas-on-the-decks"><a class="header" href="#clickable-areas-on-the-decks">Clickable areas on the decks</a></h4>
+<p>Each deck in the list has three clickable areas:</p>
+<h3 id="deck-expander"><a class="header" href="#deck-expander">Deck expander</a></h3>
+<p>If you are using <a href="https://docs.ankiweb.net/getting-started.html#decks">subdecks</a>, then a deck expander button may appear on the far left of the deck, which can be used to show / hide the subdecks. A ▶ icon means the deck has hidden subdecks which can be shown, a ▼ icon means the deck has visible subdecks that can be hidden, and no icon means that the deck has no subdecks. </p>
+<p><strong>Note:</strong> subdecks can be created by using the naming convention <code>PARENT::CHILD</code>.</p>
+<h3 id="deck-name"><a class="header" href="#deck-name">Deck name</a></h3>
+<p>This is the main clickable area, which will take you to the study screen if there are cards available to review.</p>
+<h3 id="count-buttons"><a class="header" href="#count-buttons">Count buttons</a></h3>
+<p>The count buttons on the far right of each deck act as a separate clickable area that takes you to the deck overview instead of the study screen. This can be useful if you want to quickly view the number of cards available in the deck.</p>
+<h2 id="advanced-actions"><a class="header" href="#advanced-actions">Advanced Actions</a></h2>
+<p>Some additional actions are located in the overflow menu for less common tasks, which are summarized below:</p>
+<h3 id="undo"><a class="header" href="#undo">Undo</a></h3>
+<p>After reviewing the last card in a study session, you can undo it from here.</p>
+<h3 id="check-database"><a class="header" href="#check-database">Check database</a></h3>
+<p>This can automatically fix a lot of problems with your database, and will also purge any unused tags. If you experience any problems with your collection, this is the first action you should try. </p>
+<blockquote>
+<p><strong>NOTE:</strong> Under some circumstances, check database will move cards to a deck named <em>!Recovered Cards</em>. If this occurs, please move the cards to an appropriate deck via the <a href="browser.html#findingsearchingbrowsing">card browser</a>, and delete <em>!Recovered Cards</em> when it is empty.</p>
+</blockquote>
+<h3 id="check-media"><a class="header" href="#check-media">Check media</a></h3>
+<p>Try to run this if you experience any issues with media syncing.</p>
+<h3 id="empty-cards"><a class="header" href="#empty-cards">Empty cards</a></h3>
+<p>Remove any empty cards from your collection. See the <a href="https://docs.ankiweb.net/templates/generation.html#card-generation--deletion">desktop documentation</a> for more.</p>
+<h3 id="restore-from-backup"><a class="header" href="#restore-from-backup">Restore from backup</a></h3>
+<p>Allows you to restore from one of AnkiDroid's <a href="backups.html#automatic-backups">automatic backups</a></p>
+<h3 id="manage-note-types"><a class="header" href="#manage-note-types">Manage note types</a></h3>
+<p>Allows you to add, edit, and delete note types. See the <a href="advanced-features/customizing-card-layout.html">customizing card layout</a> section for more help with this advanced feature.Keyboard Shortcuts</p>
+<h3 id="import"><a class="header" href="#import">Import</a></h3>
+<p>Import a .apkg anki file containing a deck. See the <a href="importing/importing-anki-files.html">importing</a> section for more.</p>
+<h3 id="export-collection"><a class="header" href="#export-collection">Export collection</a></h3>
+<p>Export entire collection as a collection.apkg file. See the <a href="exporting.html">exporting</a> section for more.</p>
+<h2 id="deck-counts"><a class="header" href="#deck-counts">Deck Counts</a></h2>
+<p>Next to each deck, three numbers are displayed. The left, blue number, corresponds to how many new cards you have to learn today. Anki will introduce 20 new cards a day by default, and you can customize this number if you'd like. The red number in the middle is for the cards due to be studied today which are currently in the learning phase, and the green number is the cards which are due for review (i.e. cards which have already graduated from the learning phase). On a deck you've never studied before, these numbers will both be zero.</p>
+<p>As explained above, tapping on the counts will take you to the deck overview screen.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="navigation-drawer"><a class="header" href="#navigation-drawer">Navigation Drawer</a></h1>
+<p><img src="img/2-navigation_drawer.png" alt="navigation_drawer.png" /></p>
+<p>The navigation drawer can be opened from most places in the application by pressing the left menu icon, 
+or alternatively swiping outwards from anywhere on the far left side of the screen. It is used
+for quickly navigating between different parts of the application. You can switch to the following screens:</p>
+<h3 id="decks"><a class="header" href="#decks">Decks</a></h3>
+<p>Takes you to the top level of the app where the list of cards are shown (<a href="deck-picker.html">more info here</a>)</p>
+<h3 id="card-browser"><a class="header" href="#card-browser">Card Browser</a></h3>
+<p>Shows a list of all your cards (<a href="browser.html">more info here</a>)</p>
+<h3 id="statistics"><a class="header" href="#statistics">Statistics</a></h3>
+<p>Helps you track your study progress (<a href="https://docs.ankiweb.net/stats.html#statistics">more info in Anki manual</a> and <a href="advanced-features/advanced-statistics.html">here</a>)</p>
+<h3 id="night-mode"><a class="header" href="#night-mode">Night mode</a></h3>
+<p>This switches the app to a dark theme which many users find is less straining on the eyes, particularly when reviewing in the dark. See the <a href="https://github.com/ankidroid/Anki-Android/wiki/Advanced-formatting#customize-night-mode-colors">wiki</a> for instructions on how to customize the card background and font color used in night mode.</p>
+<h3 id="settings"><a class="header" href="#settings">Settings</a></h3>
+<p>Allows you to customize the app (<a href="settings.html">more info here</a>)</p>
+<h3 id="help"><a class="header" href="#help">Help</a></h3>
+<p>Opens this web page</p>
+<h3 id="send-feedback"><a class="header" href="#send-feedback">Send feedback</a></h3>
+<p>Get support from the AnkiDroid team</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="deck-overview-screen"><a class="header" href="#deck-overview-screen">Deck Overview Screen</a></h1>
+<!-- toc -->
+<p><img src="img/3-deck_overview.png" alt="deck_overview.png" /></p>
+<p>From the deck list, if you tap the counts area you will be taken to the deck overview screen. On tablets it is always shown in the area to the right of the deck list.</p>
+<p>On this screen you can view a summary of the deck, build custom study sessions, rebuild / empty filtered decks, and change deck options. When visible, pressing the study button will take you to the study screen for that deck.</p>
+<h2 id="app-bar-1"><a class="header" href="#app-bar-1">App bar</a></h2>
+<p>The icons that are shown in the app bar depend on whether your deck is an ordinary deck or a filtered deck.</p>
+<h3 id="ordinary-decks"><a class="header" href="#ordinary-decks">Ordinary decks</a></h3>
+<h4 id="custom-study-1"><a class="header" href="#custom-study-1">Custom Study</a></h4>
+<p>Tapping the wrench icon allows you to create a custom session, for example to do extra reviews outside your normal schedule, or study only certain cards inside a deck. See the <a href="filtered-deck.html">filtered deck section</a> for more information on this.</p>
+<h3 id="filtered-decks"><a class="header" href="#filtered-decks">Filtered decks</a></h3>
+<h4 id="empty-deck"><a class="header" href="#empty-deck">Empty deck</a></h4>
+<p>Tapping the cross icon will empty all of the cards in the current filtered deck (i.e. return them to their original deck).</p>
+<h4 id="rebuild-deck"><a class="header" href="#rebuild-deck">Rebuild deck</a></h4>
+<p>Tapping the rebuild icon will rebuild the current filtered deck according to the settings specified in filtered deck options.</p>
+<h3 id="overflow-menu"><a class="header" href="#overflow-menu">Overflow menu</a></h3>
+<h4 id="deck-options-1"><a class="header" href="#deck-options-1">Deck Options</a></h4>
+<p>Allows you to configure some options related to the current deck, such as the number of new cards and reviews to introduce each day. Please see the <a href="https://docs.ankiweb.net/deck-options.html">desktop documentation</a> for more information about these study options.</p>
+<h4 id="unbury-1"><a class="header" href="#unbury-1">Unbury</a></h4>
+<p>This option is only visble when the selected deck has cards that have been manually or automatically buried.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="study-screen"><a class="header" href="#study-screen">Study Screen</a></h1>
+<p>Tapping on the deck name from the deck list, or the study button from the deck overview screen will take you to the study screen where you do your study. </p>
+<p><img src="img/4-reviewer.png" alt="reviewer.png" /></p>
+<h2 id="basics"><a class="header" href="#basics">Basics</a></h2>
+<p>If you have not used Anki on a computer before, you may like to have a look at the first <a href="https://docs.ankiweb.net/getting-started.html#videos">intro video</a> before reading on, as it explains the basic review process.</p>
+<p>On the top left of the screen you'll see three numbers. From the left, these correspond to new cards, learning cards, and cards to review. These are explained in more detail in the intro videos for the desktop program, so please <a href="https://docs.ankiweb.net/getting-started.html#videos">check them out</a> if you haven't already.</p>
+<p>When you've looked at a card's question and remembered the answer, or decided you don't know it, tap the <strong>show answer</strong> button. When you do, the bottom area will change to display 2-4 answer buttons, depending on how you've answered the card previously. The buttons will display the time a card will next be shown, so 10m means <strong>10 minutes</strong> and <strong>5d</strong> means <strong>5 days</strong>. You can tap directly on these buttons to choose a particular answer. </p>
+<p>To make reviewing faster, you can configure gestures (for example taps and swipes) to answer cards without using the buttons. See the <a href="settings.html">preferences section</a> for more information on configuring gestures.</p>
+<h2 id="app-bar-2"><a class="header" href="#app-bar-2">App Bar</a></h2>
+<p>The App Bar at the top of the study screen has several buttons for performing various common actions. The number of buttons which are shown is determined automatically by Android based on the size and resolution of your screen. If there is not enough space to show the button for a given action, then the action will be available from the menu instead. If you are unsure what a button does, you can long-tap on it to see the name of the action. The following action are available:</p>
+<h4 id="undo-1"><a class="header" href="#undo-1">Undo</a></h4>
+<p>Undo the answer you chose for the last card you studied (button always shown).</p>
+<h4 id="mark-card"><a class="header" href="#mark-card">Mark Card</a></h4>
+<p>Adds a <strong>marked</strong> tag to the current note, so it can be easily found in the browser. 
+This is useful when you want to take some action on the note at a later date, such as looking up a word when you get home. Marked cards also show a small star in the upper-right-hand corner during reviews.</p>
+<h4 id="flag-card"><a class="header" href="#flag-card">Flag Card</a></h4>
+<p>Adds a color coded <strong>flag</strong> (red, orange, green, or blue)
+This can be used as a general purpose indicator to differentiate your cards. Flags are represented by a number from 1-4, corresponding to the previously listed colors.</p>
+<h4 id="edit-card"><a class="header" href="#edit-card">Edit Card</a></h4>
+<p>Open the edit note screen, where you can change the content displayed on the flashcard (see the <a href="editing-notes.html">editing notes section</a> for more help)</p>
+<h4 id="hide--delete"><a class="header" href="#hide--delete">Hide / Delete</a></h4>
+<p>Give options to bury, suspend, or delete the current note or card</p>
+<ul>
+<li><strong>Bury card / Bury note:</strong> Hides a card or all of the note’s cards from review until the next day. (If you want to unbury cards before then, you can choose “unbury” from the long-press menu in the <a href="deck-picker.html">deck list</a>, or from the <a href="deck-overview.html">deck overview screen</a>.) This is useful if you cannot answer the card at the moment or you want to come back to it another time. Burying can also happen automatically for cards of the same note. If cards were in learning when they are buried, they are moved back to the new card queue or review queue prior to being buried.</li>
+<li><strong>Suspend card / Suspend note:</strong> Hides a card or all of the note’s cards from review until they are manually unsuspended (by long-tapping a card in the <a href="browser.html">card browser</a>). This is useful if you want to avoid reviewing the note for some time, but don’t want to delete it. If cards were in learning when they are suspended, they are moved back to the new card queue or review queue prior to being suspended.</li>
+<li><strong>Delete note:</strong> Deletes the note and all of its cards.</li>
+</ul>
+<h4 id="replay-audio"><a class="header" href="#replay-audio">Replay Audio</a></h4>
+<p>If the card has audio on the front or back, it will be played again.</p>
+<h4 id="enable--disable-whiteboard"><a class="header" href="#enable--disable-whiteboard">Enable / Disable Whiteboard</a></h4>
+<p>This action enables or disables the whiteboard feature for the current deck. The whiteboard feature allows you to draw on the screen, which is particularly useful for practicing drawing characters from languages such as Japanese. When the whiteboard has been enabled for the current deck, two new actions will become available for clearing and hiding the whiteboard. Disabling the whiteboard will hide these actions as well as the whiteboard itself.</p>
+<h4 id="deck-options-2"><a class="header" href="#deck-options-2">Deck options</a></h4>
+<p>Open the deck specific study options. See the <a href="https://docs.ankiweb.net/deck-options.html">desktop documentation</a> for more information about these study options.</p>
+<h4 id="check-pronunciation"><a class="header" href="#check-pronunciation">Check Pronunciation</a></h4>
+<p>This action enables or disables the temporary audio recorder toolbar at the top of the card. This feature allows you to record your voice and replay it. It is used primarily to check your pronunciation. This toolbar is composed of three buttons: play, stop playing and record microphone audio. This tool can be used while viewing either the question or the answer.</p>
+<h2 id="reaching-the-end-of-the-study-session"><a class="header" href="#reaching-the-end-of-the-study-session">Reaching the end of the study session</a></h2>
+<p>When you've finished the cards that are due to be studied today, you'll be taken back to the decks list and shown a congratulations message. From here you can select a different deck, or if you've finished studying for the day, you can simply tap the home button in order to close AnkiDroid (and you can also do this in the middle of reviews if you wish).</p>
+<p>If you wish to keep studying the same deck further, tap on the deck again which will give you several options for continued study. Please see the <a href="filtered-deck.html">filtered deck</a> section for more on custom study.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="add-note-screen"><a class="header" href="#add-note-screen">Add Note Screen</a></h1>
+<!-- toc -->
+<p><strong>Note:</strong> <em>This section onwards assumes you understand what <a href="https://docs.ankiweb.net/getting-started.html#notes--fields">notes, fields, card templates, and note types</a> are</em></p>
+<p>To add a new note, tap the <strong>+</strong> button at the bottom of the deck list and choose <strong>Add</strong>.</p>
+<p><img src="img/5-adding.png" alt="adding.png" /></p>
+<p>The following controls are available in the add note screen:</p>
+<h3 id="type"><a class="header" href="#type">Type</a></h3>
+<p>Allows you to select the type of note you'd like to add. 
+For most purposes the <strong>Basic</strong> note type is sufficient, but for example if you would like an extra card generated which is the reverse of the main card  (i.e. shows the <strong>Back</strong> field on the front of the card), you could chose the <strong>Basic (and reversed card)</strong> note type.</p>
+<h3 id="deck"><a class="header" href="#deck">Deck</a></h3>
+<p>Allows you to change the deck the generated card/cards will be added to.</p>
+<h3 id="fields"><a class="header" href="#fields">Fields</a></h3>
+<p>Below the deck selector are the fields for the note (for example the <strong>Basic</strong> note type has two fields <strong>Front</strong> and <strong>Back</strong>). When you tap on a field, a keyboard will come up, allowing you to type in information.</p>
+<h3 id="media-buttons"><a class="header" href="#media-buttons">Media Buttons</a></h3>
+<p>Next to each field is an attach icon, which allows you to add media to your note (this feature is currently in the experimental phase).<br />
+Add image lets you add images either via your device's camera (if it has one), or from your photo library. 
+Record audio allows you to record your voice and place it into a field. The advanced editor lets you automatically search for translations or pronunciation audio files online.</p>
+<h3 id="tags"><a class="header" href="#tags">Tags</a></h3>
+<p>Brings up a dialog which lets you add / remove tags from the note.</p>
+<h3 id="cards"><a class="header" href="#cards">Cards</a></h3>
+<p>Shows the names of the cards which will be generated for the selected note type. Tapping on this button will bring up a dialog which lets you preview the source code for the card template of the selected note type.  From here you can edit, preview, add, and delete card templates. See the <a href="https://docs.ankiweb.net/templates/intro.html">cards and templates section</a> of the Anki Desktop manual for more information about card templates.</p>
+<p>Long press in a text entry field to add a cloze deletion around the selected text, or an empty cloze deletion if there is no selected text.</p>
+<p>When you've finished typing in the content of a note, tap the tick icon in the app bar at the top to add it to your collection. Alternatively, if you want to go back to what you were doing without saving, you can tap the app icon, or use the hardware back button.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="edit-note-screen"><a class="header" href="#edit-note-screen">Edit Note Screen</a></h1>
+<p>The edit note screen can be opened by choosing edit while reviewing, or by opening a card in the browser. The edit screen is similar to the add new note screen mentioned above, with some key differences:</p>
+<ul>
+<li>
+<p>Changing the deck operates on the selected card (which is underlined in the <strong>Cards</strong> box). 
+If a note type is chosen which has more than one card, only the currently selected card will be moved to the new deck.</p>
+</li>
+<li>
+<p>Changing the <strong>Type</strong> dropdown selector changes to the note type edit mode. In this mode, editing the content of the note (i.e. deck, fields, etc) is disabled, 
+and if a custom note type with more than two fields is being used, additional buttons will appear which let you control the mapping of the fields to the new note type.</p>
+</li>
+</ul>
+<p>If a note type is selected which has less cards than the original note type, only the first n cards will be kept. For example changing from <strong>Basic (and reversed card)</strong> to <strong>Basic</strong>
+will lead to only the first card being kept. To warn you of this, the text in the <strong>Cards</strong> box will appear red, and a confirmation dialog will be shown before the note is saved.</p>
+<blockquote>
+<p>Hint: to change the type for multiple notes in one go, or to customize the mapping between cards, use the <strong>Change note type</strong> option in the browser on Anki Desktop.</p>
+</blockquote>
+<p>There are also several advanced options available in the main menu:</p>
+<h3 id="add-note"><a class="header" href="#add-note">Add note</a></h3>
+<p>Create a new empty note</p>
+<h3 id="copy-card"><a class="header" href="#copy-card">Copy card</a></h3>
+<p>Copy the current note to a new editable note</p>
+<h3 id="reset-progress"><a class="header" href="#reset-progress">Reset progress</a></h3>
+<p>Move the card to the end of the new card queue. The current state of the card is cleared, but not its revision history.</p>
+<h3 id="reschedule"><a class="header" href="#reschedule">Reschedule</a></h3>
+<p>Allows you to reschedule as a review card on a given date. This is useful if you have imported already-learnt material, and you want to start it off with higher initial intervals.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="findingsearchingbrowsing"><a class="header" href="#findingsearchingbrowsing">Finding/Searching/Browsing</a></h1>
+<!-- toc -->
+<p>You can search for or browse cards by tapping the <strong>Card browser</strong> button from the <a href="drawer.html">navigation drawer</a>.</p>
+<p><img src="img/6-browser.png" alt="img/6-browser.png" /></p>
+<p>The browser screen starts by displaying all the cards in the currently selected deck. You can search for cards in the selected deck by tapping the magnifying glass icon in the top. You can change the selected deck (or change to all decks) by choosing the deck from the dropdown list on the top left.</p>
+<p>By default, the first column in the browser gives the text which will be shown on the question (i.e. front side) of the flashcard, and the second column shows the text from the answer (i.e. the back side) of the flashcard. </p>
+<p>The first column can also be configured to show the <a href="https://docs.ankiweb.net/editing.html#customizing-fields">sort field</a> for a more compact display. The second column can be configured to show many different parameters by tapping the drop down menu in the column heading. </p>
+<p>Note that the content of the columns is dynamically calculated as your scroll through the list of the cards.</p>
+<p>From the search results, you can tap on a card to edit it (see the <a href="editing-notes.html">edit note section</a> above), or long-tapping on it will show a menu allowing you to perform the following actions:</p>
+<h4 id="mark--unmark-note"><a class="header" href="#mark--unmark-note">Mark / unmark note</a></h4>
+<p>Add / remove the <strong>marked</strong> tag from the note. Cards with a marked note are highlighted in purple.</p>
+<h4 id="flag-card-1"><a class="header" href="#flag-card-1">Flag card</a></h4>
+<p>Change or remove the color coded <strong>flag</strong> on the card. Cards with a flag are highlighted in the flags color.</p>
+<h4 id="suspend--unsuspend-card"><a class="header" href="#suspend--unsuspend-card">Suspend / unsuspend card</a></h4>
+<p>Suspended cards are highlighted in yellow, and are not shown during review.</p>
+<h4 id="delete-note"><a class="header" href="#delete-note">Delete note</a></h4>
+<p>Delete the note of the currently selected card, and all cards belonging to that note. This action cannot be undone without <a href="backups.html">restoring from backup</a>.</p>
+<h4 id="preview"><a class="header" href="#preview">Preview</a></h4>
+<p>Render the currently selected card so that you can see what it looks like in the reviewer.</p>
+<h4 id="select-multiple-cards"><a class="header" href="#select-multiple-cards">Select multiple cards</a></h4>
+<p>Long-tapping on a single card will select the single card. While that card is selected, if you long-tap on another card on your screen, then all of the cards between the first selected card and the last card will be selected. This allows for actions to be performed on multiple cards at once.</p>
+<h2 id="searching"><a class="header" href="#searching">Searching</a></h2>
+<p>AnkiDroid supports all the search strings that the desktop version of Anki does, allowing you to perform quite complex searches. Some examples:</p>
+<h4 id="tagmarked"><a class="header" href="#tagmarked">tag:marked</a></h4>
+<p>show cards that with the tag <strong>marked</strong></p>
+<h4 id="isdue"><a class="header" href="#isdue">is:due</a></h4>
+<p>show only cards that are waiting for review</p>
+<h4 id="frontrabbit"><a class="header" href="#frontrabbit">front:rabbit</a></h4>
+<p>show only cards where the front field is exactly <strong>rabbit</strong> </p>
+<h4 id="flag1"><a class="header" href="#flag1">flag:1</a></h4>
+<p>show only cards marked with a red flag</p>
+<p>For a full list of the possibilities, please see the section in the <a href="https://docs.ankiweb.net/searching.html">desktop manual</a>.</p>
+<p>Alternatively, some more commonly used filters (marked, suspended, and tagged cards) can be quickly applied without manually typing them by choosing them from the overflow menu. You can also save and recall common search queries from the menu.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="filtered-decks-1"><a class="header" href="#filtered-decks-1">Filtered Decks</a></h1>
+<p>Anki is designed to optimize the learning process, so that you study the minimum amount necessary to remember the majority of your cards. Once the congratulations screen is reached, further study becomes a case of diminishing returns: the amount of extra time spent going over the same cards again is generally not worth the moderate increase in retention you'll see.</p>
+<p>That said, if you have a test looming, or simply want to pass some time, it's possible to keep reviewing even after you are shown the congratulations message.</p>
+<p>A <strong>filtered deck</strong> is a temporary deck that contains cards based on various criteria, such as <strong>forgotten today</strong>, <code>is tagged 'hard'</code>, and so on. After studying cards in a filtered deck, or when the filtered deck is deleted, the cards are automatically returned to their original deck.</p>
+<p>The easiest way to create a filtered deck is by long clicking on a deck and choosing the <strong>custom study</strong> option. </p>
+<p>Advanced users can create a filtered deck manually, by choosing <strong>Create filtered deck</strong> from the overflow menu in the deck list screen.</p>
+<p>For further information on filtered decks, please see the <a href="https://docs.ankiweb.net/filtered-decks.html#filtered-decks--cramming">desktop documentation</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="importing-anki-files"><a class="header" href="#importing-anki-files">Importing Anki Files</a></h1>
+<p>You can import Anki files (with .apkg file format) directly into AnkiDroid. Other file formats cannot be imported directly into AnkiDroid, however flashcards from most other applications can be imported into Anki Desktop on your computer, which can then be <a href="importing/../anki-desktop.html">added into AnkiDroid in the usual way</a>. 
+See the <a href="https://docs.ankiweb.net/importing.html">importing section of the Anki Desktop manual</a> for help on importing into Anki Desktop.</p>
+<p>As in Anki Desktop, AnkiDroid distinguishes between <a href="https://docs.ankiweb.net/exporting.html">the two types of .apkg files</a> (<strong>collection package</strong> and <strong>deck package</strong>) based on the filename.  Collection packages have the name <strong>collection.colpkg</strong>, and when imported will completely <em>replace all contents</em> in AnkiDroid. Any apkg file which is <em><strong>not</strong></em> named something that ends in <strong>.colpkg</strong> will be treated as a deck package, which will be <em>merged with any existing content</em> when imported into to AnkiDroid.</p>
+<p>You can import .apkg Anki collection files into AnkiDroid either by opening them using the standard Android system, or by manually importing them from within AnkiDroid:</p>
+<h2 id="open-the-file-using-android"><a class="header" href="#open-the-file-using-android">Open the file using Android</a></h2>
+<p>Apkg files are automatically associated with AnkiDroid, so for example if you open a .apkg email attachment which you sent to yourself, then AnkiDroid will automatically open the file and confirm if you want to import it. Simply click OK and the apkg file will be imported.</p>
+<h2 id="import-the-file-manually-in-ankidroid"><a class="header" href="#import-the-file-manually-in-ankidroid">Import the file manually in AnkiDroid</a></h2>
+<p>You can also manually import .apkg files as follows:</p>
+<ul>
+<li>Connect your device to your computer using USB</li>
+<li>Copy the .apkg from your computer to the AnkiDroid folder on your device</li>
+<li>Open AnkiDroid on your device</li>
+<li>From the main menu in the deck list, choose <em>Import</em></li>
+<li>Choose the apkg file you just copied to your device when prompted</li>
+<li>Tap OK</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="importing-anki-databases-anki2"><a class="header" href="#importing-anki-databases-anki2">Importing Anki Databases (.anki2)</a></h1>
+<p>AnkiDroid does not support directly importing Anki database (<code>.anki2</code>) files. A database import will replace your collection with the contents the provided file. If you want to perform a full replacement, you should import a <code>collection[.apkg/.colpkg]</code> created in the app with the export function.</p>
+<h2 id="importing-anki2-files-manually"><a class="header" href="#importing-anki2-files-manually">Importing anki2 files manually</a></h2>
+<p>This is not officially supported, but <code>.anki2</code> files can manually be imported if needed, in cases of troubleshooting for example:</p>
+<ul>
+<li>Create a new folder on your Android file system</li>
+<li>Obtain the full path to the folder as provided by your file manager, this will typically appear as: <code>/storage/emulated/0/&lt;FolderName&gt;</code></li>
+<li>Place the <code>.anki2</code> file in the newly created folder</li>
+<li>Rename the file to <code>collection.anki2</code></li>
+<li>(If applicable) Temporarily log out of your AnkiWeb account: <code>Settings - AnkiDroid - AnkiWeb account</code></li>
+<li>Open <code>Settings - Advanced - AnkiDroid Directory</code> and set the AnkiDroid Directory to the newly created folder.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="exporting-anki-files"><a class="header" href="#exporting-anki-files">Exporting Anki Files</a></h1>
+<p>AnkiDroid can export your flashcards in the .apkg Anki file format so that you can import them into Anki Desktop, or share them with other people. 
+As in Anki Desktop, you can either export a <a href="https://docs.ankiweb.net/exporting.html#packaged-decks">collection package or deck package</a>, depending on what you are trying to achieve.</p>
+<p>There are two export options available: <strong>include scheduling information</strong> and <strong>include media</strong>. Generally the default options are sufficient, if you choose not to include scheduling information, Anki will assume that you are sharing the deck with other people, and will remove marked and leech tags so that they will have a clean copy of it.</p>
+<h2 id="exporting-collection-package"><a class="header" href="#exporting-collection-package">Exporting collection package</a></h2>
+<p>When exporting for use in Anki Desktop, you generally want to <a href="https://docs.ankiweb.net/exporting.html#collection-colpkg">export your entire collection</a>, including all your review history etc. </p>
+<p>From the main menu in the decks screen:</p>
+<ol>
+<li>Tap the <strong>Export</strong> item in the menu.</li>
+<li>Tap <strong>OK</strong> using default options</li>
+<li>Tap <strong>OK</strong> again to email the exported collection.apkg file to yourself, or alternatively you can manually copy to your computer using USB</li>
+</ol>
+<p>To import the file on your computer:</p>
+<ol>
+<li>Save the file <strong>collection.apkg</strong> to your desktop</li>
+<li>Double-click on the file to start Anki.</li>
+<li>Confirm you wish to replace, so that the deck from your mobile device
+overwrites the old data on your desktop.</li>
+<li>After importing, you can delete the apkg file on your desktop if you wish.</li>
+</ol>
+<h2 id="exporting-deck-package"><a class="header" href="#exporting-deck-package">Exporting deck package</a></h2>
+<p>If you want to share a deck in AnkiDroid with another user, you can export a deck package. </p>
+<p>From the main menu in the decks screen:</p>
+<ol>
+<li>Long tap on the deck you wish to export</li>
+<li>Tap <strong>Export</strong></li>
+<li>Tap <strong>OK</strong> using the default options</li>
+<li>Tap <strong>OK</strong> again to email the exported apkg to another user</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="automatic-backups"><a class="header" href="#automatic-backups">Automatic Backups</a></h1>
+<p>AnkiDroid will automatically create backups of your collection for you. The backups include all your cards and statistics, but do not include sounds or images.</p>
+<p>The backup is taken in the background when you first start the app. A backup will only happen if more than 5 hours has elapsed since the last time a backup was created. 
+By default, AnkiDroid will store the last 8 backups; this number can be changed in the main settings.</p>
+<p>You can restore a backup by choosing the <em>restore from backup</em> option from the main menu of the <a href="deck-picker.html">decks screen</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="preferences"><a class="header" href="#preferences">Preferences</a></h1>
+<!-- toc -->
+<p>The preferences screen can be accessed by opening the navigation drawer, and choosing <strong>Settings</strong>. It allows you to customize various application settings and how AnkiDroid appears.</p>
+<p>The Preferences screen is divided up into different sections, which are covered below.</p>
+<h2 id="ankidroid"><a class="header" href="#ankidroid">AnkiDroid</a></h2>
+<p>These are the general settings which affect the whole app:</p>
+<h4 id="ankiweb-account"><a class="header" href="#ankiweb-account">AnkiWeb account</a></h4>
+<p>Change the account used for syncing with the cloud. For more information on syncing, please see <a href="anki-desktop.html">this section</a>.</p>
+<h4 id="fetch-media-on-sync"><a class="header" href="#fetch-media-on-sync">Fetch media on sync</a></h4>
+<p>By default, AnkiDroid will sync sounds and images as well as your cards and review history. 
+If you disable this option, sounds and images will not be downloaded from or uploaded to the sync server by AnkiDroid.</p>
+<h4 id="automatic-synchronization"><a class="header" href="#automatic-synchronization">Automatic synchronization</a></h4>
+<p>Enable this option if you want AnkiDroid to sync every time you open and close the app. There is a limit of once every ten minutes for this behavior. Once a sync begins you can cancel it by pressing your device's back button, however it can take some time for the cancellation to take effect.</p>
+<p>Users that want more fine-grained control over when sync occurred might like to use a 3rd party app like Tasker to automate synchronization. See the <a href="https://github.com/ankidroid/Anki-Android/wiki/AnkiDroid-API#sync-intent">API documentation</a> for more information on this.</p>
+<h4 id="deck-for-new-cards"><a class="header" href="#deck-for-new-cards">Deck for new cards</a></h4>
+<p>The default of <strong>Use current deck</strong> means that Anki saves the last-used note type for each deck and selects it again then next time you choose the deck (and, in addition, will start with the current deck selected when choosing Add from anywhere). The other option, <strong>Decide by note type,</strong> saves the last-used deck for each note type (and opens the add window to the last-used note type when you choose Add). This may be more convenient if you always use a single note type for each deck.</p>
+<h4 id="language"><a class="header" href="#language">Language</a></h4>
+<p>Change the language. Note: AnkiDroid translations are contributed by volunteers. If you find missing or incorrect translations, feel free to contribute to the translation project. More details can be found on the <a href="https://github.com/ankidroid/Anki-Android/wiki/Contributing#translate-ankidroid">AnkiDroid Wiki</a>.</p>
+<h4 id="error-reporting-mode"><a class="header" href="#error-reporting-mode">Error reporting mode</a></h4>
+<p>Control whether or not AnkiDroid asks your permission before sending error reports to our error reporting system when AnkiDroid crashes. You can also disable the reporting feature entirely if you wish.</p>
+<h2 id="notifications"><a class="header" href="#notifications">Notifications</a></h2>
+<p>This subsection allows you configure when and how AnkiDroid shows alerts in the Android notification bar.</p>
+<h4 id="notify-when"><a class="header" href="#notify-when">Notify when</a></h4>
+<p><strong>Never notify</strong> will disable all notifications from AnkiDroid. <strong>Pending messages available</strong> will only show important status updates like when a sync completed. <strong>More than n cards due</strong> will show a notification when you have more than n cards due (requires the widget to be enabled).</p>
+<h4 id="vibrate"><a class="header" href="#vibrate">Vibrate</a></h4>
+<p>Checking this will make your device vibrate when showing a notification</p>
+<h4 id="blink-light"><a class="header" href="#blink-light">Blink light</a></h4>
+<p>Checking this will make your device light blink when an unread notification exists (if your device has a notification LED)</p>
+<h2 id="reviewing"><a class="header" href="#reviewing">Reviewing</a></h2>
+<p>The reviewing screen allows you to customize how AnkiDroid behaves when you're
+reviewing cards. Note that only the reviewing settings which are applied to <strong>all decks</strong> are shown here. There are more settings related to reviewing which are <strong>deck specific</strong>. These deck specific settings are located in <strong>Deck options</strong>.</p>
+<h4 id="new-card-position"><a class="header" href="#new-card-position">New card position</a></h4>
+<p>Controls when new cards are shown: either mixed with, after, or before all reviews.</p>
+<h4 id="start-of-next-day"><a class="header" href="#start-of-next-day">Start of next day</a></h4>
+<p>Controls when AnkiDroid should start showing the next day's cards. 
+The default setting of 4AM ensures that if you're studying around midnight, you won't have two days worth of cards shown to you in one session. If you stay up very late or wake up very early, you may want to adjust this to a time you're usually sleeping.</p>
+<h4 id="learn-ahead-limit"><a class="header" href="#learn-ahead-limit">Learn ahead limit</a></h4>
+<p>The Learn ahead limit tells AnkiDroid how to behave when there is nothing left to study in the current deck but cards in learning. The default setting of 20 minutes tells AnkiDroid that cards should be shown early if they are due to be shown in less than 20 minutes and there's nothing else to do. If you set this to 0, Anki will always wait the full period, showing the congratulations screen until the remaining cards are ready to be reviewed.</p>
+<h4 id="timebox-limit"><a class="header" href="#timebox-limit">Timebox limit</a></h4>
+<p>Timeboxing is a technique to help you focus by dividing a longer activity (such as a 30 minute study session) into smaller blocks. If you set the timebox time limit to a non-zero number of minutes, AnkiDroid will periodically show a message saying you how many cards you've managed to study during the prescribed time limit.</p>
+<h2 id="display"><a class="header" href="#display">Display</a></h2>
+<p>This subsection relates to the way cards are displayed during reviewing</p>
+<h4 id="keep-screen-on"><a class="header" href="#keep-screen-on">Keep screen on</a></h4>
+<p>Ignore the automatic screen timeout setting in Android to always keep the screen on.</p>
+<h4 id="fullscreen-mode"><a class="header" href="#fullscreen-mode">Fullscreen mode</a></h4>
+<p>Switches to an immersive fullscreen mode so that you can use more of the screen. You can choose between <strong>Hide the system bars</strong> which will hide the system status bar, action bar, and bottom navigation buttons. Alternatively you can choose <strong>Hide the system bars and answer buttons</strong>, which will hide everything except for the actual card content itself. You can temporarily exit fullscreen mode by swiping inwards (i.e. down or up) from the system bars.</p>
+<p><em>Note that immersive fullscreen mode is only supported on Android 4.4+</em></p>
+<h4 id="center-align"><a class="header" href="#center-align">Center align</a></h4>
+<p>By default AnkiDroid tries to show cards exactly as they are shown on Anki Desktop, however if you prefer your cards to be center aligned vertically in AnkiDroid then you can enable this feature.</p>
+<h4 id="show-button-time"><a class="header" href="#show-button-time">Show button time</a></h4>
+<p>By default, the answer buttons will display the time a card will next be shown. If you disable this option, the times will not appear, and only labels like <strong>Again</strong>, <strong>Good</strong> and <strong>Easy</strong> will be shown.</p>
+<h4 id="card-zoom"><a class="header" href="#card-zoom">Card zoom</a></h4>
+<p>Here you can increase the zoom level of the card content (excluding images). You can use this option if you want to increase the font size for all cards.</p>
+<h4 id="image-zoom"><a class="header" href="#image-zoom">Image zoom</a></h4>
+<p>Here you can increase the zoom level of any images embedded in your cards.</p>
+<h4 id="answer-button-size"><a class="header" href="#answer-button-size">Answer button size</a></h4>
+<p>If you find it difficult to press the answer button, you can use this setting to make it bigger.</p>
+<h4 id="show-remaining"><a class="header" href="#show-remaining">Show remaining</a></h4>
+<p>Disabling this allows you to hide the card count in the top left of the screen.</p>
+<h2 id="whiteboard"><a class="header" href="#whiteboard">Whiteboard</a></h2>
+<p>This subsection controls the whiteboard in the reviewer.
+Note: the whiteboard must be enabled in each deck individually from the menu in the study screen.</p>
+<h4 id="stroke-width"><a class="header" href="#stroke-width">Stroke width</a></h4>
+<p>Control the stroke width of the whiteboard. Reducing the stroke width may allow you to draw with more detail.</p>
+<h4 id="black-strokes"><a class="header" href="#black-strokes">Black strokes</a></h4>
+<p>Use black strokes instead of color, which may reduce memory usage. Note: this setting doesn't apply when night mode is enabled.</p>
+<h2 id="automatic-display-answer"><a class="header" href="#automatic-display-answer">Automatic display answer</a></h2>
+<p>The automatic display answer feature allows you to have the answer shown automatically after some timeout period. You can also have the next question shown automatically; in this case the card is assumed to be failed (i.e. the again button is automatically chosen)</p>
+<h4 id="time-to-show-answer"><a class="header" href="#time-to-show-answer">Time to show answer</a></h4>
+<p>Time to wait until answer is automatically shown</p>
+<h4 id="time-to-show-next-question"><a class="header" href="#time-to-show-next-question">Time to show next question</a></h4>
+<p>Time to wait until next question is automatically shown.</p>
+<h2 id="fonts"><a class="header" href="#fonts">Fonts</a></h2>
+<p>In this screen you can change the font used by AnkiDroid, and some scaling options related to fonts. 
+See the <a href="advanced-features/custom-fonts.html">custom fonts</a> section for more information about using custom fonts.</p>
+<h4 id="default-font"><a class="header" href="#default-font">Default font</a></h4>
+<p>Choose the default font used by the AnkiDroid reviewer. You can add fonts to this list by copying them to the <strong>fonts</strong> folder.</p>
+<h4 id="default-font-applicability"><a class="header" href="#default-font-applicability">Default font applicability</a></h4>
+<p>The default setting is to only use the default font when no font has been specified in the card styling via Anki Desktop, however you can also force the default font to be applied, ignoring any font specification in the card styling.</p>
+<h4 id="browser-and-editor-font"><a class="header" href="#browser-and-editor-font">Browser and editor font</a></h4>
+<p>The font to be used by the browser and editor</p>
+<h4 id="card-browser-font-scaling"><a class="header" href="#card-browser-font-scaling">Card browser font scaling</a></h4>
+<p>Lets you change the font size used in the card browser.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gestures"><a class="header" href="#gestures">Gestures</a></h1>
+<!-- toc -->
+<p>AnkiDroid allows you to customize the interface, so that actions you perform
+frequently can be accomplished quickly by using tap and swipe gestures.</p>
+<h3 id="actions"><a class="header" href="#actions">Actions</a></h3>
+<p>The following gestures can be used:</p>
+<ul>
+<li>Swipe up</li>
+<li>Swipe down</li>
+<li>Swipe left</li>
+<li>Swipe right</li>
+<li>Double touch</li>
+<li>Touch top</li>
+<li>Touch bottom</li>
+<li>Touch left</li>
+<li>Tough right</li>
+</ul>
+<p>The following actions are available for each gesture:</p>
+<h4 id="no-action"><a class="header" href="#no-action">No action</a></h4>
+<p>Don't do anything. Useful if you want to disable certain swipes, tap zones and so on.</p>
+<h4 id="answer-button-1"><a class="header" href="#answer-button-1">Answer button 1</a></h4>
+<p>When the answer screen is shown, choose the red
+button, indicating you wish to review the card again soon. This is useful when
+you forgot a card or wish to review it more frequently. 
+When the question is shown, this action (and all other answer actions below) will simply show the answer.</p>
+<h4 id="answer-button-2"><a class="header" href="#answer-button-2">Answer button 2</a></h4>
+<p>When the answer screen is shown, choose the second button from the left, 
+generally indicating you found the card hard to remember.</p>
+<h4 id="answer-button-3"><a class="header" href="#answer-button-3">Answer button 3</a></h4>
+<p>When the answer screen is shown, choose the third button from the left.</p>
+<h4 id="answer-button-4"><a class="header" href="#answer-button-4">Answer button 4</a></h4>
+<p>When the answer screen is shown, choose the fourth button from the left (when applicable).</p>
+<h4 id="answer-recommended-green"><a class="header" href="#answer-recommended-green">Answer recommended (green)</a></h4>
+<p>When the answer screen is shown, choose the green button.
+This is the button you should end up using the most.</p>
+<h4 id="answer-better-than-recommended"><a class="header" href="#answer-better-than-recommended">Answer better than recommended</a></h4>
+<p>When the answer screen is shown, choose the button on the
+right, indicating you found the card too easy to remember and would like a
+much longer delay.</p>
+<h4 id="undo-2"><a class="header" href="#undo-2">Undo</a></h4>
+<p>Undoes the last action.</p>
+<h4 id="edit-card-1"><a class="header" href="#edit-card-1">Edit card</a></h4>
+<p>Edits the current card.</p>
+<h4 id="mark"><a class="header" href="#mark">Mark</a></h4>
+<p>Adds a tag called <strong>Marked</strong> the current note, so it can be easily found in a search.</p>
+<h4 id="lookup-expression"><a class="header" href="#lookup-expression">Lookup expression</a></h4>
+<p>When the lookup feature is enabled (in advanced settings), lookup an expression
+in the selected dictionary. Note: the expression needs to be copied to the clipboard before this action will work.</p>
+<h4 id="bury-card"><a class="header" href="#bury-card">Bury card</a></h4>
+<p>Hides the current card from review.</p>
+<h4 id="suspend-card"><a class="header" href="#suspend-card">Suspend card</a></h4>
+<p>Prevent current card from being shown during review until you unsuspend it via the card browser.</p>
+<h4 id="delete-note-1"><a class="header" href="#delete-note-1">Delete note</a></h4>
+<p>Deletes the currently shown note and all of its cards.</p>
+<h4 id="play-media"><a class="header" href="#play-media">Play media</a></h4>
+<p>Replay any audio on the card.</p>
+<h4 id="abort-learning"><a class="header" href="#abort-learning">Abort learning</a></h4>
+<p>Stop reviewing and go back to the deck overview page.</p>
+<h4 id="bury-note"><a class="header" href="#bury-note">Bury note</a></h4>
+<p>Bury the current note (i.e. hide it until the next day).</p>
+<h4 id="suspend-note"><a class="header" href="#suspend-note">Suspend note</a></h4>
+<p>Suspend the current note (i.e. hide it until you unsuspend it).</p>
+<h4 id="toggle-red-flag"><a class="header" href="#toggle-red-flag">Toggle Red Flag</a></h4>
+<p>Enables the red flag, unless the flag is already red, in which case the flag is disabled.</p>
+<h4 id="toggle-orange-flag"><a class="header" href="#toggle-orange-flag">Toggle Orange Flag</a></h4>
+<p>Enables the orange flag, unless the flag is already orange, in which case the flag is disabled.</p>
+<h4 id="toggle-green-flag"><a class="header" href="#toggle-green-flag">Toggle Green Flag</a></h4>
+<p>Enables the green flag, unless the flag is already green, in which case the flag is disabled.</p>
+<h4 id="toggle-blue-flag"><a class="header" href="#toggle-blue-flag">Toggle Blue Flag</a></h4>
+<p>Enables the blue flag, unless the flag is already blue, in which case the flag is disabled.</p>
+<h4 id="remove-flag"><a class="header" href="#remove-flag">Remove Flag</a></h4>
+<p>Removes the flag from the card.</p>
+<h2 id="advanced"><a class="header" href="#advanced">Advanced</a></h2>
+<p>Some less common features for advanced users are shown here</p>
+<h4 id="collection-path"><a class="header" href="#collection-path">Collection path</a></h4>
+<p>Change the location where AnkiDroid's data is stored (not recommended)</p>
+<h4 id="force-full-sync"><a class="header" href="#force-full-sync">Force full sync</a></h4>
+<p>Tap this item to force a full upload or download on the next sync (for example, because you accidentally deleted a deck on one side and want to restore the deck rather than having its deletion synchronized).</p>
+<h4 id="advanced-statistics"><a class="header" href="#advanced-statistics">Advanced Statistics</a></h4>
+<p>Take into account the effect of future reviews in the <strong>Forecast</strong> graph. More info <a href="advanced-features/advanced-statistics.html">here</a>.</p>
+<h3 id="workarounds"><a class="header" href="#workarounds">Workarounds</a></h3>
+<h4 id="type-answer-into-the-card"><a class="header" href="#type-answer-into-the-card">Type answer into the card</a></h4>
+<p>If you have set up your cards to ask you to type in the answer (as explained in <a href="https://docs.ankiweb.net/templates/intro.html">this section of the desktop manual</a>), AnkiDroid will display a keyboard on such cards and allow you to check your answer.</p>
+<p>In order to improve user experience when working with the whiteboard and gestures, we use a typing box separate from the card, which is inconsistent with the way the feature works on Anki Desktop.</p>
+<p>For full consistency with Anki Desktop, you can enable this option which allows you to save screen area, and choose an appropriate font (e.g. Japanese vs Chinese) for the input box.</p>
+<h4 id="input-workaround"><a class="header" href="#input-workaround">Input Workaround</a></h4>
+<p>Some older devices couldn't gain focus into the text input box for typed-answer fields, so this was added (Hidden for API &gt; 14).</p>
+<h4 id="longclick-workaround"><a class="header" href="#longclick-workaround">Longclick Workaround</a></h4>
+<p>Some older devices couldn't detect longclick for initiating selecting/copying of text, so this was added (Hidden for API &gt; 10).</p>
+<h4 id="fix-for-hebrew-vowels"><a class="header" href="#fix-for-hebrew-vowels">Fix for Hebrew Vowels</a></h4>
+<p>Some older devices couldn't render Hebrew text, so this feature was added which allows the user to download and install a Hebrew font which is known to work (Hidden for API &gt; 15).</p>
+<h4 id="text-to-speech"><a class="header" href="#text-to-speech">Text to Speech</a></h4>
+<p>Enable this option to have Android read out all the text on your flashcards using the default text to speech engine. Google's built-in TTS engine should work; 3rd party TTS engines may or may not.
+AnkiDroid will ask you to select the language for the front and back of your cards once for each deck on the first time you review a card in that deck. 
+To change the language or disable TTS for a given deck after making your initial choice, you'll need to use the <strong>reset languages</strong> option described below and reconfigure for each deck.</p>
+<p>Alternatively, if you want only fragments of cards to be read aloud, or if you want to set the TTS language for multiple decks at once, you can insert <code>&lt;tts&gt;</code> tags into <a href="advanced-features/customizing-card-layout.html">card templates</a>. For example, with the following template for the back of the card</p>
+<pre><code class="language-html">{{FrontSide}}
+
+&lt;hr id=answer&gt;
+
+&lt;tts service=&quot;android&quot; voice=&quot;en_GB&quot;&gt;{{EnglishTranslation}}&lt;/tts&gt;
+&lt;br&gt;&lt;br&gt;
+{{Example}}
+</code></pre>
+<p>only the <code>EnglishTranslation</code> field will be read aloud in a British English voice; the <code>Example</code> field, lying outside the <code>&lt;tts&gt;</code> tag, won't be read aloud. Every <code>&lt;tts&gt;</code> tag needs to have the following two attributes:</p>
+<ul>
+<li><strong><code>service</code></strong>: should be set to <strong><code>android</code></strong>, otherwise the contents of the <strong><code>&lt;tts&gt;</code></strong> tag won't be read aloud;</li>
+<li><strong><code>voice</code></strong>: used to select the TTS language; should be a <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes">two- or three- letter language code</a>, optionally followed by an underscore and a <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">two-letter country or region code</a>. A frequently updated list of languages supported by the Google TTS engine can be found on its <a href="https://en.wikipedia.org/wiki/Google_Text-to-Speech">Wikipedia page</a>.</li>
+</ul>
+<p>To make both AnkiDroid and the <a href="https://ankiatts.appspot.com">AwesomeTTS</a> plugin to the desktop application use a TTS engine to read aloud certain card fragments, put the <code>&lt;tts service=&quot;android&quot; ...&gt;</code> tag inside the <code>&lt;tts&gt;</code> tag recognised by AwesomeTTS, or vice versa. An example:</p>
+<pre><code class="language-html">&lt;tts service=&quot;sapi5js&quot; quality=&quot;39&quot; speed=&quot;0&quot; voice=&quot;Microsoft David Desktop&quot; volume=&quot;100&quot; xml=&quot;0&quot;&gt;
+    &lt;tts service=&quot;android&quot; voice=&quot;en_GB&quot;&gt;
+        {{EnglishTranslation}}
+    &lt;/tts&gt;
+&lt;/tts&gt;
+</code></pre>
+<p>AnkiDroid automatically ignores <code>&lt;tts&gt;</code> tags selecting an unknown TTS service. In contrast, AwesomeTTS may display a warning message on encountering the <code>&lt;tts service=&quot;android&quot; ...&gt;</code> tag; to suppress it, uncheck the two <em>Show errors</em> checkboxes on the <em>Playback</em> tab of the <em>AwesomeTTS: Configuration</em> dialog in the desktop application.</p>
+<p><em>This feature may be removed in the future in favor of a separately downloadable plugin.</em></p>
+<h4 id="lookup-dictionary"><a class="header" href="#lookup-dictionary">Lookup Dictionary</a></h4>
+<p>Dictionary to use to lookup words copied to the clipboard in the reviewer. After setting up a dictionary, do the following to perform the lookup:</p>
+<ul>
+<li>Longclick on the text you want to copy in the reviewer</li>
+<li>After selecting the word you want to copy, press the <strong>copy</strong> icon in the app bar at the top of the screen</li>
+<li>Tap once anywhere on the flashcard</li>
+<li>A magnifying glass icon should appear, which performs the lookup when clicked</li>
+</ul>
+<p>Alternatively, the lookup action can be performed via a gesture.</p>
+<p><em>This feature will likely be removed in the future in favor of a plugin</em></p>
+<h4 id="reset-languages"><a class="header" href="#reset-languages">Reset Languages</a></h4>
+<p>Useful for resetting the TTS language</p>
+<h4 id="ereader-updown-buttons"><a class="header" href="#ereader-updown-buttons">eReader (up/down buttons)</a></h4>
+<p>Support for eReader hardware buttons (see <a href="https://github.com/ankidroid/Anki-Android/issues/1625">issue 1625</a>)</p>
+<p><em>This feature will likely be removed in the future in favor of a plugin</em></p>
+<h4 id="ereader-double-scrolling"><a class="header" href="#ereader-double-scrolling">eReader Double Scrolling</a></h4>
+<p>Double the scrolling distance when using the eReader hardware buttons</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="note-formatting-toolbar"><a class="header" href="#note-formatting-toolbar">Note Formatting Toolbar</a></h1>
+<p>The note formatting toolbar contains basic text formatting buttons (Bold, Italic, Underline, Horizontal Line, Insert Title, Change Font Size, <a href="advanced-features/mathjax.html">Insert MathJax</a> and Insert Cloze Deletion).</p>
+<p>It also allows the addition of user-defined toolbar buttons using HTML. HTML is a powerful language allowing nearly endless customization of your cards. <a href="https://github.com/ankidroid/Anki-Android/wiki/Note-Editor-Toolbar-HTML-Samples">Our wiki</a> contains common code samples to get you started.</p>
+<p>A user-defined toolbar button can be removed by long pressing the button and selecting <strong>Delete</strong>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="keyboard-shortcuts"><a class="header" href="#keyboard-shortcuts">Keyboard Shortcuts</a></h1>
+<h2 id="home-screen"><a class="header" href="#home-screen">Home Screen</a></h2>
+<table><thead><tr><th>Shortcut</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><kbd>A</kbd></td><td>Add Note</td></tr>
+<tr><td><kbd>B</kbd></td><td>Card Browser</td></tr>
+<tr><td><kbd>Y</kbd></td><td>Sync</td></tr>
+</tbody></table>
+<h2 id="reviewer"><a class="header" href="#reviewer">Reviewer</a></h2>
+<table><thead><tr><th>Shortcut</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><kbd>1</kbd>,<kbd>2</kbd>,<kbd>3</kbd>,<kbd>4</kbd></td><td>Press the nth answer button</td></tr>
+<tr><td>Gamepad Y</td><td>Flip Card/Press the first answer button</td></tr>
+<tr><td>Gamepad X</td><td>Flip Card/Press the second answer button</td></tr>
+<tr><td>Gamepad B</td><td>Flip Card/Press the third answer button</td></tr>
+<tr><td>Gamepad A</td><td>Flip Card/Press the fourth answer button</td></tr>
+<tr><td><kbd>Space</kbd>,<kbd>Enter</kbd></td><td>Flip Card/Answer Good</td></tr>
+<tr><td><kbd>e</kbd></td><td>Edit Note</td></tr>
+<tr><td><kbd>*</kbd></td><td>Mark Note</td></tr>
+<tr><td><kbd>-</kbd></td><td>Bury Card</td></tr>
+<tr><td><kbd>=</kbd></td><td>Bury Note</td></tr>
+<tr><td><kbd>@</kbd></td><td>Suspend Card</td></tr>
+<tr><td><kbd>!</kbd></td><td>Suspend Note</td></tr>
+<tr><td><kbd>r</kbd>,<kbd>F5</kbd></td><td>Replay Media</td></tr>
+<tr><td><kbd>z</kbd></td><td>Undo</td></tr>
+</tbody></table>
+<h2 id="note-editor"><a class="header" href="#note-editor">Note Editor</a></h2>
+<table><thead><tr><th>Shortcut</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Enter</kbd></td><td>Save Note</td></tr>
+<tr><td><kbd>D</kbd></td><td>Select Deck</td></tr>
+<tr><td><kbd>L</kbd></td><td>Card Template Editor</td></tr>
+<tr><td><kbd>N</kbd></td><td>Select Note Type</td></tr>
+<tr><td><kbd>T</kbd></td><td>Edit Tags</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>P</kbd></td><td>Preview Note</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>B</kbd></td><td>Bold</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>I</kbd></td><td>Italic</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>U</kbd></td><td>Underline</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>R</kbd></td><td>Insert Horizontal Rule</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>H</kbd></td><td>Insert Title</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>F</kbd></td><td>Change Font Size</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>M</kbd></td><td>Insert MathJax Equation</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd></td><td>Insert New Cloze Deletion</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd></td><td>Insert Cloze Deletion using existing number</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>1</kbd>..<kbd>0</kbd></td><td>Insert User-Defined HTML</td></tr>
+</tbody></table>
+<h2 id="card-browser-1"><a class="header" href="#card-browser-1">Card Browser</a></h2>
+<table><thead><tr><th>Shortcut</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><kbd>Ctrl</kbd>+<kbd>A</kbd></td><td>Select All</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>E</kbd></td><td>Edit Note</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>D</kbd></td><td>Change Deck</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>K</kbd></td><td>Mark Note</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>R</kbd></td><td>Reschedule</td></tr>
+</tbody></table>
+<h2 id="card-template-editor"><a class="header" href="#card-template-editor">Card Template Editor</a></h2>
+<table><thead><tr><th>Shortcut</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><kbd>Ctrl</kbd>+<kbd>P</kbd></td><td>Preview Changed</td></tr>
+</tbody></table>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="using-right-to-left-languages-with-ankidroid"><a class="header" href="#using-right-to-left-languages-with-ankidroid">Using Right-To-Left Languages with AnkiDroid</a></h1>
+<p>Anki and AnkiDroid have full support for RTL languages such as Arabic, Hebrew, and Persian.</p>
+<h2 id="editing-fields-as-rtl"><a class="header" href="#editing-fields-as-rtl">Editing Fields as RTL</a></h2>
+<p>Fields can be marked as RTL (currently possible only from Anki Desktop) for RTL editing. When a field is marked as RTL, then the text is right-aligned in editing fields and punctuation is correctly displayed at the end (left) of sentences. Text that contains blocks of LTR characters will be properly displayed as well, with the beginning of the sentence appearing to the right of the LTR block and the end of the sentence being displayed to the left of the LTR block.</p>
+<p>Directionality is especially important for editing and creating RTL cloze deletions as the cloze format includes both neutral and LTR markup characters. Therefore it is recommended to use a separate note type for LTR cloze deletions and RTL cloze deletions.</p>
+<h2 id="displaying-fields-as-rtl-during-study"><a class="header" href="#displaying-fields-as-rtl-during-study">Displaying Fields as RTL during study</a></h2>
+<p>To display a field as RTL, with proper right-alignment and directionality (punctuation at left of sentences, proper flow around LTR blocks), the field should be wrapped in a div or span element with the RTL directionality specified:</p>
+<pre><code class="language-html">&lt;div dir=&quot;rtl&quot;&gt;&lt;/div&gt;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="using-anki-desktop-with-ankidroid"><a class="header" href="#using-anki-desktop-with-ankidroid">Using Anki Desktop with AnkiDroid</a></h1>
+<!-- toc -->
+<p>Anki has a free cloud synchronization service called AnkiWeb that makes it easy to keep your card decks in sync between mobile devices and your computer. If you cannot use sync for some reason, it's also possible to use USB, though this method is more laborious.</p>
+<p>Note that AnkiDroid is not affiliated with Anki Desktop or AnkiWeb. AnkiDroid is based on Anki Desktop but it is developed by an entirely separate community of volunteers.</p>
+<p><img src="img/AnkiDesktop.png" alt="AnkiDesktop.png" /></p>
+<h2 id="via-cloud-sync"><a class="header" href="#via-cloud-sync">Via Cloud Sync</a></h2>
+<p>Before you can use AnkiWeb, you'll first need to create an account by visiting <a href="https://ankiweb.net">https://ankiweb.net</a> and clicking the <strong>Sign Up</strong> button. If you have used AnkiWeb in the past, you can skip this step. After signing up, see the corresponding instructions below, depending on whether you are trying to get your existing decks into AnkiDroid or out of AnkiDroid.</p>
+<h3 id="sync-existing-decks-into-a-new-ankidroid-install"><a class="header" href="#sync-existing-decks-into-a-new-ankidroid-install">Sync existing decks into a new AnkiDroid install</a></h3>
+<p>In this scenario you have some existing Anki decks that you want to copy into a new install of AnkiDroid by syncing with AnkiWeb. Open the Anki client with your existing decks (usually this would be Anki desktop, but it could also mean a version of AnkiDroid you have been using on another device), and click the synchronization button (which has two arrows in a circle) at the top right of the deck list.</p>
+<p>If you have never used AnkiWeb before you will need to enter your credentials if prompted, and then press the <strong>Upload to AnkiWeb</strong> button to confirm overwriting the empty collection on AnkiWeb with your existing decks in Anki. Anki will upload all your cards, images and audio to AnkiWeb. If you have a lot of media, this may take some time.</p>
+<p>Once the synchronization has completed, open AnkiDroid in the device that you are trying to copy the existing decks into, and tap the <strong>Sync</strong> button in the app bar at the top of the main <a href="deck-picker.html">deck list</a>. 
+After entering your AnkiWeb credentials, AnkiDroid will download all your cards and media, and remember your login information for next time.</p>
+<p>Note that if you have any existing material in AnkiDroid before attempting to sync, you may be shown a message asking you to choose to either download from AnkiWeb, or upload to AnkiWeb. If you are happy to lose the cards in AnkiDroid then simply choose <strong>Download</strong>. If you need to merge the existing cards with AnkiDroid then you should see the <a href="ankiweb-conflicts.html#dealing-with-merge-conflicts-on-ankiweb">resolving conflicts</a> section before continuing.</p>
+<p>After the first synchronization has completed, you can click the sync button again any time you wish to synchronize your changes to the cloud. Only changes made since the previous sync will be sent, so subsequent syncs are a lot faster.</p>
+<p>If you add some new cards on the desktop computer and want to sync them to AnkiDroid, you'd repeat the same basic process: sync on desktop (or close the program, as it syncs automatically on close by default), and then tap the sync button on AnkiDroid.</p>
+<h3 id="sync-from-ankidroid-to-computer"><a class="header" href="#sync-from-ankidroid-to-computer">Sync from AnkiDroid to Computer</a></h3>
+<p>The process of syncing from AnkiDroid to computer is essentially the same as syncing from computer to AnkiDroid, but in reverse.</p>
+<p>From the <a href="deck-picker.html">deck list</a>, tap the sync button in the top right (it has two arrows in a circle). If it's your first time using AnkiWeb, you may need to enter your login credentials, and then press the &quot;upload&quot; button to upload your AnkiDroid collection to AnkiWeb.</p>
+<p>Once the synchronization has completed, open Anki Desktop on your computer and press the sync button there (with two arrows in a circle), and Anki will download your collection.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dealing-with-merge-conflicts-on-ankiweb"><a class="header" href="#dealing-with-merge-conflicts-on-ankiweb">Dealing with merge conflicts on AnkiWeb</a></h1>
+<p>Although it should not happen often, occasionally you may end up in the position where your cards on AnkiDroid can not be automatically merged with the cards on AnkiWeb. In this case it's necessary to choose to either upload to or download from AnkiWeb, which would overwrite any changes on the other side. </p>
+<p>If you have new cards on both sides which you want to keep, before syncing you can <a href="exporting.html">export a deck package</a> for each deck containing new cards from AnkiDroid, then when you do the sync choose <strong>download</strong> to download from AnkiWeb. After the synchronization has completed, you can import the decks you previously exported from AnkiDroid, as per the <a href="importing/importing-anki-files.html">importing section</a>.</p>
+<h2 id="via-usb"><a class="header" href="#via-usb">Via USB</a></h2>
+<p>If you don't have regular internet access, it's still possible to copy decks back and forth to your device, by using USB.</p>
+<p>The USB method works by importing or exporting all your decks at once. This means that unlike syncing via AnkiWeb, you can't make changes from two locations at once and then merge them. Instead, if you wish to add cards on the desktop, you need to make sure you export the latest version of your collection from your mobile device first, or you'll end up losing any reviews done on the mobile device.</p>
+<p>Thus the workflow you would typically use is to export your collection from your mobile device and import it into the desktop, make modifications on the desktop, and then export your collection and import it back into your mobile device.</p>
+<p>AnkiDroid can't directly import text files. If you wish to do that, you'll need to do that with the desktop program, and then import your collection into AnkiDroid.</p>
+<h3 id="copy-all-decks-from-anki-desktop-to-ankidroid-via-usb"><a class="header" href="#copy-all-decks-from-anki-desktop-to-ankidroid-via-usb">Copy all decks from Anki Desktop to AnkiDroid via USB</a></h3>
+<p>On your computer:</p>
+<ol>
+<li>Open the desktop program.</li>
+<li>Choose File&gt;Export from the menu.</li>
+<li>Click the <strong>Export...</strong> button. Make sure to leave <strong>all decks</strong> selected, as it's not possible to import individual decks into AnkiDroid. <strong>Include scheduling information</strong> must also remain checked.</li>
+<li>Anki will automatically create a collection.apkg on your desktop. If the file is named something else, please see the previous step again.</li>
+<li>Connect your Android device to your computer via the USB cable.</li>
+<li>Open the file explorer on your computer and view the contents of your Android device.</li>
+<li>Locate the AnkiDroid folder.</li>
+<li>Drag the collection.apkg file from your desktop into this AnkiDroid folder.</li>
+</ol>
+<p>Then in AnkiDroid:</p>
+<ol>
+<li>From the main decks screen, tap <strong>Import file</strong> from the menu</li>
+<li>Tap on <strong>Collection</strong> and then confirm</li>
+</ol>
+<p>Once complete, the decks on your device will have been replaced with the decks from your desktop. See the section on 
+<a href="importing/importing-anki-files.html">importing apkg files</a> for more help with importing.</p>
+<h3 id="copy-all-decks-from-ankidroid-to-anki-desktop-via-usb"><a class="header" href="#copy-all-decks-from-ankidroid-to-anki-desktop-via-usb">Copy all decks from AnkiDroid to Anki Desktop via USB</a></h3>
+<p>The process to copy your decks from AnkiDroid to Anki Desktop is essentially the same as above, but in reverse.</p>
+<ol>
+<li>Start with your device disconnected from USB</li>
+<li>Choose <strong>Export collection</strong> from the main menu in the Deck Screen</li>
+<li>Ensure <strong>Include scheduling information</strong> remains checked and press <strong>OK</strong></li>
+<li>Connect device to computer using USB</li>
+<li>Copy the <strong>collection.apkg</strong> from the path specified in the message to the desktop on your computer</li>
+<li>Double click on the file to import into Anki Desktop</li>
+</ol>
+<p>See the <a href="exporting.html">exporting section</a> below for more detailed information on exporting from AnkiDroid.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="advanced-features"><a class="header" href="#advanced-features">Advanced Features</a></h1>
+<ul>
+<li><a href="advanced-features/mathjax.html">MathJax Support</a></li>
+<li><a href="advanced-features/reverse-cards.html">Reverse Cards</a></li>
+<li><a href="advanced-features/custom-fonts.html">Custom Fonts</a></li>
+<li><a href="advanced-features/customizing-card-layout.html">Custom Card Layout</a></li>
+<li><a href="advanced-features/type-in-answer.html">Type in the answer feature</a></li>
+<li><a href="advanced-features/advanced-statistics.html">Advanced Statistics</a></li>
+<li><a href="advanced-features/reminders.html">Reminders</a></li>
+<li><a href="advanced-features/set-language-hint.html">Automatic Language Selection</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mathjax-support"><a class="header" href="#mathjax-support">MathJax Support</a></h1>
+<p>Mathjax is a modern typesetting library for math and chemistry.  AnkiDroid supports Mathjax cards out of the box.  Mathjax is configured to expect TeX formatting, with <code>\(</code> and <code>\)</code> delimiting inline equations and <code>\[</code> and <code>\]</code> for display equations.</p>
+<p>To try it out, enter the following into a field:</p>
+<pre><code>\(\sqrt{x}\)
+</code></pre>
+<p>and preview the card.</p>
+<p>For more details, see <a href="https://docs.ankiweb.net/math.html#mathjax">Mathjax Support</a> in the Anki Manual.</p>
+<p><a href="https://www.reddit.com/r/Anki/comments/ar7lxd/how_to_load_mathjax_color_extension_on_anki/egm6u5j">Previous workarounds</a> are no longer necessary as of AnkiDroid 2.9.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reverse-cards"><a class="header" href="#reverse-cards">Reverse Cards</a></h1>
+<p>The Anki system has <a href="https://docs.ankiweb.net/getting-started.html#note-types">built-in note types which allow you to review cards in both directions</a>. 
+When <a href="advanced-features/../adding-notes.html">creating new material</a> in AnkiDroid, you should choose one of these note types, such as <strong>Basic (and reversed card)</strong>, which will automatically generate a reverse card for you.</p>
+<p><img src="advanced-features/../img/ReverseNoteType.png" alt="ReverseNoteType" /></p>
+<p>If you used the wrong note type when adding your material, you can change the note type via the <a href="advanced-features/../editing-notes.html">edit note screen</a>, or you can change the note type for multiple cards at once using the browser in Anki Desktop. 
+To do this, follow the instructions in the <a href="advanced-features/../anki-desktop.html">syncing with Anki Desktop section</a>, then in Anki Desktop open the browser, select the cards you want to change, then choose <strong>Change note type</strong> from the menu.</p>
+<p>Alternatively, if your cards are using a custom card layout which doesn't include a reverse card, you can edit the note type to include a reverse card by following the instructions in the <a href="https://docs.ankiweb.net/templates/generation.html#reverse-cards">reverse cards section</a> of the Anki Desktop user manual. While less convenient than using Anki Desktop, it is possible to edit the note type from directly within AnkiDroid as well; see the <a href="advanced-features/../advanced-features/customizing-card-layout.html">custom card layout section</a> for more on this.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="custom-fonts"><a class="header" href="#custom-fonts">Custom Fonts</a></h1>
+<p>AnkiDroid allows you to use non-system fonts on your cards. To set them up properly, it is strongly recommended to use the official method that is used by Anki Desktop. Please see <a href="https://docs.ankiweb.net/templates/styling.html#installing-fonts">the corresponding section in the desktop manual</a> for more information.</p>
+<p>Alternatively, you can create a new subfolder <strong>fonts</strong> in the main AnkiDroid directory (i.e. the folder which contains the <strong>backups</strong> subfolder, specified under <code>Settings &gt; Advanced &gt; AnkiDroid directory)</code>, copy a compatible font file (i.e. .ttf) there, and then set this as the default font under <code>Settings &gt; Fonts &gt; Default font</code>. </p>
+<p><strong>Note:</strong> this method will change the default font for <strong>all</strong> of your cards, whereas the official method can be more specific. Also, if you sync with AnkiWeb, using this method will lead to cards being displayed differently on different devices.</p>
+<p>Only fonts in the ttf format are officially supported in Anki/AnkiDroid; the <a href="https://fonts.google.com/noto">Google Noto</a> font set is highly recommended for all languages, and some other free fonts can be found <a href="https://github.com/ankidroid/Anki-Android/wiki/Freely-distributable-fonts">here</a>.</p>
+<p>Please note that AnkiDroid has to load the entire font into memory in order to use it, and fonts for Asian languages can be quite large. If you have an older device and notice AnkiDroid crashing frequently after installing a font, you may have exceeded your device's memory limits. For Google Noto, it's not recommended to use the combined CJK font, rather get the individual languages <a href="https://github.com/googlei18n/noto-cjk">separately from here</a>.</p>
+<blockquote>
+<p><strong>Note 1</strong>: If you have <strong>Fetch media on sync</strong> disabled, you may need to manually copy the font file from Anki Desktop to your AnkiDroid/collection.media folder.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note 2</strong>: If you can't get your font to work after following the steps in here and the Anki Desktop manual, please refer to the FAQ for <a href="https://github.com/ankidroid/Anki-Android/wiki/FAQ#i-followed-the-instructions-in-the-manual-but-i-still-cant-get-my-custom-font-to-work">detailed steps on how to debug font issues</a>.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="custom-card-layout"><a class="header" href="#custom-card-layout">Custom Card Layout</a></h1>
+<p>The layout of flashcards is completely customizable, although this is an advanced topic with a fairly steep learning curve, and you will probably find it a lot more convenient to do the customization with <a href="advanced-features/../anki-desktop.html">Anki Desktop</a>. </p>
+<p>The <a href="https://docs.ankiweb.net/templates/intro.html">card templates section</a> of the Anki Desktop manual has detailed instructions on how to edit note types, and most of the actions discussed there are also available from AnkiDroid by tapping <strong>cards</strong> at the bottom of the note editor, or choosing the <strong>manage note types</strong> option in the deck picker. Since detailed information on customizing card layouts is available in the Anki desktop manual, it will not be repeated here.</p>
+<p>There is an <a href="https://github.com/ankidroid/Anki-Android/wiki/Advanced-formatting">advanced formatting page</a> on the AnkiDroid wiki with various hints on how you can get the most out of your card formatting, and we encourage you to read it, and edit it freely if you have any tips that you'd like to share with the community.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="type-in-the-answer-feature"><a class="header" href="#type-in-the-answer-feature">Type in the answer feature</a></h1>
+<p>AnkiDroid allows you to type in the correct answer and then compare it to the right answer. You have to set this up with Anki desktop, as described in the <a href="https://docs.ankiweb.net/templates/fields.html#checking-your-answer">Anki Desktop manual</a>.</p>
+<p>Anki desktop replaces the <strong>{{type:NN}}</strong> field on the front of a card with an input box in the card. On AnkiDroid it is replaced with a <strong>......</strong> prompt instead, and a text input box is shown at the bottom. The comparison between typed text and the correct text is shown on the answer side in place of the <strong>{{type:NN}}</strong> field there, like on Anki desktop.</p>
+<p>The text input box and the soft keyboard can be hidden by ticking <strong>Disable typing in answer</strong> in the preferences.</p>
+<p>Even with typing disabled, the correct answer is shown on the answer side. This is done on purpose; otherwise the correct answer might not be shown at all.</p>
+<p>To hide the comparison (e.g. because the correct answer is shown anyway), the HTML id <strong>typeans</strong> can be used. 
+Add following to the <a href="https://docs.ankiweb.net/templates/styling.html#card-styling">card styling</a> using Anki Desktop.</p>
+<pre><code class="language-css">.mobile #typeans {
+    display: none;
+}
+</code></pre>
+<p>The type answer prompt and the comparison have more classes that can be used to change the way they are displayed. Some of these are the same as on Anki Desktop, some are specific to AnkiDroid.</p>
+<p>The comparison uses three classes, typeGood, typeBad and typeMissed to add green, red and gray background to the typing comparison. These three classes are used on Anki desktop as well.</p>
+<p>The <strong>......</strong> prompt has the class <strong>typePrompt</strong>.</p>
+<p>When typing is set to off in the preferences, the class <strong>typeOff</strong> is added to the prompt on the question side, and to the div element containing the comparison on the answer side. This class can be used to show the type prompt or to hide the typing comparison in this case.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="advanced-statistics-1"><a class="header" href="#advanced-statistics-1">Advanced Statistics</a></h1>
+<p>If Advanced Statistics are enabled, it changes the <strong>Forecast</strong> graph so that it shows the estimated number of reviews that will be due on a given day in the future taking into account future reviews, learning new cards and failing cards. The bars and the left axis show the number of cards due on each day if you study all cards each day, while the line and the right axis show the number of unseen (shown as <strong>learn</strong>), young and mature cards your deck or collection will consist of if you study all cards each day. The forecast graph does count reviews that are currently overdue. It assumes that the overdue cards will be reviewed according to the <strong>maximum reviews/day</strong> deck option.</p>
+<p>Advanced Statistics can be enabled in <code>Settings -&gt; Advanced -&gt; Advanced Statistics</code> (in plugin section).</p>
+<p>The outcome of future reviewing, learning or failing cards affects reviews after that future review. To take this into account, the probability of each outcome is computed from the review log. Then the outcome is randomly chosen, such that an outcome which is more likely according to the review log is more likely to be chosen than an outcome which is less likely according to the review log. The settings all affect how the effect of the outcome of future reviews on subsequent reviews is taken into account.</p>
+<h3 id="compute-first-n-days-simulate-remainder"><a class="header" href="#compute-first-n-days-simulate-remainder">Compute first n days, simulate remainder</a></h3>
+<p>If this setting is set to a number greater than 0, instead of randomly choosing an outcome, each possible outcome is taken into account in the simulation, together with its probability. The probability is taken into account for the graph and for future reviews in which it results, which also affect the graph. 
+One review has a couple of possible outcomes (say 4), which all result in a review. That review also has a couple of possible outcomes and so on. If many reviews are simulated this way, many reviews (4 x 4 x 4 x ... ) have to be taken into account which increases the time it takes to compose the graph.
+Therefore, for reviews later than n days from now are simulated by randomly choosing an outcome.</p>
+<p>In summary, higher n gives a more accurate graph, but it takes more time to compose the graph.</p>
+<h3 id="precision-of-computation"><a class="header" href="#precision-of-computation">Precision of computation</a></h3>
+<p>Reviews which occur with a probability smaller than 100% minus the configured precision of the computation are simulated by randomly choosing an outcome rather than taking into account each possible outcome. This setting is only applicable if the first n days are computed. 
+If Advanced Statistics are disabled, the <strong>Forecast</strong> graph shows the estimated number of reviews that will be due on a given day in the future if you do not review cards, learn no new cards and fail no cards.</p>
+<p>In summary, higher precision gives a more accurate graph, but it takes more time to compose the graph.</p>
+<h3 id="number-of-iterations-of--the-simulation"><a class="header" href="#number-of-iterations-of--the-simulation">Number of iterations of  the simulation</a></h3>
+<p>Composes the graph several times and then displays the average of these graphs.
+Each time the graph is composed, another outcome might be randomly chosen.  If we average many outcomes which are randomly chosen taking into account the probabilities from the review log, the average outcome will likely be close to the average of the probabilities from the review log.
+If we average many graphs, the average graph will likely be close to the graph which is generated by taking into account all possible outcomes.
+If the number of graphs which are averaged is not too high, it will be faster than taking into account all possible outcomes.</p>
+<p>In summary, a higher number of iterations gives a more accurate graph, but it takes more time to compose the graph.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reminders"><a class="header" href="#reminders">Reminders</a></h1>
+<p>AnkiDroid can remind you to devote some time to reviewing cards every day at a specific time via Android's notification framework.
+You can configure reminders for each options group independently.
+To configure a notification go to Deck options &gt; Reminders, then tick the checkbox and select the time you want to be notified at.
+To stop receiving notifications go to Deck options &gt; Reminders and unmark the checkbox.</p>
+<p>Notifications only work for top level decks. Please let us know if you want us to add notifications for subdecks too.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="automatic-language-selection"><a class="header" href="#automatic-language-selection">Automatic Language Selection</a></h1>
+<p>AnkiDroid has an in Automatic Language Selection feature in the Note Editor starting with AnkiDroid 2.13. This feature allows you to define a default language to be used in your keyboard for a field in a note type.</p>
+<p>For example, if you have Russian and English note fields, and your keyboard supports the setImeHintLocales Android API, the keyboard layout will switch to Russian in the first field and back to English in the second automatically when the fields get focus. <a href="https://www.youtube.com/watch?v=JrxDjTrRhBE">Checkout video reference for demonstration</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="help--support"><a class="header" href="#help--support">Help &amp; Support</a></h1>
+<h2 id="before-asking"><a class="header" href="#before-asking">Before Asking</a></h2>
+<p>Before asking for help, please try searching through the <a href="intro.html">AnkiDroid Manual</a>, the list of <a href="https://github.com/ankidroid/Anki-Android/wiki/FAQ">Frequently Asked Questions</a>, and also the main <a href="https://docs.ankiweb.net">Anki Manual</a> for general help with the Anki system and features, and any issues not limited to Android.</p>
+<h2 id="support"><a class="header" href="#support">Support</a></h2>
+<p>If you were unable to find what you needed in the documentation above, please visit the relevant site below:</p>
+<h3 id="non-android-specific-issues"><a class="header" href="#non-android-specific-issues">Non-Android-Specific Issues</a></h3>
+<p>AnkiDroid (the Android version of Anki) is created and managed independently from other Anki versions. For the PC / Web / iOS versions, and general Anki issues that are not limited to Android, please visit the main <a href="https://forums.ankiweb.net">Anki support site</a>.</p>
+<h3 id="ankidroid-questions"><a class="header" href="#ankidroid-questions">AnkiDroid Questions</a></h3>
+<p>For questions and help concerning AnkiDroid, please visit the <a href="https://groups.google.com/g/anki-android">user forum</a>, or you can send your questions to the forum's <a href="mailto:public-forum@ankidroid.org">public email address</a> if you don't want to register on the forum.</p>
+<h3 id="bug-reports-and-feature-requests"><a class="header" href="#bug-reports-and-feature-requests">Bug Reports and Feature Requests</a></h3>
+<p>For bug reports and feature requests, please search through the current list of open issues on the <a href="https://github.com/ankidroid/Anki-Android/issues">AnkiDroid issue tracker</a>, and if there are no existing issues, create a new issue including as much information as possible. 
+For bug reports, please also include the output of <strong>debug info</strong> by following the steps below: </p>
+<ol>
+<li>Open the navigation drawer by tapping the button on the top left of the screen</li>
+<li>Tap <strong>settings</strong></li>
+<li>Tap <strong>advanced</strong></li>
+<li>Tap <strong>about AnkiDroid</strong> at the bottom</li>
+<li>Tap the <strong>copy debug info</strong> button at the bottom (which copies <strong>debug info</strong> to the clipboard)</li>
+<li>If filling out the bug report on your mobile device, paste the contents of the clipboard directly to the issue. Alternatively, you can paste the contents of the clipboard into a new email, send it to yourself, then copy and paste that into the bug report from your computer.</li>
+</ol>
+<p><img src="img/DebugInfo.png" alt="DebugInfo.png" /></p>
+<p><strong>Note:</strong> if you are unable to open the app at all, so cannot even access <strong>settings</strong> then please follow <a href="https://github.com/ankidroid/Anki-Android/wiki/Unopenable-collections">these instructions</a>.</p>
+<p>This <strong>debug info</strong> is important as it allows us to match your report with our internal crash report data. </p>
+<h3 id="contributing-to-ankidroid"><a class="header" href="#contributing-to-ankidroid">Contributing to AnkiDroid</a></h3>
+<p>AnkiDroid is an open source project, and anyone is welcome to contribute (including non-developers)! For help with contributing to AnkiDroid, please first check the <a href="https://github.com/ankidroid/Anki-Android/wiki/Contributing">contribution wiki page</a>, and ask any further questions in the <a href="https://groups.google.com/g/anki-android">main forum</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="beta-testing"><a class="header" href="#beta-testing">Beta testing</a></h1>
+<p>If you want to try out the latest features in AnkiDroid, you can sign up for the beta testing program as follows:</p>
+<ol>
+<li>Visit the <a href="https://play.google.com/apps/testing/com.ichi2.anki">Google Play Beta page</a></li>
+<li>Click <strong>Become a beta tester</strong></li>
+</ol>
+<p>After following these steps, the latest beta version will automatically be installed by Google Play in the same way as ordinary updates.</p>
+<p>If you are more adventurous, you can also become an alpha tester, by joining the <a href="https://groups.google.com/g/ankidroidalphatesters">alpha testers group</a> in addition to performing the above steps for beta testing.</p>
+<p>Please submit any bugs you find in these development versions to the AnkiDroid issue tracker, as per the link:help.html[main help page].</p>
+<p>If you wish to leave the testing program at any time, simply visit the <a href="https://play.google.com/apps/testing/com.ichi2.anki">Google Play Beta page</a> and click <strong>Leave the test</strong>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="contributing-to-ankidroid-1"><a class="header" href="#contributing-to-ankidroid-1">Contributing to AnkiDroid</a></h1>
+<!-- toc -->
+<p>AnkiDroid is an open source project, and its development relies on contributions from volunteers. Here are some of the ways you can contribute to the AnkiDroid project:</p>
+<h3 id="get-involved"><a class="header" href="#get-involved">Get involved</a></h3>
+<p>Rate the app, join the <a href="https://groups.google.com/g/anki-android">AnkiDroid forum</a> and answer questions for other users, submit bug reports, become a <a href="beta-testing.html">beta tester</a>, etc. More detailed information on ways you can contribute as a non-developer can be found on the <a href="https://github.com/ankidroid/Anki-Android/wiki/Contributing">Wiki</a>.</p>
+<h3 id="translate"><a class="header" href="#translate">Translate</a></h3>
+<p>Translations of AnkiDroid and this user manual are all contributed by users, and are greatly appreciated. 
+See the <a href="https://github.com/ankidroid/Anki-Android/wiki/Contributing#translate-ankidroid">translating</a> wiki page for detailed instructions on how to contribute translations.</p>
+<h3 id="develop"><a class="header" href="#develop">Develop</a></h3>
+<p>The source code for AnkiDroid is available on our main <a href="https://github.com/ankidroid/Anki-Android">Github page</a>, and bug fixes as well as new features are very welcome. 
+Before investing a lot of time on working on a new feature, you may like to ask on the forum first if it's likely to be merged into the main project, as not all features will be accepted.
+If you are just getting started with Android programming, feel free to ask on the forum for some tips and/or tasks which are suitable for beginners.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ankidroid-changelog"><a class="header" href="#ankidroid-changelog">AnkiDroid Changelog</a></h1>
+<ul>
+<li><a href="changelog/v2.15.0-to-2.15.6.html">Version 2.15</a></li>
+<li><a href="changelog/v2.14.0-to-2.14.6.html">Version 2.14</a></li>
+<li><a href="changelog/v2.13.0-to-2.13.5.html">Version 2.13</a></li>
+<li><a href="changelog/v2.11.0-to-2.12.0.html">Version 2.11 to 2.12</a></li>
+<li><a href="changelog/v2.6-to-2.10.html">Version 2.6 to 2.10</a></li>
+<li><a href="changelog/v2.0-to-2.5.html">Version 2.0 to 2.5</a></li>
+<li><a href="changelog/v0.1-to-1.1.3.html">Version 0.1 to 1.1.3</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="version-2156-20210714"><a class="header" href="#version-2156-20210714">Version 2.15.6 (20210714)</a></h2>
+<ul>
+<li>One more crash fix, no crashes shall be left unfixed! If we can help it.</li>
+</ul>
+<h2 id="version-2155-20210713"><a class="header" href="#version-2155-20210713">Version 2.15.5 (20210713)</a></h2>
+<ul>
+<li><a href="https://opencollective.com/ankidroid">🤜🤛 Thank you! Your support makes the fixes happen!</a></li>
+<li>Full-screen navigation drawer drag is a preference, default off</li>
+<li>Floating Action Button ('+') labels are clickable again</li>
+<li>Fixed crash on first run post-install on tablets</li>
+<li>Fixed odd weekly breakdown stats chart behavior</li>
+<li>Fixed crash creating new deck from deck chooser</li>
+<li><a href="https://crowdin.com/project/ankidroid">Updated translations</a> (thank you translators!)</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/47?closed=1">Full Changelog here</a></li>
+<li>We are deep into development for v2.16 + Google Summer of Code, lots of new stuff coming</li>
+<li>Happy reviewing!</li>
+</ul>
+<h2 id="version-2154-20210602"><a class="header" href="#version-2154-20210602">Version 2.15.4 (20210602)</a></h2>
+<ul>
+<li>Saw one crash show up for 2.15.3: if you touched the 3 numbers
+instead of the deck name on the deck list on phones, it would crash</li>
+<li>Temporarily revert full screen navigation drawer option to fix</li>
+</ul>
+<h2 id="version-2153-20210602"><a class="header" href="#version-2153-20210602">Version 2.15.3 (20210602)</a></h2>
+<ul>
+<li><a href="https://opencollective.com/ankidroid">❤️  Thank you so much for the donations! We appreciate it ❤️</a></li>
+<li>Another batch of fixes stabilizing all the work done for AnkiDroid 2.15</li>
+<li>Fix &quot;Search All Decks&quot; in Card Browser not searching</li>
+<li>Make new full screen navigation drawer open optional, default off</li>
+<li>Preserve edited search in card browser if navigation drawer opens</li>
+<li>Fix crash editing Tags dialog when switching back from another app</li>
+<li>Fix incorrect cloze help link</li>
+<li>Increase touchable area of undo icon</li>
+<li>Fix legacy / handebar template parsing</li>
+<li>Fix icon sizes for notifications and search</li>
+<li>Fix audio files incorrectly importing when attached</li>
+<li>Fix deck options &quot;steps&quot; showing up with lots of decimal places</li>
+<li>Update translations, add Kannada language</li>
+<li>Fix F-Droid app store publishing</li>
+<li>Correct navigation away from and back to Changelog</li>
+<li>Fix template parsing for &quot;{{FrontSide}}&quot;</li>
+<li>Fix stats tab view layout in RTL context</li>
+<li>Fix preview of cloze cards from note editor </li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/45?closed=1">Full changelog here</a></li>
+</ul>
+<h2 id="version-2152-20210526"><a class="header" href="#version-2152-20210526">Version 2.15.2 (20210526)</a></h2>
+<ul>
+<li><a href="https://opencollective.com/ankidroid">❤️  Your donations here give us the time to work on the app, thank you! ❤️</a></li>
+<li>🔥 Hot fixes for 2.15.0 issues (See below for 2.15.0 notes 👇 it was a huge release!)</li>
+<li>2.15 should have no regressions now we think 🤞 </li>
+<li>That means we'll slow down the releases and these popups now, sorry + thank you </li>
+<li>Fix another API issue breaking card add from external apps</li>
+<li>Fix conditional template issue that caused blank cards for some</li>
+<li>Fix auto-advance ignoring &quot;no advance&quot; setting if card had audio</li>
+<li>Gracefully handle corrupt collections with invalid current decks selected</li>
+<li>Publish to Amazon App Store again (go get AnkiDroid on your Fire devices!)</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/44?closed=1">Issue tracker milestone here</a></li>
+</ul>
+<h2 id="version-2151-20210525"><a class="header" href="#version-2151-20210525">Version 2.15.1 (20210525)</a></h2>
+<ul>
+<li><a href="https://opencollective.com/ankidroid">❤️ Your donations funded this rapid set of fixes, enjoy! ❤️</a></li>
+<li>🔥 Hot fixes for 2.15.0 issues (See below for 2.15.0 notes 👇 it was a huge release!)</li>
+<li>Do not auto-update users to scheduler v2. Yet.</li>
+<li>Fix crash on undo after deck delete</li>
+<li>Try harder to successfully paste images</li>
+<li>Reviewer performance fix - only load mathjax if needed</li>
+<li>Fixed compatibility issue for 2.15 collections on 2.14</li>
+<li>Fixed API issue breaking card add from external apps</li>
+<li>Fresh language translations. See a bad translation? <a href="https://crowdin.com/project/ankidroid">You can fix it easily!</a></li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/43?closed=1">Detailed issue log</a></li>
+</ul>
+<h2 id="version-2150-20210524"><a class="header" href="#version-2150-20210524">Version 2.15.0 (20210524)</a></h2>
+<ul>
+<li><a href="https://opencollective.com/ankidroid">❤️ Your donations funded these features, enjoy! ❤️</a></li>
+<li>Thanks to <a href="https://github.com/ankidroid/Anki-Android/wiki/Google-Summer-of-Code-2021">Google Summer of Code</a> students for a HUGE effort!</li>
+<li>Way too many changes to describe, but here are the highlights:</li>
+<li>New timezone code supported for sync with AnkiDesktop!</li>
+<li>Performance, stability improvements everywhere</li>
+<li>General UI improvements (accessibility, dark mode, design, more)</li>
+<li>Many new keyboard shortcuts and gesture actions</li>
+<li>Languages: Added Odia, Malayalam; big RTL support improvements!</li>
+<li>Reviewer: Javascript API: many new methods</li>
+<li>Improved account login, sync conflict, card template UI</li>
+<li>Tags and Decks dialogs have search!</li>
+<li>Whiteboard: erase, pen colors, stroke width</li>
+<li>NoteEditor: Mathjax 3, capitalize sentences setting</li>
+<li>Huge quality improvements all over codebase, helps future developers</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/37?closed=1">🚧 Full 638 item changelog here! 🚧</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="version-2146-20210309"><a class="header" href="#version-2146-20210309">Version 2.14.6 (20210309)</a></h2>
+<ul>
+<li>Reviewer: fix &quot;my card is blank now with 2.14.5! help!&quot; 😱</li>
+<li>Reviewer: fix Android 8/8.1 review buttons disappear (finally?)</li>
+</ul>
+<h2 id="version-2145-20210307"><a class="header" href="#version-2145-20210307">Version 2.14.5 (20210307)</a></h2>
+<ul>
+<li>We really appreciate the <a href="https://opencollective.com/ankidroid">donations</a>, they paid for these fixes 🤝</li>
+<li>NoteEditor: Android 11 users can crop!</li>
+<li>NoteEditor: Canceling crop twice won't delete your image</li>
+<li>DeckList: parent limits altered to match Desktop</li>
+<li>DeckList: current deck saved as correct type</li>
+<li>SchedulerV2: allow very small delays</li>
+<li>KNOWN ISSUE: <a href="https://github.com/ankidroid/Anki-Android/issues/7369">Android 8/8.1 answer buttons disappear</a>. Use gestures as workaround.</li>
+<li>Anyone with Android 8/8.1 that reproduces this and knows how to develop Android layouts? We'd love the help!</li>
+</ul>
+<h2 id="version-2144-20210307"><a class="header" href="#version-2144-20210307">Version 2.14.4 (20210307)</a></h2>
+<ul>
+<li>Re-released immediately as 2.14.5 after release script issue 🤷😅</li>
+</ul>
+<h2 id="version-2143-20210109"><a class="header" href="#version-2143-20210109">Version 2.14.3 (20210109)</a></h2>
+<ul>
+<li><a href="https://www.youtube.com/c/TheAnKing">The AnKing</a> has graced us with a <a href="https://youtu.be/iuBU_OM9oAM">new intro video</a>! 🤓</li>
+<li>Still happily overwhelmed by the <a href="https://opencollective.com/ankidroid">donations</a> 💪</li>
+<li>Reviewer: Fix mark note keyboard shortcut</li>
+<li>NoteEditor: Fix to remove padding if removing formatting toolbar</li>
+<li>Previewer: Fix to show same card after edit</li>
+<li>Scheduler: Fix v1 scheduler completes deck when only learn cards due</li>
+</ul>
+<h2 id="version-2142-20201202"><a class="header" href="#version-2142-20201202">Version 2.14.2 (20201202)</a></h2>
+<ul>
+<li>Wow! We are humbled by the <a href="https://opencollective.com/ankidroid">donations</a> 🤯</li>
+<li>The resources are already going to contributors to improve the app! Thank you ❤️ </li>
+<li>Note Editor: Fix image crop not working first time</li>
+<li>Note Editor: Paste image at cursor not end</li>
+<li>Note Editor: Fix Ctrl+C opens preview</li>
+<li>Note Editor: Add menubar toggle to disable editing toolbar</li>
+<li>Home Screen: Fix Vivo device shortcut creation (again)</li>
+<li>Reviewer: Fix numeric keypad not working</li>
+<li>Note Editor: Fix cloze cards going to wrong deck</li>
+<li>Navigation Menu: Fix safe display app hang</li>
+<li>Preferences: Fix gestures menu translation / ordering issue</li>
+<li>Translations: thanks <a href="https://crowdin.com/project/ankidroid/activity_stream">translators!</a> - you can help too!</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/39?closed=1">Full Changelog here</a></li>
+</ul>
+<h2 id="version-2141-2020-11-23"><a class="header" href="#version-2141-2020-11-23">Version 2.14.1 (2020-11-23)</a></h2>
+<ul>
+<li>Always free, always open source, but you may <a href="https://opencollective.com/ankidroid">donate if you like 😊</a></li>
+<li>Move sync button to right of action bar (vs search)</li>
+<li>Fix duplicate note detection</li>
+<li>Fix add deck shortcut on Vivo devices</li>
+<li>Fix non-translatable 'Card Info' strings</li>
+<li>Fix suspended card handling in filtered decks</li>
+<li>Sync translations from volunteers on our crowdin.com site (thank you!)</li>
+<li>Fix crash on mismatched WebView ABIs</li>
+<li>Fix crash invalid filename handling while pasting image</li>
+<li>Fix crash selecting cards in card browser</li>
+<li>Fix crash Android 8 in card browser</li>
+<li>Fix crash in undo labeling</li>
+<li>Fix crash reset password when system browser not exported</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/38?closed=1">Full Changelog here</a></li>
+</ul>
+<h2 id="version-2140-2020-11-18"><a class="header" href="#version-2140-2020-11-18">Version 2.14.0 (2020-11-18)</a></h2>
+<ul>
+<li>Enabled Donations - we ❤️ you, <a href="https://opencollective.com/ankidroid">now you can ❤️ us 😊</a></li>
+<li>New Screen: Card Info (from Card Browser or as a Reviewer App Bar Button)</li>
+<li>New Screen: Help - easy access to manual, many community pages/manuals, donation page, translations</li>
+<li>Home screen: Add deck shortcut</li>
+<li>Deck Options: SchedV2: Support setting &quot;Hard Factor&quot; </li>
+<li>Card Browser: Add deck filtering</li>
+<li>Card Browser: Filter By Flag</li>
+<li>Card Browser: Adding cards defaults to selected deck</li>
+<li>Card Browser: Many more keyboard shortcuts</li>
+<li>Card Browser: Display the number of cards deleted when deleting a note</li>
+<li>Card Browser: Better handling of deck searches containing wildcards</li>
+<li>Reviewer: Basic Android TV Support</li>
+<li>Reviewer: New Gesture: Abort Learning &amp; Sync</li>
+<li>Reviewer: Support AnkiMobile 9-area gesture touch layout</li>
+<li>Reviewer: Improve &quot;Empty Card&quot; UX</li>
+<li>Reviewer: Keyboard shortcuts for flags (Ctrl+1...4)</li>
+<li>Note Editor: Editor Toolbar (&amp; keyboard shortcuts) - hugely requested feature!</li>
+<li>Note Editor Toolbar: Apply Custom Commands (&amp; keyboard shortcuts)</li>
+<li>Note Editor: Paste to Insert Image</li>
+<li>Note Editor: Made fields full-width</li>
+<li>Note Editor: Change Font Size for fields</li>
+<li>Note Editor: Expand/Collapse Fields</li>
+<li>Note Editor: Clear Field button</li>
+<li>Note Editor: Ctrl+Shift+[Num] to switch fields</li>
+<li>Note Editor: Improved image addition / naming</li>
+<li>Note Editor: Add preference to convert newline to HTML (or not)</li>
+<li>OS Integration: Default to &quot;Anki Card&quot; in system context menu vs &quot;Card Browser&quot;</li>
+<li>Libanki: Add FileUpload API</li>
+<li>Translations: Tagged screenshots on crowdin.com to help our translators</li>
+<li>Stability: Fix rare crashes (down to ~50/day total w/1.8million installs!)</li>
+<li>Performance: massive number of speedups</li>
+<li>Dev: Massively sped up AnkiDroid builds and improved code readability</li>
+<li>Totals: 345 code changes and hundreds of translations, made by volunteers, in 2 months</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/30?closed=1">Full Changelog here</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="version-2135-2020-10-03"><a class="header" href="#version-2135-2020-10-03">Version 2.13.5 (2020-10-03)</a></h2>
+<ul>
+<li>Fix performance for fast (&lt;1s) answers in review</li>
+<li>Add links to new Arabic help/manual translation</li>
+<li>Add back button handling to changelog display</li>
+<li>Add rate button to changelog</li>
+<li>Add warning message to handle future db upgrades</li>
+<li>Sync all translations from our volunteer translators (thanks everyone!)</li>
+</ul>
+<h2 id="version-2134-2020-09-29"><a class="header" href="#version-2134-2020-09-29">Version 2.13.4 (2020-09-29)</a></h2>
+<ul>
+<li>Fix crash showing TagsDialog</li>
+<li>Fix crash in gesture detection</li>
+<li>Improve import interrupted error message</li>
+<li>Fix scheduler counts after undo</li>
+<li>Fix Card Browser preview after sort</li>
+<li>Fix button display if answer animation incomplete</li>
+<li>Sync all translations</li>
+</ul>
+<h2 id="version-2133-2020-09-23"><a class="header" href="#version-2133-2020-09-23">Version 2.13.3 (2020-09-23)</a></h2>
+<ul>
+<li>Fix double-clicking answer buttons skipping cards</li>
+<li>Change missing media warning to twice-per-session not twice-per-deck</li>
+<li>Change answer button fade on open</li>
+<li>Updated all translations from volunteer crowdin.com site up to 20200923</li>
+</ul>
+<h2 id="version-2132-2020-09-19"><a class="header" href="#version-2132-2020-09-19">Version 2.13.2 (2020-09-19)</a></h2>
+<ul>
+<li>Fix Crash rare on Card Browser exit</li>
+<li>Fix Crash Android 4.4</li>
+<li>Fix Open Deck failures / improve related messaging</li>
+<li>Fix messaging for Xioami cloze workaround</li>
+<li>Move &quot;set field language&quot; after share on Note Editor context menu</li>
+</ul>
+<h2 id="version-2131-2020-09-17"><a class="header" href="#version-2131-2020-09-17">Version 2.13.1 (2020-09-17)</a></h2>
+<ul>
+<li>Add cloze via clipboard paste workaround on MIUI/Xiaomi devices</li>
+<li>Fix Navigation drawer respects safe display / disable animations preference</li>
+<li>Fix Reviewer buttons respect safe display / disable animations preference</li>
+<li>Fix Deck Picker bottom bar opacity</li>
+<li>Fix Error message about missing content on cards</li>
+<li>Fix crash selecting deck that disappears during sync</li>
+</ul>
+<h2 id="version-2130-2020-09-15"><a class="header" href="#version-2130-2020-09-15">Version 2.13.0 (2020-09-15)</a></h2>
+<ul>
+<li>Field tag (such as &quot;{{Front}}&quot;) appearing in a note's field will be shown as-is in cards.</li>
+<li>Add Sync icon badge when changes are pending sync (can be disabled in options)</li>
+<li>Add Edit Note from card Preview while in Card Browser</li>
+<li>Add &quot;Anki Card&quot; to system context menu (like &quot;Card Browser&quot;) - disabled by default</li>
+<li>Add Set keyboard language for specific fields in the note editor (example: one field Japanese, other field Portuguese for input).</li>
+<li>Add Keep keyboard open after adding a note</li>
+<li>Add Card properties available in JavaScript API</li>
+<li>Add JavaScript API versioning for scripts (basis for future plugins)</li>
+<li>Add Auto-Login when selecting saved user account</li>
+<li>Add Allow import of collection.anki21 files when under SchedV1</li>
+<li>Add New screen for first-time users</li>
+<li>Add Button animations when answering cards</li>
+<li>Add Note Editor: Add shortcuts Ctrl+(Alt)+Shift+C to add a cloze.</li>
+<li>Fix Some cards in learning were not shown at the right time (Only if you undo/bury/suspend/reset/reschedule and the next card goes to learning mode)</li>
+<li>Fix Selected deck has translucent background if a deck picker background is set</li>
+<li>Fix Improved preview screens</li>
+<li>Fix Better accessibility in Deck Browser for partially sighted users</li>
+<li>Fix Improve visibility of &quot;Add/Remove Option Group&quot;</li>
+<li>Fix Improved messages for sync rate limiting error</li>
+<li>Fix Improved messages for reducing study limits</li>
+<li>Fix Improved messaging when collection is missing media</li>
+<li>Fix Improve feedback when accessing Debug Info</li>
+<li>Fix Add additional warnings to reschedule dialog</li>
+<li>Fix Whiteboard pen color can be disabled by pressing icon again</li>
+<li>Fix Ensure all menu items in the reviewer can be customized by &quot;App Bar Buttons&quot; setting</li>
+<li>Fix Scheduler discrepancy handling early interval on filtered decks</li>
+<li>Fix Exports work when cards are missing media</li>
+<li>Fix Crash due to logging.</li>
+<li>Fix Toasts used to show one more card than the number of card actually reviewed during the time box</li>
+<li>Fix Handle newlines properly in Note Editor Preview</li>
+<li>Fix Improve AnkiDroid opening animation</li>
+<li>Fix Show correct answer button when answering via Keyboard</li>
+<li>Fix &quot;New Cards Added&quot; Statistic</li>
+<li>Fix Crash when inserting a cloze when selecting text from right-to-left via keyboard</li>
+<li>Fix &quot;Show Password&quot; icon revealing saved password</li>
+<li>Fix Card browser still contains card after the app goes into background</li>
+<li>Fix Daily unbury occurs during sync if necessary</li>
+<li>Fix On big screen, buttons moved during loading</li>
+<li>Translators If some text change because of minor changes (typos) you won't have to translate it again</li>
+<li>Performance improvements (specifically: initial loading of large collection (lot of decks, note type, card type, fields, long templates...), card browser, deck picker startup, next card view, undo, cancelling tasks such as computing a list of card in browser)</li>
+<li>Dev: Massive dev workflow improvements and automated checks for our translations.</li>
+<li>Dev: Implement backend for CSV Importer</li>
+<li>Dev: Improve crash reporting on app startup</li>
+<li>Dev: Massive improvement in testing, especially around scheduler / card queue behavior</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/27?closed=1">Full Changelog here</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="version-2121-2020-07-21"><a class="header" href="#version-2121-2020-07-21">Version 2.12.1 (2020-07-21)</a></h2>
+<ul>
+<li>Fix bug previewing edited notes after changing field count</li>
+<li>Fix crash previewing edited notes from dynamic decks</li>
+<li>Fix crash restarting app after a crash</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/28?closed=1">Full Changelog here</a></li>
+</ul>
+<h2 id="version-2120-2020-07-18"><a class="header" href="#version-2120-2020-07-18">Version 2.12.0 (2020-07-18)</a></h2>
+<ul>
+<li>Add Crop image feature</li>
+<li>Add Preview in note editor</li>
+<li>Add edit tags in reviewer</li>
+<li>Add volume buttons as gestures</li>
+<li>Add whiteboard pen color</li>
+<li>Add microphone tool bar in reviewer</li>
+<li>Add javascript API (check the Wiki!)</li>
+<li>Improve: app is 3MB smaller</li>
+<li>Fix: show whole tag in tags dialog</li>
+<li>Fix copy note copies tags too</li>
+<li>Fix data corruption canceling template edits</li>
+<li>performance and bug fixes everywhere!</li>
+</ul>
+<p>11 volunteers made hundreds of individual changes this release</p>
+<p><a href="https://github.com/ankidroid/Anki-Android/milestone/18?closed=1">Full Changelog here</a></p>
+<h2 id="version-2113-2020-06-17"><a class="header" href="#version-2113-2020-06-17">Version 2.11.3 (2020-06-17)</a></h2>
+<ul>
+<li>Fix out-of-memory errors when importing very large decks</li>
+<li>Fix incorrect out-of-space message on import in Android 4</li>
+<li>Fix crash if card viewer closed quickly after view</li>
+<li>Fix unzip fail on .apkg files &gt;2GB</li>
+<li>Fix crash on edit note in browser multi-select</li>
+</ul>
+<h2 id="version-2112-2020-06-10"><a class="header" href="#version-2112-2020-06-10">Version 2.11.2 (2020-06-10)</a></h2>
+<ul>
+<li>Add santali language</li>
+<li>Fix Hebrew, Indonesian, Tagalog languages</li>
+<li>Improve error reporting around apkg import failures</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/24?closed=1">Full Changelog here</a></li>
+</ul>
+<h2 id="version-2111-2020-06-08"><a class="header" href="#version-2111-2020-06-08">Version 2.11.1 (2020-06-08)</a></h2>
+<ul>
+<li>Fix crash in Card Browser multi-select mode</li>
+<li>Fix Custom Steps interval dialog space entry issue</li>
+<li>Fix flags don't export with deck</li>
+<li>Fix AnkiDroid API doesn't handle null model id (Anki Compatibility workaround)</li>
+<li>Fix translation crash in sync dialog in Azerbaijani</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/23?closed=1">Full Changelog here</a></li>
+</ul>
+<h2 id="version-2110-2020-06-05"><a class="header" href="#version-2110-2020-06-05">Version 2.11.0 (2020-06-05)</a></h2>
+<ul>
+<li>Android minimum supported version is now 4.1 / Jelly Bean / API16 (AnkiWeb Compatibility)</li>
+<li>Change sibling burying should default to off (Anki Compatibility)</li>
+<li>Change learn cards do not go in filtered decks in v1 sched (Anki Compatibility)</li>
+<li>Add Browser Appearance screen, to edit Card Browser render format (Anki Compatibility)</li>
+<li>Add guidance in Note Editor if no cards will be generated despite full fields</li>
+<li>Add all translations from our crowdin.com translation site</li>
+<li>Add ability to decrease daily limit in custom study (Anki Compatibility)</li>
+<li>Add ability to block gesture handling when tapping hints in Reviewer</li>
+<li>Add create subdeck option in deck list long-press context menu</li>
+<li>Add edit note action in Card Browser multi-select mode</li>
+<li>Add ability to turn off 'Card Browser' system text context menu item</li>
+<li>Add nightMode CSS selector for card HTML (Anki Compatibility)</li>
+<li>Add ability to change just the case of a deck name</li>
+<li>Add page-up/page-down gestures</li>
+<li>Improve gesture handling in full-screen / immersive mode</li>
+<li>Improve handling of cloze deletion in TTS mode</li>
+<li>Improve Card Browser search from Android text selection menu</li>
+<li>Improve Card Browser with default hide of media filenames</li>
+<li>Improve Reviewer auto-advance by waiting for TTS to finish</li>
+<li>Improve transparent SVG display in night mode with white background</li>
+<li>Improve anki package import handling</li>
+<li>Improve AnkiWeb login form enter button handling</li>
+<li>Improve hardware back button handling in restore from backup</li>
+<li>Improve Reviewer display of un-rendered LaTeX</li>
+<li>Improve TTS / auto-answer combination, wait for TTS before advance</li>
+<li>Workaround Firefox open downloaded deck bug</li>
+<li>Workaround crash on Samsung devices with &gt;500 deck reminders</li>
+<li>Fix card template editor mistakenly allowing add template on cloze type</li>
+<li>Fix language change preference</li>
+<li>Fix ability to unbury a deck in deck list</li>
+<li>Fix app bar item flicker during review</li>
+<li>Fix V2 scheduler learning card count after undo</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/13?closed=1">Full Changelog here</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="version-2104-2020-05-31"><a class="header" href="#version-2104-2020-05-31">Version 2.10.4 (2020-05-31)</a></h2>
+<ul>
+<li>Workaround expired AnkiWeb SSL Root certificate</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/22?closed=1">Full Changelog here</a></li>
+</ul>
+<h2 id="version-2103-2020-05-29"><a class="header" href="#version-2103-2020-05-29">Version 2.10.3 (2020-05-29)</a></h2>
+<ul>
+<li>Fix crash on no permissions on Card Browser system text menu entry</li>
+<li>Fix crash in widget if external storage unmounts</li>
+<li>Fix crash on device reboot if no permissions</li>
+<li>Fix crash if deck picker background image too large</li>
+<li>Fix crash in tags dialog</li>
+<li>Fix bad data generated for null objects (Anki compatability)</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/21?closed=1">Full Changelog here</a></li>
+</ul>
+<h2 id="version-2102-2020-05-14"><a class="header" href="#version-2102-2020-05-14">Version 2.10.2 (2020-05-14)</a></h2>
+<ul>
+<li>Fix type answer cards not rendering correctly</li>
+<li>Fix type answer card template creation on non-English new installs</li>
+<li>Fix frequent full sync caused by incorrect learning card counts</li>
+<li>Fix crash importing into fresh install with no storage permission</li>
+</ul>
+<h2 id="version-2101-2020-05-13"><a class="header" href="#version-2101-2020-05-13">Version 2.10.1 (2020-05-13)</a></h2>
+<ul>
+<li>Updated all translations from crowdin translators</li>
+<li>Fix crash note editor on rapid back button</li>
+<li>Fix crash from incorrect Thai translation</li>
+</ul>
+<h2 id="version-210-2020-05-12"><a class="header" href="#version-210-2020-05-12">Version 2.10 (2020-05-12)</a></h2>
+<ul>
+<li>Add welcome dialog explaining need for storage permission</li>
+<li>Add support for Flags on cards (including flagging by gesture)</li>
+<li>Add ability to set background image in Deck Picker</li>
+<li>Add localization of standard templates created in fresh install</li>
+<li>Add support for card javascript to reload current card programmatically</li>
+<li>Add support for restricted learning / classroom devices</li>
+<li>Add preference to disable &quot;Extended Text UI&quot; full-screen editor</li>
+<li>Add CSS style capability to heavy checkmark and down arrow in card</li>
+<li>Add display of current interval on reschedule dialog</li>
+<li>Add support for card javascript to answer cards programmatically</li>
+<li>Add ability to toggle sticky field in field editor</li>
+<li>Improve deck list newline, style, script tag handling in deck descriptions</li>
+<li>Improve whiteboard on/off state handling, especially between day/night mode</li>
+<li>Improve multi-selection options in CardBrowser</li>
+<li>Improve performance (systematic optimization process, lots of improvements!)</li>
+<li>Improve handling of erroneous notes (missing fields, improper clozes)</li>
+<li>Improve user messaging on network connection failures</li>
+<li>Improve counting of suspended/buried cards in advanced statistics</li>
+<li>Improve v2 scheduler compatibility with Anki ecosystem</li>
+<li>Improve handling / detection of full sync need</li>
+<li>Improve Anki compatibility by allowing more field/model/deck name characters</li>
+<li>Improve deck list estimated review times with human scale times</li>
+<li>Fix text scaling bug in card browser</li>
+<li>Fix crash in export while using v2 scheduler</li>
+<li>Fix Custom Tabs crash with non-default system web browser</li>
+<li>Fix issues with import of packages with long Unicode names</li>
+<li>Fix incorrect intervals on lapsed filtered v2 scheduler cards</li>
+<li>Fix multimedia editor save/cancel behavior</li>
+<li>Fix incorrect button/gesture availability while existing task is still active</li>
+<li>Fix type answer crash on invalid characters</li>
+<li>Fix cloze references not being recognized in all fields</li>
+<li>Fix invalid ability to change deck to a filtered deck</li>
+<li>Fix crashes on adding invalid images, audios, and videos</li>
+<li>Fix CardBrowser crash after deleting card</li>
+<li>Fix crash and help user if no browser detected</li>
+<li>Fix Reviewer crash if card not available</li>
+<li>Fix crash / improve import of pasted decks</li>
+<li>Fix clicking hint field blocks key input in Reviewer</li>
+<li>Fix Previewer forgetting which card to show on device rotation</li>
+<li>Fix Mathjax/cloze interactions</li>
+<li>Fix vertical alignment of touch area in full-screen review</li>
+<li>Fix handling of ':::' in deck names</li>
+<li>Fix incorrect display of HTML comments in card browser</li>
+</ul>
+<h2 id="version-297-2020-04-30"><a class="header" href="#version-297-2020-04-30">Version 2.9.7 (2020-04-30)</a></h2>
+<ul>
+<li>Fix crash / workaround deck options timer config regression in AnkiDesktop</li>
+</ul>
+<h2 id="version-296-2020-04-03"><a class="header" href="#version-296-2020-04-03">Version 2.9.6 (2020-04-03)</a></h2>
+<ul>
+<li>Fix multimedia crashes (permissions handling, image add, preview)</li>
+<li>Fix UI and crashes in database check (user dialog + exception handling)</li>
+<li>Fix Windows 10 image compatibility issue with image paths</li>
+<li>Fix AnkiDesktop sync compatibility issue if more than 1000 cards due</li>
+<li>Fix crash in card browser render</li>
+<li>Fix parsing of image tags in card browser</li>
+<li>Fix crash in StudyOptionsFragment</li>
+<li>Fix issue with deck options group changing on export</li>
+<li>Fix issue with exports containing unexpected media</li>
+<li>Fix issue with dynamic decks (crash fix, export fix)</li>
+<li>Fix high frequency issue &quot;AnkiDroid directory is inaccessible&quot;</li>
+<li>Fix high frequency WebView (card viewer) crash</li>
+<li>Add columns to card browser (due, ease, changed, created, edited)</li>
+<li>Fix card scheduler not respecting maximum intervals</li>
+<li>Fix card browser spins forever on images or empty strings</li>
+</ul>
+<h2 id="version-295-2020-03-15"><a class="header" href="#version-295-2020-03-15">Version 2.9.5 (2020-03-15)</a></h2>
+<ul>
+<li>Fix crash rendering card list while updating card browser search</li>
+<li>Fix case-sensitivity issue with pronunciation words not being found</li>
+<li>Fix crash caused by auto-sync on startup showing dialog too soon</li>
+<li>Fix crash on preview of TTS cards showing language selectiond dialog too slowly</li>
+<li>Fix crash on import if collection not found</li>
+<li>Fix Anki ecosystem deck configuration issue for Anki Desktop users &lt;= 2.16</li>
+<li>Fix crash if user attempts to open camera or gallery and no app is available</li>
+<li>Fix crash building deck reminders while deck is synchronizing</li>
+<li>Fix crash related to audio recording stop</li>
+<li>Show helpful messages if import fails because device is out of space</li>
+<li>Fix crash when taking pictures on devices with Lollipop and older</li>
+</ul>
+<h2 id="version-294-2020-02-18"><a class="header" href="#version-294-2020-02-18">Version 2.9.4 (2020-02-18)</a></h2>
+<ul>
+<li>Fix crash when fetching pronunciations in note editor</li>
+<li>Fix issue with pronunciation words not being found</li>
+<li>Fix crash on startup for users with auto-sync on startup</li>
+<li>Fix crash on deck import when app is in background</li>
+<li>Fix crash for users of Google Chrome Canary</li>
+<li>Fix crash when adding certain audio clips</li>
+<li>Fix crash related to fetching Sound metadata</li>
+<li>Fix issue where audio plays twice</li>
+</ul>
+<h2 id="version-293-2020-02-09"><a class="header" href="#version-293-2020-02-09">Version 2.9.3 (2020-02-09)</a></h2>
+<ul>
+<li>Fix issues with connection timeouts and new encryption library</li>
+<li>Fix incorrect handling of decks with ':::' in their name</li>
+</ul>
+<h2 id="version-292-2020-02-03"><a class="header" href="#version-292-2020-02-03">Version 2.9.2 (2020-02-03)</a></h2>
+<ul>
+<li>Add support for new AnkiWeb encryption changes</li>
+<li>Fix some bugs using filtered decks</li>
+<li>Fix crash on app startup with uninitialized collection</li>
+<li>Fix some issues with new cloze deletion menu</li>
+<li>Fix issue with Mathjax + cloze deletion</li>
+<li>Fix incorrect intervals bug with new scheduler</li>
+<li>Add various patches from Anki Desktop</li>
+</ul>
+<h2 id="version-291-2019-10-16"><a class="header" href="#version-291-2019-10-16">Version 2.9.1 (2019-10-16)</a></h2>
+<ul>
+<li>Fix crash reviewing on Android 5 - 7</li>
+<li>Fix crash on Hungarian translation</li>
+</ul>
+<h2 id="version-29-2019-10-14"><a class="header" href="#version-29-2019-10-14">Version 2.9 (2019-10-14)</a></h2>
+<ul>
+<li>Change to new adaptive icon</li>
+<li>Add multi-select in the card browser (delete, change deck, reschedule)</li>
+<li>Add support for new Anki 2.1 scheduler</li>
+<li>Add support for Mathjax</li>
+<li>Add ability to add local audio files to notes</li>
+<li>Add ability to specify filename and folder on export and import</li>
+<li>Add ability to insert cloze in Note Editor</li>
+<li>Add ability to reposition cards </li>
+<li>Add ability to use due reminders for specific decks</li>
+<li>Add support for gamepad input when reviewing</li>
+<li>Add support for common keyboard shortcuts from Anki Desktop</li>
+<li>Add ability to search in Card Browser for text from system context menu</li>
+<li>Add ability to recognize tts HTML elements in questions and answers</li>
+<li>Add ability to display LaTeX rendered to SVG (vs PNG) from Anki Desktop</li>
+<li>Add confirmation check for full sync trigger in preferences</li>
+<li>Fix excessive pull-to-sync false positives. Disable when not at top of page.</li>
+<li>Fix some issues with focus in Note Editor</li>
+<li>Fix media sync errors related to file creation issues</li>
+<li>Fix crash related to use of camera without permission or no camera hardware </li>
+<li>Fix crash related to Card Browser allowing preview with no cards selected</li>
+<li>Fix crash in Reviewer when collection inaccessible</li>
+<li>Fix crash related to TTS when TTS not initialized</li>
+<li>Fix crash related to sdcard mount/unmount on inaccessible collection</li>
+<li>Fix crash related to audio button being visible after loading pronunciation media</li>
+<li>Fix crash when attempting to import invalid zip files </li>
+<li>Fix crash related to switching from split-window mode to single-window mode</li>
+<li>Fix crash related to missing preferences in Preference editor</li>
+<li>Fix crash on deck selection after deleting a deck and immediately closing app</li>
+<li>Fix crash in Reviewer when non-standard browser installed</li>
+<li>Fix type-answer field showing unexpectedly after undo in Reviewer</li>
+<li>Fix incorrect display of some characters when using type-answer</li>
+<li>Fix error related to media in subfolders not showing in Reviewer</li>
+<li>Fix some issues with generated flashcard html and CSS selectors</li>
+<li>Fix some Glosbe and Beolingus regressions</li>
+<li>Fix issue where new deck was created when note type was renamed</li>
+<li>Fix add note button disappearing from Card Browser when returning from search</li>
+<li>Fix some statistics display issues </li>
+<li>Fix incorrect display of some preferences</li>
+<li>Fix invisible notification bar in NoteEditor</li>
+<li>Fix newline characters not working in cloze deletions</li>
+<li>Increase max card count display from 1000 to 99999</li>
+<li>Improve display handling of very long review intervals (&gt; 68 years)</li>
+<li>Improve next/back buttons when using Previewer on multiple cards</li>
+<li>Improve handling of selected deck between statistics, card browser and deck picker</li>
+<li>Improve Card Browser search by restoring when returning from other activities</li>
+<li>Improve card focus handling when moving between Note Editor and Card Template Editor</li>
+<li>Improve labeling of deck-group vs deck-specific options</li>
+<li>Improve formatting of HTTP error codes during sync</li>
+<li>Improve handling of multi-touch events while whiteboard displayed</li>
+<li>Improve permission dialog descriptions</li>
+<li>Improve handling of &quot;preview new cards&quot; setting when creating custom study deck</li>
+<li>Improve Navigation Drawer performance on older devices</li>
+<li>Improve database check dialog with addition progress updates during check</li>
+<li>Use different notification channels for study reminders and general notifications</li>
+<li>Drop support for Android &lt; Ice Cream Sandwich MR1 (API15, Android 4.0.3)</li>
+<li>Add support for more features on Chromebook (import, export, restore backup, camera)</li>
+<li>Add API support for card/note bury and suspend</li>
+<li>Add API to open Reviewer on specific decks from other apps</li>
+<li>Add support for HTML/Javascript debugging</li>
+<li>Add link to third party apps which support AnkiDroid API in advanced preferences</li>
+<li>Fix issue with custom sync server certificates</li>
+<li>Perform basic DB integrity check on app upgrade</li>
+<li>Introduce optional analytics reporting</li>
+</ul>
+<h2 id="version-284-2018-04-27"><a class="header" href="#version-284-2018-04-27">Version 2.8.4 (2018-04-27)</a></h2>
+<ul>
+<li>Fix error syncing due to too many card templates</li>
+</ul>
+<h2 id="version-283-2017-11-10"><a class="header" href="#version-283-2017-11-10">Version 2.8.3 (2017-11-10)</a></h2>
+<ul>
+<li>Fix crash adding a picture from camera</li>
+<li>Fix add note icon disappearing in browser after search</li>
+<li>Fix translations from Glosbe</li>
+<li>Fix crash long-tapping when no deck is selected</li>
+<li>Fix crash entering advanced settings on some devices</li>
+<li>Fix incorrect graph display in statistics</li>
+<li>Fix deck not changing properly in statistics</li>
+<li>Fix rounding error in statistics weekly breakdown</li>
+<li>Fix spurious new deck created on model rename</li>
+<li>Improve error message on exception during media sync</li>
+<li>Improve animation when transitioning between screens</li>
+<li>Use a round icon on devices that support it</li>
+</ul>
+<h2 id="version-282-2017-02-28"><a class="header" href="#version-282-2017-02-28">Version 2.8.2 (2017-02-28)</a></h2>
+<ul>
+<li>Fix bugs showing confirmation dialogs in various places</li>
+<li>Fix uncommon crash showing dialog after sync</li>
+</ul>
+<h2 id="version-281-2017-02-06"><a class="header" href="#version-281-2017-02-06">Version 2.8.1 (2017-02-06)</a></h2>
+<ul>
+<li>Allow sending exported apkg to arbitrary app (e.g. Google Drive)</li>
+<li>Allow AnkiWeb to display a warning on sync completion</li>
+<li>Fix potential full-sync after sync cancellation</li>
+<li>Fix media sync sometimes scanning all files again</li>
+<li>Fix removing $ character when importing media files</li>
+<li>Improve automatic card answer timing when audio is played</li>
+<li>Improve rendering of some statistics</li>
+<li>Fix some crashes in the Russian, Vietnamese, and Chinese translations</li>
+<li>Fix crash sending exported apkg by email. NB: Export path can no longer be modified.</li>
+</ul>
+<h2 id="version-27-2016-10-16"><a class="header" href="#version-27-2016-10-16">Version 2.7 (2016-10-16)</a></h2>
+<ul>
+<li>Add pull-to-sync feature</li>
+<li>Add option to place answer buttons at the top</li>
+<li>Add widget to directly access &quot;Add note&quot; screen</li>
+<li>Fix issue with importing whole collections and restoring backups</li>
+<li>Fix deck import failing after the first successful one</li>
+<li>Fix cards in learning queue not being randomized</li>
+<li>Fix crash with fullscreen mode and hidden answer buttons</li>
+<li>Fix rare crash when opening deck options</li>
+<li>Improve support with TalkBack</li>
+</ul>
+<h2 id="version-261-2016-07-08"><a class="header" href="#version-261-2016-07-08">Version 2.6.1 (2016-07-08)</a></h2>
+<ul>
+<li>Add card cycling in previewer (similar to desktop client)</li>
+<li>Add option to hide 'minutes left' in reviewer</li>
+<li>Fix language from app setting not always being used</li>
+<li>Fix not being able to play back new sound recording</li>
+<li>Fix potential crash on Android 2.3 (Gingerbread)</li>
+<li>Improved use of horizontal space when resizing large images</li>
+<li>Minor adjustment to black theme colors</li>
+</ul>
+<h2 id="version-26-2016-06-14"><a class="header" href="#version-26-2016-06-14">Version 2.6 (2016-06-14)</a></h2>
+<ul>
+<li>Add two new themes (black, plain), selectable in preferences</li>
+<li>Make reviewer app bar icons customizable</li>
+<li>Split &quot;hide / delete&quot; menu in reviewer into &quot;bury&quot;, &quot;suspend&quot;, &quot;delete note&quot;</li>
+<li>Reviewer undo button now removes last stroke when whiteboard in use</li>
+<li>Add menu entry to change TTS language from reviewer</li>
+<li>Add more of the statistics available on the desktop client</li>
+<li>Add &quot;advanced statistics&quot; plugin (must be enabled in advanced settings)</li>
+<li>Add setting to configure custom sync server (advanced)</li>
+<li>Fix card templates created in AnkiDroid incorrectly using bold style</li>
+<li>Fix many importing issues (behavior now consistent with the desktop client)</li>
+<li>Fix long-tapping card in browser not always working</li>
+<li>Update sound playback button image</li>
+<li>Reduce size of whiteboard and gesture area for better interoperability with full screen</li>
+<li>Improve error messages with inaccessible collections</li>
+<li>Allow auto-play of HTML media elements (for templates that enable it)</li>
+<li>Significant updates to the content provider and API (for developers; see documentation)</li>
+<li>Many small bug fixes, improvements, theme adjustments, translation updates</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="version-254-2015-12-14"><a class="header" href="#version-254-2015-12-14">Version 2.5.4 (2015-12-14)</a></h2>
+<ul>
+<li>Fix background color in overflow menu of deck picker</li>
+</ul>
+<h2 id="version-253-2015-12-14"><a class="header" href="#version-253-2015-12-14">Version 2.5.3 (2015-12-14)</a></h2>
+<ul>
+<li>Fix floating action button (blue +) interfering with deck list on Android 2.3</li>
+<li>Fix opening apkg files from Gmail</li>
+<li>Fix automatic playback of consecutive videos</li>
+<li>Add a new launch screen</li>
+<li>Improve behaviour surrounding the deck overview screen</li>
+<li>Multiple media files can now be added to one field in the note editor</li>
+<li>Don't include unused media files on export</li>
+<li>Undo behaviour is now consistent with the desktop client (can no longer undo note edits)</li>
+<li>Enhancements to sync canceling</li>
+<li>Minor performance enhancements, crash fixes, and UI tweaks</li>
+</ul>
+<h2 id="version-252-2015-12-04"><a class="header" href="#version-252-2015-12-04">Version 2.5.2 (2015-12-04)</a></h2>
+<ul>
+<li>Fix start-up crashes on Samsung devices running Android 4.2</li>
+<li>Fix crash for new users on Android 6.0</li>
+<li>Reverted to old typing method. The new method is now an option which is off by default.</li>
+<li>You can now click on the numbers in the right-most part of the deck list to open the deck overview screen</li>
+<li>Various fixes to transition animations and progress bars</li>
+<li>Add option to remove empty cards (previously only possible on desktop)</li>
+<li>Remove: Google Translate filter. In practice, this feature had no effect and is not required</li>
+<li>Remove: Google image search for multimedia card. The image search API has been discontinued by Google and no longer works</li>
+</ul>
+<h2 id="version-251-2015-12-01"><a class="header" href="#version-251-2015-12-01">Version 2.5.1 (2015-12-01)</a></h2>
+<ul>
+<li>Fix crash when loading deck list (could not open collection bug)</li>
+<li>Fix visible progress bar showing when answering card</li>
+</ul>
+<h2 id="version-25-2015-11-30"><a class="header" href="#version-25-2015-11-30">Version 2.5 (2015-11-30)</a></h2>
+<ul>
+<li>Redesign of user interface to use material design</li>
+<li>Add new dark theme</li>
+<li>Simplify the study process by bypassing deck overview screen</li>
+<li>Add ability to add, edit, delete note types</li>
+<li>Add setting to enable auto-sync and a Tasker intent to trigger sync</li>
+<li>Replace &quot;instant add&quot; feature with new API for 3rd party apps to add cards directly to AnkiDroid</li>
+<li>&quot;Type in the answer&quot; input box now built into the card html itself</li>
+<li>Make fullscreen-mode immersive and added setting to hide answer buttons when using gestures</li>
+<li>Add css class for customizing card background color when night mode is enabled</li>
+<li>Allow changing media volume from the deck picker</li>
+<li>Add ability to save and view common searches in the card browser</li>
+<li>Browser now shows full question and answer in the results by default</li>
+<li>Only show tags relevant to that deck when doing custom study by tag</li>
+<li>Fix some bugs in the widget</li>
+<li>Remove &quot;simple interface&quot;</li>
+<li>Remove support for Android version 2.1 and 2.2 (minimum is now 2.3.3)</li>
+<li>Add support for Android 6 Marshmallow</li>
+<li>Disable write-ahead-logging in sqlite database</li>
+<li>Many other bug fixes and small improvements</li>
+</ul>
+<h2 id="version-244-2015-10-20"><a class="header" href="#version-244-2015-10-20">Version 2.4.4 (2015-10-20)</a></h2>
+<ul>
+<li>Fix playback of sound files with apostrophes in file name</li>
+<li>Fix new card siblings not being buried for the same day</li>
+<li>Fix media on cards when using the Hebrew Fix option</li>
+<li>Fix crashes related to &quot;Relative overdueness&quot; and make this sort order available on AnkiDroid</li>
+<li>When mixing new and review cards, make their rotation more consistent with desktop</li>
+</ul>
+<h2 id="version-243-2015-04-21"><a class="header" href="#version-243-2015-04-21">Version 2.4.3 (2015-04-21)</a></h2>
+<ul>
+<li>Fix &quot;unknown field&quot; bug</li>
+<li>Fix crash showing welcome screen on Android 2.3</li>
+<li>Fix crash caused by widget</li>
+<li>Fix rare crash in browser</li>
+<li>Fix a couple of sync issues</li>
+<li>Fix crash starting AnkiDroid on a small number of devices</li>
+<li>Update translations</li>
+</ul>
+<h2 id="version-242-2015-03-18"><a class="header" href="#version-242-2015-03-18">Version 2.4.2 (2015-03-18)</a></h2>
+<ul>
+<li>Fix some bugs with cloze templates</li>
+<li>Fix a translation error</li>
+</ul>
+<h2 id="version-241-2015-03-15"><a class="header" href="#version-241-2015-03-15">Version 2.4.1 (2015-03-15)</a></h2>
+<ul>
+<li>Fix some bugs with filtered decks</li>
+<li>Improve importing of shared decks</li>
+<li>Open settings if AnkiDroid dir inaccesible</li>
+<li>Fix a bug with zooming</li>
+<li>Fix a bug where old card was still shown in reviewer after changing deck</li>
+<li>Fix some issues with cloze deletion</li>
+<li>Fix various crashes</li>
+<li>Update translations</li>
+</ul>
+<h2 id="version-24-2015-01-28"><a class="header" href="#version-24-2015-01-28">Version 2.4 (2015-01-28)</a></h2>
+<ul>
+<li>Move &quot;preview&quot; feature to browser</li>
+<li>Add ability to change note type of existing flashcards</li>
+<li>Add ability to view and delete card templates</li>
+<li>Fix TTS for most devices</li>
+<li>Support playback of videos (see supported formats <a href="http://developer.android.com/guide/appendix/media-formats.html">here</a>)</li>
+<li>Improve rendering of second column in browser</li>
+<li>Improve detection of swipe gestures</li>
+<li>Increase number of languages in Glosbe translator</li>
+<li>Add support for Chromebooks</li>
+<li>New crash report system</li>
+<li>Bug fixes</li>
+</ul>
+<h2 id="version-232-2014-11-06"><a class="header" href="#version-232-2014-11-06">Version 2.3.2 (2014-11-06)</a></h2>
+<ul>
+<li>Bug fixes: Sync, TTS, Remote images, Advanced editor, Export</li>
+<li>Note: This is the last version of AnkiDroid supported by AnkiWeb. Previous versions will not sync.</li>
+</ul>
+<h2 id="version-23-2014-10-27"><a class="header" href="#version-23-2014-10-27">Version 2.3 (2014-10-27)</a></h2>
+<ul>
+<li>Add new user manual</li>
+<li>Make statistics identical to Anki Desktop</li>
+<li>Fixes to media sync</li>
+<li>Fix bug where images were not showing</li>
+<li>Change layout of note editor</li>
+<li>Add new disable whiteboard option to reviewer and update icons</li>
+<li>Add full support for APKG export and import</li>
+<li>Add feature to email exported APKG</li>
+<li>Increase default number of backups and use APKG</li>
+<li>Make preview card accessible from card browser</li>
+<li>Make shared decks download with Android browser</li>
+<li>Add reset and reschedule feature in note editor</li>
+<li>Add a new notification system and icon</li>
+<li>Replace tutorial deck with new welcome screen</li>
+<li>Disable opening navigation drawer from reviewer when swipe is used</li>
+<li>Improve audio recording quality</li>
+<li>Support sticky fields when enabled in Anki Desktop</li>
+<li>Many other bug fixes</li>
+</ul>
+<h2 id="version-223-2014-08-04"><a class="header" href="#version-223-2014-08-04">Version 2.2.3 (2014-08-04)</a></h2>
+<ul>
+<li>New media sync protocol</li>
+<li>Fix 2 bugs for opening links and resuming the app</li>
+</ul>
+<h2 id="version-22-2014-07-21"><a class="header" href="#version-22-2014-07-21">Version 2.2 (2014-07-21)</a></h2>
+<ul>
+<li>Redesign layout</li>
+<li>Add pictures and sounds to flashcards (experimental)</li>
+<li>Make second column in card browser configurable</li>
+<li>Make images on flashcards zoomable</li>
+<li>Improve preview feature and access via action bar</li>
+<li>Simplify menus and settings</li>
+<li>Make slow searches in card browser cancellable</li>
+<li>Improve adding/removing tags</li>
+<li>Fix &quot;type in the answer&quot; and cloze deletion features</li>
+<li>Fix whiteboard feature</li>
+<li>Restore backups from within the app</li>
+<li>Make volume duck on any background music when sounds played</li>
+<li>Make playing of sounds consistent with Desktop version</li>
+<li>Remove animations feature due to being buggy</li>
+<li>Improve speed of showing cards</li>
+<li>Remove duplicate check dialog when adding new flashcards</li>
+<li>Remove swap button when adding or editing flashcards</li>
+<li>Remove kanji info feature (will become optional plugin in the future)</li>
+<li>Make minimum Android version 2.1</li>
+<li>Fix lots of bugs</li>
+</ul>
+<h2 id="version-213-2014-04-05"><a class="header" href="#version-213-2014-04-05">Version 2.1.3 (2014-04-05)</a></h2>
+<ul>
+<li>Create new notes in correct deck</li>
+<li>TTS fixes</li>
+</ul>
+<h2 id="version-21-2014-03-27"><a class="header" href="#version-21-2014-03-27">Version 2.1 (2014-03-27)</a></h2>
+<ul>
+<li>Lots of Bug Fixes</li>
+<li>New custom study option with improved tag selection</li>
+<li>New preview card feature in note editor (experimental)</li>
+<li>New override font preference in addition to default font</li>
+<li>New &quot;Kanji Info&quot; feature (enabled in preferences-&gt;reviewing-&gt;Kanji Info)</li>
+<li>Improve Aedict integration</li>
+<li>Support for Samsung Multi-Window</li>
+<li>Fix Some TTS Issues</li>
+<li>Updated Translations</li>
+<li>Remove unused media check when deleting decks</li>
+<li>Significantly increase speed for reducing filtered decks</li>
+<li>Remove upgrade wizard</li>
+</ul>
+<h2 id="version-204-2014-02-03"><a class="header" href="#version-204-2014-02-03">Version 2.0.4 (2014-02-03)</a></h2>
+<ul>
+<li>Fix issue with typing answers</li>
+<li>Default font now overrides card font</li>
+<li>Fixed audio playback image being covered by text on Android 2.3</li>
+<li>Fixed reviewer crash when language set to Romanian</li>
+<li>Translation fixes</li>
+</ul>
+<h2 id="version-202-2013-12-15"><a class="header" href="#version-202-2013-12-15">Version 2.0.2 (2013-12-15)</a></h2>
+<ul>
+<li>Fixed lots of crashes</li>
+<li>Tablet UI fixes</li>
+<li>Fixed new card ordering issues</li>
+<li>Card appearance now matches desktop Anki. (Centering cards is off by default but can be re-enabled)</li>
+<li>Option groups can now be changed in AnkiDroid</li>
+<li>Clear error message when using a bad template</li>
+<li>Fixed timeboxing notifications</li>
+<li>Properly scale images</li>
+<li>Better custom font handling</li>
+<li>More settings (next day starts at, timeboxing value, etc.)</li>
+<li>Changing AnkiDroid interface language now works.</li>
+<li>Fixed import/shared deck download issues (&quot;not a valid apkg file&quot;)</li>
+<li>Fixed invisible text on Motorola devices</li>
+<li>Focus on answer when revealed</li>
+<li>Filtered decks are now blue in deck list</li>
+<li>Removed unused circle button in note editor</li>
+</ul>
+<h2 id="version-201-2013-02-06"><a class="header" href="#version-201-2013-02-06">Version 2.0.1 (2013-02-06)</a></h2>
+<ul>
+<li>Upgrade wizard</li>
+<li>Fix importing apkgs</li>
+<li>Fix media syncing</li>
+</ul>
+<h2 id="version-20-2013-01-03"><a class="header" href="#version-20-2013-01-03">Version 2.0 (2013-01-03)</a></h2>
+<ul>
+<li>complete revision</li>
+<li>libanki2.0 scheduling</li>
+<li>new learning mode</li>
+<li>new layout</li>
+<li>merge syncing possible now</li>
+<li>better statistics</li>
+<li>decks are now saved in a single collection</li>
+<li>options are shareable now</li>
+<li>tablet layout</li>
+<li>tons of performance improvements</li>
+<li>card import function</li>
+<li>collection can be saved on internal memory</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="version-01-to-113"><a class="header" href="#version-01-to-113">Version 0.1 to 1.1.3</a></h2>
+<p>AnkiDroid has continuously evolved collectively as an open source project, with the first version released to the Google Market on <a href="http://nicolas-raoul.blogspot.jp/2009/06/just-published-ankidroid-on-market.html">June 28 2009</a>. </p>
+<p>Version 1.1.3 was the last 1.x version (released on 26th June 2012), before the incompatible AnkiDroid v2.0 was released, 
+essentially rewritten from scratch to be compatible with the new Anki Desktop v2.0.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>

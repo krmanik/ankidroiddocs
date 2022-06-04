@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Preferences - AnkiDroid Manual</title>
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="css/kbd.css">
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="intro.html">Introduction</a></li><li class="chapter-item "><a href="getting-started.html"><strong aria-hidden="true">1.</strong> Getting started</a></li><li class="chapter-item "><a href="deck-picker.html"><strong aria-hidden="true">2.</strong> The Deck List</a></li><li class="chapter-item "><a href="drawer.html"><strong aria-hidden="true">3.</strong> Navigation Drawer</a></li><li class="chapter-item "><a href="deck-overview.html"><strong aria-hidden="true">4.</strong> Deck Overview Screen</a></li><li class="chapter-item "><a href="reviewer.html"><strong aria-hidden="true">5.</strong> Study Screen</a></li><li class="chapter-item "><a href="adding-notes.html"><strong aria-hidden="true">6.</strong> Add Note Screen</a></li><li class="chapter-item "><a href="editing-notes.html"><strong aria-hidden="true">7.</strong> Edit Note Screen</a></li><li class="chapter-item "><a href="browser.html"><strong aria-hidden="true">8.</strong> Finding/Searching/Browsing</a></li><li class="chapter-item "><a href="filtered-deck.html"><strong aria-hidden="true">9.</strong> Filtered Decks</a></li><li class="chapter-item "><a href="importing/importing-anki-files.html"><strong aria-hidden="true">10.</strong> Importing Anki Files</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="importing/importing-anki-databases.html"><strong aria-hidden="true">10.1.</strong> Importing Anki Databases (.anki2)</a></li></ol></li><li class="chapter-item "><a href="exporting.html"><strong aria-hidden="true">11.</strong> Exporting Anki Files</a></li><li class="chapter-item "><a href="backups.html"><strong aria-hidden="true">12.</strong> Automatic Backups</a></li><li class="chapter-item expanded "><a href="settings.html" class="active"><strong aria-hidden="true">13.</strong> Preferences</a></li><li class="chapter-item "><a href="gestures.html"><strong aria-hidden="true">14.</strong> Gestures</a></li><li class="chapter-item "><a href="note-formatting-toolbar.html"><strong aria-hidden="true">15.</strong> Note Formatting Toolbar</a></li><li class="chapter-item "><a href="keyboard-shortcuts.html"><strong aria-hidden="true">16.</strong> Keyboard Shortcuts</a></li><li class="chapter-item "><a href="rtl.html"><strong aria-hidden="true">17.</strong> Using Right-To-Left Languages with AnkiDroid</a></li><li class="chapter-item "><a href="anki-desktop.html"><strong aria-hidden="true">18.</strong> Using Anki Desktop with AnkiDroid</a></li><li class="chapter-item "><a href="ankiweb-conflicts.html"><strong aria-hidden="true">19.</strong> Dealing with merge conflicts on AnkiWeb</a></li><li class="chapter-item "><a href="advanced-features/intro.html"><strong aria-hidden="true">20.</strong> Advanced Features</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="advanced-features/mathjax.html"><strong aria-hidden="true">20.1.</strong> MathJax Support</a></li><li class="chapter-item "><a href="advanced-features/reverse-cards.html"><strong aria-hidden="true">20.2.</strong> Reverse Cards</a></li><li class="chapter-item "><a href="advanced-features/custom-fonts.html"><strong aria-hidden="true">20.3.</strong> Custom Fonts</a></li><li class="chapter-item "><a href="advanced-features/customizing-card-layout.html"><strong aria-hidden="true">20.4.</strong> Custom Card Layout</a></li><li class="chapter-item "><a href="advanced-features/type-in-answer.html"><strong aria-hidden="true">20.5.</strong> Type in the answer feature</a></li><li class="chapter-item "><a href="advanced-features/advanced-statistics.html"><strong aria-hidden="true">20.6.</strong> Advanced Statistics</a></li><li class="chapter-item "><a href="advanced-features/reminders.html"><strong aria-hidden="true">20.7.</strong> Reminders</a></li><li class="chapter-item "><a href="advanced-features/set-language-hint.html"><strong aria-hidden="true">20.8.</strong> Automatic Language Selection</a></li></ol></li><li class="chapter-item "><a href="help.html"><strong aria-hidden="true">21.</strong> Help &amp; Supports</a></li><li class="chapter-item "><a href="beta-testing.html"><strong aria-hidden="true">22.</strong> Beta testing</a></li><li class="chapter-item "><a href="contributing.html"><strong aria-hidden="true">23.</strong> Contributing to AnkiDroid</a></li><li class="chapter-item "><a href="changelog/intro.html"><strong aria-hidden="true">24.</strong> Changelog</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="changelog/v2.15.0-to-2.15.6.html"><strong aria-hidden="true">24.1.</strong> Version 2.15</a></li><li class="chapter-item "><a href="changelog/v2.14.0-to-2.14.6.html"><strong aria-hidden="true">24.2.</strong> Version 2.14</a></li><li class="chapter-item "><a href="changelog/v2.13.0-to-2.13.5.html"><strong aria-hidden="true">24.3.</strong> Version 2.13</a></li><li class="chapter-item "><a href="changelog/v2.11.0-to-2.12.0.html"><strong aria-hidden="true">24.4.</strong> Version 2.11 to 2.12</a></li><li class="chapter-item "><a href="changelog/v2.6-to-2.10.html"><strong aria-hidden="true">24.5.</strong> Version 2.6 to 2.10</a></li><li class="chapter-item "><a href="changelog/v2.0-to-2.5.html"><strong aria-hidden="true">24.6.</strong> Version 2.0 to 2.5</a></li><li class="chapter-item "><a href="changelog/v0.1-to-1.1.3.html"><strong aria-hidden="true">24.7.</strong> Version 0.1 to 1.1.3</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AnkiDroid Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ankidroid/ankidroiddocs/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="preferences"><a class="header" href="#preferences">Preferences</a></h1>
+<!-- toc -->
+<p>The preferences screen can be accessed by opening the navigation drawer, and choosing <strong>Settings</strong>. It allows you to customize various application settings and how AnkiDroid appears.</p>
+<p>The Preferences screen is divided up into different sections, which are covered below.</p>
+<h2 id="ankidroid"><a class="header" href="#ankidroid">AnkiDroid</a></h2>
+<p>These are the general settings which affect the whole app:</p>
+<h4 id="ankiweb-account"><a class="header" href="#ankiweb-account">AnkiWeb account</a></h4>
+<p>Change the account used for syncing with the cloud. For more information on syncing, please see <a href="anki-desktop.html">this section</a>.</p>
+<h4 id="fetch-media-on-sync"><a class="header" href="#fetch-media-on-sync">Fetch media on sync</a></h4>
+<p>By default, AnkiDroid will sync sounds and images as well as your cards and review history. 
+If you disable this option, sounds and images will not be downloaded from or uploaded to the sync server by AnkiDroid.</p>
+<h4 id="automatic-synchronization"><a class="header" href="#automatic-synchronization">Automatic synchronization</a></h4>
+<p>Enable this option if you want AnkiDroid to sync every time you open and close the app. There is a limit of once every ten minutes for this behavior. Once a sync begins you can cancel it by pressing your device's back button, however it can take some time for the cancellation to take effect.</p>
+<p>Users that want more fine-grained control over when sync occurred might like to use a 3rd party app like Tasker to automate synchronization. See the <a href="https://github.com/ankidroid/Anki-Android/wiki/AnkiDroid-API#sync-intent">API documentation</a> for more information on this.</p>
+<h4 id="deck-for-new-cards"><a class="header" href="#deck-for-new-cards">Deck for new cards</a></h4>
+<p>The default of <strong>Use current deck</strong> means that Anki saves the last-used note type for each deck and selects it again then next time you choose the deck (and, in addition, will start with the current deck selected when choosing Add from anywhere). The other option, <strong>Decide by note type,</strong> saves the last-used deck for each note type (and opens the add window to the last-used note type when you choose Add). This may be more convenient if you always use a single note type for each deck.</p>
+<h4 id="language"><a class="header" href="#language">Language</a></h4>
+<p>Change the language. Note: AnkiDroid translations are contributed by volunteers. If you find missing or incorrect translations, feel free to contribute to the translation project. More details can be found on the <a href="https://github.com/ankidroid/Anki-Android/wiki/Contributing#translate-ankidroid">AnkiDroid Wiki</a>.</p>
+<h4 id="error-reporting-mode"><a class="header" href="#error-reporting-mode">Error reporting mode</a></h4>
+<p>Control whether or not AnkiDroid asks your permission before sending error reports to our error reporting system when AnkiDroid crashes. You can also disable the reporting feature entirely if you wish.</p>
+<h2 id="notifications"><a class="header" href="#notifications">Notifications</a></h2>
+<p>This subsection allows you configure when and how AnkiDroid shows alerts in the Android notification bar.</p>
+<h4 id="notify-when"><a class="header" href="#notify-when">Notify when</a></h4>
+<p><strong>Never notify</strong> will disable all notifications from AnkiDroid. <strong>Pending messages available</strong> will only show important status updates like when a sync completed. <strong>More than n cards due</strong> will show a notification when you have more than n cards due (requires the widget to be enabled).</p>
+<h4 id="vibrate"><a class="header" href="#vibrate">Vibrate</a></h4>
+<p>Checking this will make your device vibrate when showing a notification</p>
+<h4 id="blink-light"><a class="header" href="#blink-light">Blink light</a></h4>
+<p>Checking this will make your device light blink when an unread notification exists (if your device has a notification LED)</p>
+<h2 id="reviewing"><a class="header" href="#reviewing">Reviewing</a></h2>
+<p>The reviewing screen allows you to customize how AnkiDroid behaves when you're
+reviewing cards. Note that only the reviewing settings which are applied to <strong>all decks</strong> are shown here. There are more settings related to reviewing which are <strong>deck specific</strong>. These deck specific settings are located in <strong>Deck options</strong>.</p>
+<h4 id="new-card-position"><a class="header" href="#new-card-position">New card position</a></h4>
+<p>Controls when new cards are shown: either mixed with, after, or before all reviews.</p>
+<h4 id="start-of-next-day"><a class="header" href="#start-of-next-day">Start of next day</a></h4>
+<p>Controls when AnkiDroid should start showing the next day's cards. 
+The default setting of 4AM ensures that if you're studying around midnight, you won't have two days worth of cards shown to you in one session. If you stay up very late or wake up very early, you may want to adjust this to a time you're usually sleeping.</p>
+<h4 id="learn-ahead-limit"><a class="header" href="#learn-ahead-limit">Learn ahead limit</a></h4>
+<p>The Learn ahead limit tells AnkiDroid how to behave when there is nothing left to study in the current deck but cards in learning. The default setting of 20 minutes tells AnkiDroid that cards should be shown early if they are due to be shown in less than 20 minutes and there's nothing else to do. If you set this to 0, Anki will always wait the full period, showing the congratulations screen until the remaining cards are ready to be reviewed.</p>
+<h4 id="timebox-limit"><a class="header" href="#timebox-limit">Timebox limit</a></h4>
+<p>Timeboxing is a technique to help you focus by dividing a longer activity (such as a 30 minute study session) into smaller blocks. If you set the timebox time limit to a non-zero number of minutes, AnkiDroid will periodically show a message saying you how many cards you've managed to study during the prescribed time limit.</p>
+<h2 id="display"><a class="header" href="#display">Display</a></h2>
+<p>This subsection relates to the way cards are displayed during reviewing</p>
+<h4 id="keep-screen-on"><a class="header" href="#keep-screen-on">Keep screen on</a></h4>
+<p>Ignore the automatic screen timeout setting in Android to always keep the screen on.</p>
+<h4 id="fullscreen-mode"><a class="header" href="#fullscreen-mode">Fullscreen mode</a></h4>
+<p>Switches to an immersive fullscreen mode so that you can use more of the screen. You can choose between <strong>Hide the system bars</strong> which will hide the system status bar, action bar, and bottom navigation buttons. Alternatively you can choose <strong>Hide the system bars and answer buttons</strong>, which will hide everything except for the actual card content itself. You can temporarily exit fullscreen mode by swiping inwards (i.e. down or up) from the system bars.</p>
+<p><em>Note that immersive fullscreen mode is only supported on Android 4.4+</em></p>
+<h4 id="center-align"><a class="header" href="#center-align">Center align</a></h4>
+<p>By default AnkiDroid tries to show cards exactly as they are shown on Anki Desktop, however if you prefer your cards to be center aligned vertically in AnkiDroid then you can enable this feature.</p>
+<h4 id="show-button-time"><a class="header" href="#show-button-time">Show button time</a></h4>
+<p>By default, the answer buttons will display the time a card will next be shown. If you disable this option, the times will not appear, and only labels like <strong>Again</strong>, <strong>Good</strong> and <strong>Easy</strong> will be shown.</p>
+<h4 id="card-zoom"><a class="header" href="#card-zoom">Card zoom</a></h4>
+<p>Here you can increase the zoom level of the card content (excluding images). You can use this option if you want to increase the font size for all cards.</p>
+<h4 id="image-zoom"><a class="header" href="#image-zoom">Image zoom</a></h4>
+<p>Here you can increase the zoom level of any images embedded in your cards.</p>
+<h4 id="answer-button-size"><a class="header" href="#answer-button-size">Answer button size</a></h4>
+<p>If you find it difficult to press the answer button, you can use this setting to make it bigger.</p>
+<h4 id="show-remaining"><a class="header" href="#show-remaining">Show remaining</a></h4>
+<p>Disabling this allows you to hide the card count in the top left of the screen.</p>
+<h2 id="whiteboard"><a class="header" href="#whiteboard">Whiteboard</a></h2>
+<p>This subsection controls the whiteboard in the reviewer.
+Note: the whiteboard must be enabled in each deck individually from the menu in the study screen.</p>
+<h4 id="stroke-width"><a class="header" href="#stroke-width">Stroke width</a></h4>
+<p>Control the stroke width of the whiteboard. Reducing the stroke width may allow you to draw with more detail.</p>
+<h4 id="black-strokes"><a class="header" href="#black-strokes">Black strokes</a></h4>
+<p>Use black strokes instead of color, which may reduce memory usage. Note: this setting doesn't apply when night mode is enabled.</p>
+<h2 id="automatic-display-answer"><a class="header" href="#automatic-display-answer">Automatic display answer</a></h2>
+<p>The automatic display answer feature allows you to have the answer shown automatically after some timeout period. You can also have the next question shown automatically; in this case the card is assumed to be failed (i.e. the again button is automatically chosen)</p>
+<h4 id="time-to-show-answer"><a class="header" href="#time-to-show-answer">Time to show answer</a></h4>
+<p>Time to wait until answer is automatically shown</p>
+<h4 id="time-to-show-next-question"><a class="header" href="#time-to-show-next-question">Time to show next question</a></h4>
+<p>Time to wait until next question is automatically shown.</p>
+<h2 id="fonts"><a class="header" href="#fonts">Fonts</a></h2>
+<p>In this screen you can change the font used by AnkiDroid, and some scaling options related to fonts. 
+See the <a href="advanced-features/custom-fonts.html">custom fonts</a> section for more information about using custom fonts.</p>
+<h4 id="default-font"><a class="header" href="#default-font">Default font</a></h4>
+<p>Choose the default font used by the AnkiDroid reviewer. You can add fonts to this list by copying them to the <strong>fonts</strong> folder.</p>
+<h4 id="default-font-applicability"><a class="header" href="#default-font-applicability">Default font applicability</a></h4>
+<p>The default setting is to only use the default font when no font has been specified in the card styling via Anki Desktop, however you can also force the default font to be applied, ignoring any font specification in the card styling.</p>
+<h4 id="browser-and-editor-font"><a class="header" href="#browser-and-editor-font">Browser and editor font</a></h4>
+<p>The font to be used by the browser and editor</p>
+<h4 id="card-browser-font-scaling"><a class="header" href="#card-browser-font-scaling">Card browser font scaling</a></h4>
+<p>Lets you change the font size used in the card browser.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="backups.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="gestures.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="backups.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="gestures.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
