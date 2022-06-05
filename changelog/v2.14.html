@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Version 2.14 - AnkiDroid Manual</title>
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="v2.15.html"><strong aria-hidden="true">1.</strong> Version 2.15</a></li><li class="chapter-item expanded "><a href="v2.14.html" class="active"><strong aria-hidden="true">2.</strong> Version 2.14</a></li><li class="chapter-item "><a href="v2.13.html"><strong aria-hidden="true">3.</strong> Version 2.13</a></li><li class="chapter-item "><a href="v2.12.html"><strong aria-hidden="true">4.</strong> Version 2.12</a></li><li class="chapter-item "><a href="v2.11.html"><strong aria-hidden="true">5.</strong> Version 2.11</a></li><li class="chapter-item "><a href="v2.10.html"><strong aria-hidden="true">6.</strong> Version 2.10</a></li><li class="chapter-item "><a href="v2.9.html"><strong aria-hidden="true">7.</strong> Version 2.9</a></li><li class="chapter-item "><a href="v2.8.html"><strong aria-hidden="true">8.</strong> Version 2.8</a></li><li class="chapter-item "><a href="v2.7.html"><strong aria-hidden="true">9.</strong> Version 2.7</a></li><li class="chapter-item "><a href="v2.6.html"><strong aria-hidden="true">10.</strong> Version 2.6</a></li><li class="chapter-item "><a href="v2.5.html"><strong aria-hidden="true">11.</strong> Version 2.5</a></li><li class="chapter-item "><a href="v2.4.html"><strong aria-hidden="true">12.</strong> Version 2.4</a></li><li class="chapter-item "><a href="v2.3.html"><strong aria-hidden="true">13.</strong> Version 2.3</a></li><li class="chapter-item "><a href="v2.2.html"><strong aria-hidden="true">14.</strong> Version 2.2</a></li><li class="chapter-item "><a href="v2.1.html"><strong aria-hidden="true">15.</strong> Version 2.1</a></li><li class="chapter-item "><a href="v2.0.html"><strong aria-hidden="true">16.</strong> Version 2.0</a></li><li class="chapter-item "><a href="v0.1-to-1.1.3.html"><strong aria-hidden="true">17.</strong> Version 0.1 to 1.1.3</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AnkiDroid Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ankidroid/ankidroiddocs/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="version-2146-20210309"><a class="header" href="#version-2146-20210309">Version 2.14.6 (20210309)</a></h2>
+<ul>
+<li>Reviewer: fix &quot;my card is blank now with 2.14.5! help!&quot; 😱</li>
+<li>Reviewer: fix Android 8/8.1 review buttons disappear (finally?)</li>
+</ul>
+<h2 id="version-2145-20210307"><a class="header" href="#version-2145-20210307">Version 2.14.5 (20210307)</a></h2>
+<ul>
+<li>We really appreciate the <a href="https://opencollective.com/ankidroid">donations</a>, they paid for these fixes 🤝</li>
+<li>NoteEditor: Android 11 users can crop!</li>
+<li>NoteEditor: Canceling crop twice won't delete your image</li>
+<li>DeckList: parent limits altered to match Desktop</li>
+<li>DeckList: current deck saved as correct type</li>
+<li>SchedulerV2: allow very small delays</li>
+<li>KNOWN ISSUE: <a href="https://github.com/ankidroid/Anki-Android/issues/7369">Android 8/8.1 answer buttons disappear</a>. Use gestures as workaround.</li>
+<li>Anyone with Android 8/8.1 that reproduces this and knows how to develop Android layouts? We'd love the help!</li>
+</ul>
+<h2 id="version-2144-20210307"><a class="header" href="#version-2144-20210307">Version 2.14.4 (20210307)</a></h2>
+<ul>
+<li>Re-released immediately as 2.14.5 after release script issue 🤷😅</li>
+</ul>
+<h2 id="version-2143-20210109"><a class="header" href="#version-2143-20210109">Version 2.14.3 (20210109)</a></h2>
+<ul>
+<li><a href="https://www.youtube.com/c/TheAnKing">The AnKing</a> has graced us with a <a href="https://youtu.be/iuBU_OM9oAM">new intro video</a>! 🤓</li>
+<li>Still happily overwhelmed by the <a href="https://opencollective.com/ankidroid">donations</a> 💪</li>
+<li>Reviewer: Fix mark note keyboard shortcut</li>
+<li>NoteEditor: Fix to remove padding if removing formatting toolbar</li>
+<li>Previewer: Fix to show same card after edit</li>
+<li>Scheduler: Fix v1 scheduler completes deck when only learn cards due</li>
+</ul>
+<h2 id="version-2142-20201202"><a class="header" href="#version-2142-20201202">Version 2.14.2 (20201202)</a></h2>
+<ul>
+<li>Wow! We are humbled by the <a href="https://opencollective.com/ankidroid">donations</a> 🤯</li>
+<li>The resources are already going to contributors to improve the app! Thank you ❤️ </li>
+<li>Note Editor: Fix image crop not working first time</li>
+<li>Note Editor: Paste image at cursor not end</li>
+<li>Note Editor: Fix Ctrl+C opens preview</li>
+<li>Note Editor: Add menubar toggle to disable editing toolbar</li>
+<li>Home Screen: Fix Vivo device shortcut creation (again)</li>
+<li>Reviewer: Fix numeric keypad not working</li>
+<li>Note Editor: Fix cloze cards going to wrong deck</li>
+<li>Navigation Menu: Fix safe display app hang</li>
+<li>Preferences: Fix gestures menu translation / ordering issue</li>
+<li>Translations: thanks <a href="https://crowdin.com/project/ankidroid/activity_stream">translators!</a> - you can help too!</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/39?closed=1">Full Changelog here</a></li>
+</ul>
+<h2 id="version-2141-2020-11-23"><a class="header" href="#version-2141-2020-11-23">Version 2.14.1 (2020-11-23)</a></h2>
+<ul>
+<li>Always free, always open source, but you may <a href="https://opencollective.com/ankidroid">donate if you like 😊</a></li>
+<li>Move sync button to right of action bar (vs search)</li>
+<li>Fix duplicate note detection</li>
+<li>Fix add deck shortcut on Vivo devices</li>
+<li>Fix non-translatable 'Card Info' strings</li>
+<li>Fix suspended card handling in filtered decks</li>
+<li>Sync translations from volunteers on our crowdin.com site (thank you!)</li>
+<li>Fix crash on mismatched WebView ABIs</li>
+<li>Fix crash invalid filename handling while pasting image</li>
+<li>Fix crash selecting cards in card browser</li>
+<li>Fix crash Android 8 in card browser</li>
+<li>Fix crash in undo labeling</li>
+<li>Fix crash reset password when system browser not exported</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/38?closed=1">Full Changelog here</a></li>
+</ul>
+<h2 id="version-2140-2020-11-18"><a class="header" href="#version-2140-2020-11-18">Version 2.14.0 (2020-11-18)</a></h2>
+<ul>
+<li>Enabled Donations - we ❤️ you, <a href="https://opencollective.com/ankidroid">now you can ❤️ us 😊</a></li>
+<li>New Screen: Card Info (from Card Browser or as a Reviewer App Bar Button)</li>
+<li>New Screen: Help - easy access to manual, many community pages/manuals, donation page, translations</li>
+<li>Home screen: Add deck shortcut</li>
+<li>Deck Options: SchedV2: Support setting &quot;Hard Factor&quot; </li>
+<li>Card Browser: Add deck filtering</li>
+<li>Card Browser: Filter By Flag</li>
+<li>Card Browser: Adding cards defaults to selected deck</li>
+<li>Card Browser: Many more keyboard shortcuts</li>
+<li>Card Browser: Display the number of cards deleted when deleting a note</li>
+<li>Card Browser: Better handling of deck searches containing wildcards</li>
+<li>Reviewer: Basic Android TV Support</li>
+<li>Reviewer: New Gesture: Abort Learning &amp; Sync</li>
+<li>Reviewer: Support AnkiMobile 9-area gesture touch layout</li>
+<li>Reviewer: Improve &quot;Empty Card&quot; UX</li>
+<li>Reviewer: Keyboard shortcuts for flags (Ctrl+1...4)</li>
+<li>Note Editor: Editor Toolbar (&amp; keyboard shortcuts) - hugely requested feature!</li>
+<li>Note Editor Toolbar: Apply Custom Commands (&amp; keyboard shortcuts)</li>
+<li>Note Editor: Paste to Insert Image</li>
+<li>Note Editor: Made fields full-width</li>
+<li>Note Editor: Change Font Size for fields</li>
+<li>Note Editor: Expand/Collapse Fields</li>
+<li>Note Editor: Clear Field button</li>
+<li>Note Editor: Ctrl+Shift+[Num] to switch fields</li>
+<li>Note Editor: Improved image addition / naming</li>
+<li>Note Editor: Add preference to convert newline to HTML (or not)</li>
+<li>OS Integration: Default to &quot;Anki Card&quot; in system context menu vs &quot;Card Browser&quot;</li>
+<li>Libanki: Add FileUpload API</li>
+<li>Translations: Tagged screenshots on crowdin.com to help our translators</li>
+<li>Stability: Fix rare crashes (down to ~50/day total w/1.8million installs!)</li>
+<li>Performance: massive number of speedups</li>
+<li>Dev: Massively sped up AnkiDroid builds and improved code readability</li>
+<li>Totals: 345 code changes and hundreds of translations, made by volunteers, in 2 months</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/30?closed=1">Full Changelog here</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="v2.15.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="v2.13.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="v2.15.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="v2.13.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

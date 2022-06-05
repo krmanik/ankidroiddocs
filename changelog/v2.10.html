@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Version 2.10 - AnkiDroid Manual</title>
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="v2.15.html"><strong aria-hidden="true">1.</strong> Version 2.15</a></li><li class="chapter-item "><a href="v2.14.html"><strong aria-hidden="true">2.</strong> Version 2.14</a></li><li class="chapter-item "><a href="v2.13.html"><strong aria-hidden="true">3.</strong> Version 2.13</a></li><li class="chapter-item "><a href="v2.12.html"><strong aria-hidden="true">4.</strong> Version 2.12</a></li><li class="chapter-item "><a href="v2.11.html"><strong aria-hidden="true">5.</strong> Version 2.11</a></li><li class="chapter-item expanded "><a href="v2.10.html" class="active"><strong aria-hidden="true">6.</strong> Version 2.10</a></li><li class="chapter-item "><a href="v2.9.html"><strong aria-hidden="true">7.</strong> Version 2.9</a></li><li class="chapter-item "><a href="v2.8.html"><strong aria-hidden="true">8.</strong> Version 2.8</a></li><li class="chapter-item "><a href="v2.7.html"><strong aria-hidden="true">9.</strong> Version 2.7</a></li><li class="chapter-item "><a href="v2.6.html"><strong aria-hidden="true">10.</strong> Version 2.6</a></li><li class="chapter-item "><a href="v2.5.html"><strong aria-hidden="true">11.</strong> Version 2.5</a></li><li class="chapter-item "><a href="v2.4.html"><strong aria-hidden="true">12.</strong> Version 2.4</a></li><li class="chapter-item "><a href="v2.3.html"><strong aria-hidden="true">13.</strong> Version 2.3</a></li><li class="chapter-item "><a href="v2.2.html"><strong aria-hidden="true">14.</strong> Version 2.2</a></li><li class="chapter-item "><a href="v2.1.html"><strong aria-hidden="true">15.</strong> Version 2.1</a></li><li class="chapter-item "><a href="v2.0.html"><strong aria-hidden="true">16.</strong> Version 2.0</a></li><li class="chapter-item "><a href="v0.1-to-1.1.3.html"><strong aria-hidden="true">17.</strong> Version 0.1 to 1.1.3</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AnkiDroid Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ankidroid/ankidroiddocs/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="version-2104-2020-05-31"><a class="header" href="#version-2104-2020-05-31">Version 2.10.4 (2020-05-31)</a></h2>
+<ul>
+<li>Workaround expired AnkiWeb SSL Root certificate</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/22?closed=1">Full Changelog here</a></li>
+</ul>
+<h2 id="version-2103-2020-05-29"><a class="header" href="#version-2103-2020-05-29">Version 2.10.3 (2020-05-29)</a></h2>
+<ul>
+<li>Fix crash on no permissions on Card Browser system text menu entry</li>
+<li>Fix crash in widget if external storage unmounts</li>
+<li>Fix crash on device reboot if no permissions</li>
+<li>Fix crash if deck picker background image too large</li>
+<li>Fix crash in tags dialog</li>
+<li>Fix bad data generated for null objects (Anki compatability)</li>
+<li><a href="https://github.com/ankidroid/Anki-Android/milestone/21?closed=1">Full Changelog here</a></li>
+</ul>
+<h2 id="version-2102-2020-05-14"><a class="header" href="#version-2102-2020-05-14">Version 2.10.2 (2020-05-14)</a></h2>
+<ul>
+<li>Fix type answer cards not rendering correctly</li>
+<li>Fix type answer card template creation on non-English new installs</li>
+<li>Fix frequent full sync caused by incorrect learning card counts</li>
+<li>Fix crash importing into fresh install with no storage permission</li>
+</ul>
+<h2 id="version-2101-2020-05-13"><a class="header" href="#version-2101-2020-05-13">Version 2.10.1 (2020-05-13)</a></h2>
+<ul>
+<li>Updated all translations from crowdin translators</li>
+<li>Fix crash note editor on rapid back button</li>
+<li>Fix crash from incorrect Thai translation</li>
+</ul>
+<h2 id="version-210-2020-05-12"><a class="header" href="#version-210-2020-05-12">Version 2.10 (2020-05-12)</a></h2>
+<ul>
+<li>Add welcome dialog explaining need for storage permission</li>
+<li>Add support for Flags on cards (including flagging by gesture)</li>
+<li>Add ability to set background image in Deck Picker</li>
+<li>Add localization of standard templates created in fresh install</li>
+<li>Add support for card javascript to reload current card programmatically</li>
+<li>Add support for restricted learning / classroom devices</li>
+<li>Add preference to disable &quot;Extended Text UI&quot; full-screen editor</li>
+<li>Add CSS style capability to heavy checkmark and down arrow in card</li>
+<li>Add display of current interval on reschedule dialog</li>
+<li>Add support for card javascript to answer cards programmatically</li>
+<li>Add ability to toggle sticky field in field editor</li>
+<li>Improve deck list newline, style, script tag handling in deck descriptions</li>
+<li>Improve whiteboard on/off state handling, especially between day/night mode</li>
+<li>Improve multi-selection options in CardBrowser</li>
+<li>Improve performance (systematic optimization process, lots of improvements!)</li>
+<li>Improve handling of erroneous notes (missing fields, improper clozes)</li>
+<li>Improve user messaging on network connection failures</li>
+<li>Improve counting of suspended/buried cards in advanced statistics</li>
+<li>Improve v2 scheduler compatibility with Anki ecosystem</li>
+<li>Improve handling / detection of full sync need</li>
+<li>Improve Anki compatibility by allowing more field/model/deck name characters</li>
+<li>Improve deck list estimated review times with human scale times</li>
+<li>Fix text scaling bug in card browser</li>
+<li>Fix crash in export while using v2 scheduler</li>
+<li>Fix Custom Tabs crash with non-default system web browser</li>
+<li>Fix issues with import of packages with long Unicode names</li>
+<li>Fix incorrect intervals on lapsed filtered v2 scheduler cards</li>
+<li>Fix multimedia editor save/cancel behavior</li>
+<li>Fix incorrect button/gesture availability while existing task is still active</li>
+<li>Fix type answer crash on invalid characters</li>
+<li>Fix cloze references not being recognized in all fields</li>
+<li>Fix invalid ability to change deck to a filtered deck</li>
+<li>Fix crashes on adding invalid images, audios, and videos</li>
+<li>Fix CardBrowser crash after deleting card</li>
+<li>Fix crash and help user if no browser detected</li>
+<li>Fix Reviewer crash if card not available</li>
+<li>Fix crash / improve import of pasted decks</li>
+<li>Fix clicking hint field blocks key input in Reviewer</li>
+<li>Fix Previewer forgetting which card to show on device rotation</li>
+<li>Fix Mathjax/cloze interactions</li>
+<li>Fix vertical alignment of touch area in full-screen review</li>
+<li>Fix handling of ':::' in deck names</li>
+<li>Fix incorrect display of HTML comments in card browser</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="v2.11.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="v2.9.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="v2.11.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="v2.9.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
