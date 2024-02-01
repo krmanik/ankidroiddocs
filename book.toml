@@ -9,15 +9,10 @@ title = "AnkiDroid Manual"
 edition = "2021"
 
 [build]
-extra-watch-dirs = ["po", "third_party"]
+extra-watch-dirs = ["po"]
 
 [preprocessor.gettext]
 after = ["links"]
-
-[preprocessor.svgbob]
-renderers = ["html"]
-after = ["gettext"]
-class = "bob"
 
 [output.html]
 curly-quotes = true
@@ -27,8 +22,9 @@ additional-css = [
   "theme/css/language-picker.css",
   "theme/css/rtl.css",
 ]
-git-repository-url = "https://github.com/ankidroid/ankidroiddocs/"
-edit-url-template = "https://github.com/ankidroid/ankidroiddocs/edit/main/{path}"
+site-url = "/ankidroiddocs/"
+git-repository-url = "https://github.com/krmanik/ankidroiddocs/"
+edit-url-template = "https://github.com/krmanik/ankidroiddocs/edit/main/{path}"
 
 [preprocessor.toc]
 command = "mdbook-toc"
