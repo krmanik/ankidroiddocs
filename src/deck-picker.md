@@ -72,7 +72,7 @@ Use this option to delete a deck (note: this action is not reversible, although 
 This option can be used to share a deck with other users. See the [exporting decks](exporting.md#exporting-anki-files) section for more information.
 
 ### Unbury
-This option is only visble when the selected deck has cards that have been manually or automatically buried.
+This option is only visible when the selected deck has cards that have been manually or automatically buried.
 
 ### Rebuild / Empty
 If the selected deck is a [filtered decks](filtered-deck.md#filtered-decks) then you also have the option to rebuild or empty the cards in it.

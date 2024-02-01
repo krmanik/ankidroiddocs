@@ -30,4 +30,4 @@ Tapping the rebuild icon will rebuild the current filtered deck according to the
 Allows you to configure some options related to the current deck, such as the number of new cards and reviews to introduce each day. Please see the [desktop documentation](https://docs.ankiweb.net/deck-options.html) for more information about these study options.
 
 #### Unbury
-This option is only visble when the selected deck has cards that have been manually or automatically buried.
+This option is only visible when the selected deck has cards that have been manually or automatically buried.
