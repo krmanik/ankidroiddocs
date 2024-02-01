@@ -1,9 +1,4 @@
 [workspace]
 # Please keep the workspace members sorted.
-members = [
-  "src/advanced-features",
-  "src/changelog",
-  "img",
-  "importing", 
-]
+members = []
 resolver = "2"
