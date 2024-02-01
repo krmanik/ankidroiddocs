@@ -21,6 +21,9 @@ jobs:
           sudo apt update
           sudo apt install gettext yapf3
 
+      - name: Check formatting
+        uses: dprint/check@v2.2
+
   typos:
     runs-on: ubuntu-latest
     steps:
