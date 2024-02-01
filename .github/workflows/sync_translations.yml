@@ -44,7 +44,7 @@ jobs:
         run: chmod +x .github/workflows/build.sh
 
       -name: Generate messages.pot for uploading to crowdin
-       run: |
+        run: |
           MDBOOK_OUTPUT='{"xgettext": {"pot-file": "messages.pot", "granularity": 0}}' mdbook build -d po
 
       - name: Install dependencies and build
