@@ -1,3 +1,18 @@
-book
-*.mo
-*.po~
+# Build artifacts
+/book/
+target/
+*.bin
+
+# Translation artifacts
+po/messages.pot
+po/*.mo
+po/*.po~
+
+# macOS artifacts
+.DS_Store
+
+# Jetbrains IDEs project files
+.idea/
+.iml
+.iws
+count.dat

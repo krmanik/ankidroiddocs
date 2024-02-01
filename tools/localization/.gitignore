@@ -104,7 +104,7 @@ dist
 .tern-port
 
 # ignore downloaded zip file
-*.zip
+ankidroiddocs.zip
 
 # translation extract dir
 temp_dir
