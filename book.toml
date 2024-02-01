@@ -34,6 +34,14 @@ renderer = ["html"]
 optional = true
 warning-policy = "warn"
 follow-web-links = true
+exclude = [
+  'microsoft.com',
+  'twitter.com',
+  'stackexchange.com',
+  'https://github.com/open-spaced-repetition/fsrs4anki#add-on-compatibility',
+  'support.google.com',
+  'reddit.com',
+]
 
 [output.html.fold]
 enable = true
