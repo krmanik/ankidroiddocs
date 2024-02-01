@@ -23,8 +23,8 @@ additional-css = [
   "theme/css/rtl.css",
 ]
 site-url = "/ankidroiddocs/"
-git-repository-url = "https://github.com/krmanik/ankidroiddocs/"
-edit-url-template = "https://github.com/krmanik/ankidroiddocs/edit/main/{path}"
+git-repository-url = "https://github.com/ankidroid/ankidroiddocs/"
+edit-url-template = "https://github.com/ankidroid/ankidroiddocs/edit/main/{path}"
 
 [preprocessor.toc]
 command = "mdbook-toc"
